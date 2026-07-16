@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canary in a Coal Mine — The Early Warning System for Life</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0e0e0c;--off-white:#f5f3ee;--cream:#ede9e0;--amber:#d4850a;--amber-light:#fdf3e0;--muted:#6b6860;--border:rgba(14,14,12,0.1);--blue:#1a4f8a;--blue-light:#e8f0fa;--green:#2d7a3a;--red:#c0392b;--stone:#a89880;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--off-white);color:var(--black);font-family:'Instrument Sans',sans-serif;line-height:1.6;}
+a{color:inherit;text-decoration:none;}
+nav{background:var(--off-white);border-bottom:1px solid var(--border);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;}
+.logo-wrap{display:flex;flex-direction:column;gap:1px;line-height:1;align-items:center;}
+.logo-top{font-family:'DM Serif Display',serif;font-size:17px;color:var(--black);letter-spacing:-.01em;}
+.logo-sub{font-family:'DM Serif Display',serif;font-style:italic;font-size:11px;color:var(--stone);}
+.nav-links{display:flex;align-items:center;gap:20px;font-size:13px;color:var(--muted);}
+.nav-links a:hover{color:var(--black);}
+.nav-links a.blue{color:var(--blue);font-weight:500;}
+.nav-links a.nav-support{color:var(--amber);font-weight:500;}
+.nav-links a.nav-support:hover{color:#b8730a;}
+.nav-btn{background:var(--black);color:var(--off-white);padding:7px 16px;border-radius:4px;font-size:13px;font-weight:500;}
+.nav-btn:hover{background:#2a2a28;color:var(--off-white);}
+
+/* HERO */
+.hero{max-width:720px;margin:0 auto;padding:64px 28px 52px;}
+.hero-eyebrow{font-family:'DM Mono',monospace;font-size:18px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;font-weight:500;}
+.hero-title{font-family:'DM Serif Display',serif;font-size:48px;line-height:1.1;color:var(--black);margin-bottom:16px;}
+.hero-title em{font-style:italic;color:var(--stone);}
+.hero-sub{font-size:17px;color:var(--muted);line-height:1.65;max-width:500px;margin-bottom:32px;}
+.hero-cta-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.cta-primary{background:var(--black);color:var(--off-white);padding:13px 28px;border-radius:4px;font-size:14px;font-weight:500;}
+.cta-primary:hover{background:#2a2a28;color:var(--off-white);}
+.cta-secondary{font-size:13px;color:var(--muted);}
+.cta-secondary a{color:var(--blue);font-weight:500;}
+
+/* FLOCK */
+.flock-section{border-top:1px solid var(--border);padding:52px 28px;}
+.flock-label{font-family:'DM Mono',monospace;font-size:16px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:8px;text-align:center;font-weight:500;}
+.flock-headline{font-family:'DM Serif Display',serif;font-size:28px;text-align:center;margin-bottom:6px;}
+.flock-headline em{font-style:italic;color:var(--stone);}
+.flock-sub{font-size:14px;color:var(--muted);text-align:center;margin-bottom:36px;}
+.flock-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;max-width:920px;margin:0 auto;}
+.bird-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:22px 24px;display:flex;flex-direction:column;}
+.bird-card.blue-card{border-color:rgba(26,79,138,.2);background:var(--blue-light);}
+.bird-icon{margin-bottom:12px;display:flex;align-items:flex-end;height:78px;}
+.bird-name{font-family:'DM Serif Display',serif;font-size:18px;margin-bottom:4px;}
+.bird-desc{font-size:13px;color:var(--muted);line-height:1.5;flex:1;margin-bottom:16px;}
+.bird-link{font-size:13px;font-weight:500;color:var(--amber);}
+.bird-link.blue-link{color:var(--blue);}
+.bird-link:hover{text-decoration:underline;}
+.bird-tag{font-family:'DM Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 7px;border-radius:3px;margin-bottom:10px;display:inline-block;}
+.tag-amber{background:var(--amber-light);color:#854f0b;}
+.tag-blue{background:var(--blue-light);color:#0c447c;}
+.tag-free{background:#eaf3de;color:#3b6d11;}
+
+/* INTEL SECTION ON HOMEPAGE */
+.home-intel{border-top:1px solid var(--border);padding:52px 28px;}
+.home-intel-inner{max-width:720px;margin:0 auto;}
+.section-label{font-family:'DM Mono',monospace;font-size:16px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:8px;font-weight:500;}
+.section-headline{font-family:'DM Serif Display',serif;font-size:28px;margin-bottom:6px;}
+.section-headline em{font-style:italic;color:var(--stone);}
+.section-sub{font-size:14px;color:var(--muted);margin-bottom:24px;}
+.intel-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+@media(max-width:600px){.intel-grid{grid-template-columns:1fr;}}
+.icard{background:#fff;border:1px solid var(--border);border-radius:8px;padding:16px 18px;}
+.icard-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;gap:8px;}
+.icard-topic{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+.pill{font-family:'DM Mono',monospace;font-size:9px;padding:2px 7px;border-radius:3px;font-weight:500;white-space:nowrap;flex-shrink:0;}
+.pill-red{background:#fce8e8;color:#a32d2d;}
+.pill-amber{background:#faeeda;color:#854f0b;}
+.pill-green{background:#eaf3de;color:#3b6d11;}
+.pill-blue{background:#e6f1fb;color:#0c447c;}
+.icard-headline{font-size:13px;font-weight:500;color:var(--black);line-height:1.35;margin-bottom:6px;}
+.icard-body{font-size:12px;color:var(--muted);line-height:1.5;}
+.icard-divider{height:1px;background:var(--border);margin:10px 0;}
+.irow{display:flex;align-items:baseline;gap:5px;font-size:11.5px;color:var(--muted);margin-top:5px;line-height:1.4;}
+.rr{font-family:'DM Mono',monospace;font-size:10px;color:var(--red);flex-shrink:0;}
+.rg{font-family:'DM Mono',monospace;font-size:10px;color:var(--green);flex-shrink:0;}
+.ra{font-family:'DM Mono',monospace;font-size:10px;color:var(--amber);flex-shrink:0;}
+.intel-note{font-family:'DM Mono',monospace;font-size:10px;color:var(--stone);margin-top:10px;}
+
+/* PRICING */
+.pricing-section{border-top:1px solid var(--border);padding:52px 28px;}
+.pricing-inner{max-width:720px;margin:0 auto;}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px;}
+@media(max-width:600px){.pricing-grid{grid-template-columns:1fr;}}
+.price-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:22px 24px;}
+.price-tier{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;}
+.price-name{font-family:'DM Serif Display',serif;font-size:22px;margin-bottom:4px;}
+.price-amount{font-size:28px;font-weight:500;color:var(--black);margin-bottom:4px;}
+.price-amount span{font-size:14px;font-weight:400;color:var(--muted);}
+.price-desc{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:16px;}
+.price-features{list-style:none;margin-bottom:20px;}
+.price-features li{font-size:12px;color:var(--muted);padding:4px 0;border-top:1px solid var(--border);}
+.price-features li:first-child{border-top:none;}
+.price-features li::before{content:'→ ';color:var(--amber);}
+.price-btn{display:block;text-align:center;padding:10px;border-radius:4px;font-size:13px;font-weight:500;border:1px solid var(--border);}
+.price-btn.primary{background:var(--black);color:var(--off-white);border-color:var(--black);}
+.price-btn.disabled{background:var(--cream);color:var(--muted);cursor:default;}
+/* Coffee card — primary CTA */
+.coffee-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:30px 28px;margin-top:28px;text-align:center;}
+.coffee-head{font-family:'DM Serif Display',serif;font-size:24px;margin-bottom:6px;}
+.coffee-head em{font-style:italic;color:var(--stone);}
+.coffee-sub{font-size:14px;color:var(--muted);line-height:1.55;max-width:440px;margin:0 auto 20px;}
+.coffee-btn{display:inline-block;background:var(--amber);color:#fff;font-weight:600;font-size:14px;padding:12px 26px;border-radius:6px;}
+.coffee-btn:hover{background:#b8730a;}
+.coffee-micro{font-family:'DM Mono',monospace;font-size:10px;color:var(--stone);margin-top:12px;}
+/* Paused tiers — quiet footnote row */
+.tiers-paused{margin-top:34px;padding-top:24px;border-top:1px solid var(--border);}
+.tiers-paused-label{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--stone);text-align:center;margin-bottom:16px;}
+.tiers-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:520px;margin:0 auto;}
+@media(max-width:600px){.tiers-row{grid-template-columns:1fr;}}
+.tier-mini{border:1px solid var(--border);border-radius:6px;padding:14px 16px;opacity:.5;}
+.tier-mini .tm-name{font-family:'DM Serif Display',serif;font-size:16px;}
+.tier-mini .tm-price{font-size:13px;color:var(--muted);}
+.tier-mini .tm-status{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-top:6px;}
+
+/* TESTIMONIALS */
+.testimonials{border-top:1px solid var(--border);padding:52px 28px;}
+.testimonials-inner{max-width:720px;margin:0 auto;}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;}
+@media(max-width:600px){.testi-grid{grid-template-columns:1fr;}}
+.testi-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:18px 20px;}
+.testi-quote{font-size:14px;color:var(--black);line-height:1.55;margin-bottom:12px;font-style:italic;}
+.testi-name{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);}
+
+/* EMAIL */
+.email-section{border-top:1px solid var(--border);padding:52px 28px;}
+.email-inner{max-width:720px;margin:0 auto;}
+.email-box{background:var(--cream);border-radius:8px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.email-copy h3{font-family:'DM Serif Display',serif;font-size:22px;margin-bottom:6px;}
+.email-copy p{font-size:13px;color:var(--muted);}
+.email-form{display:flex;gap:8px;flex-shrink:0;}
+.email-input{padding:9px 14px;border:1px solid var(--border);border-radius:4px;font-size:13px;font-family:'Instrument Sans',sans-serif;background:#fff;width:220px;}
+.email-submit{padding:9px 18px;background:var(--black);color:var(--off-white);border:none;border-radius:4px;font-size:13px;font-weight:500;font-family:'Instrument Sans',sans-serif;cursor:pointer;white-space:nowrap;}
+
+footer{border-top:1px solid var(--border);padding:20px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.footer-links{display:flex;gap:16px;font-size:12px;color:var(--muted);font-family:'DM Mono',monospace;}
+.footer-links a{color:var(--muted);}
+.footer-links a:hover{color:var(--black);}
+.footer-note{font-size:11px;color:var(--stone);font-family:'DM Mono',monospace;}
+
+.title-row { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+.title-row h1 { margin-bottom: 0; }
+
+/* mobile nav */
+.logo-top{white-space:nowrap;display:inline-flex;align-items:center;}
+.nav-links a{white-space:nowrap;}
+@media(max-width:680px){
+  nav{padding:0 14px;}
+  .logo-sub{display:none;}
+  .nav-links{gap:12px;font-size:12px;overflow-x:auto;}
+  .nav-btn{display:none;}
+}
+
+.nav-links{scrollbar-width:none;-ms-overflow-style:none;}
+.nav-links::-webkit-scrollbar{display:none;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo-wrap">
+    <span class="logo-top"><svg width="22" height="22" viewBox="58 60 175 123" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:3px"><ellipse cx="150" cy="110" rx="45" ry="35" fill="#f5c800" stroke="#c8960a" stroke-width="1.5"/><ellipse cx="158" cy="125" rx="32" ry="20" fill="#f7d940" stroke="none"/><path d="M192 105 Q215 88 225 95 Q210 108 192 112Z" fill="#e8b400" stroke="#c8960a" stroke-width="1"/><path d="M192 110 Q218 100 226 110 Q210 118 192 118Z" fill="#d4a000" stroke="#c8960a" stroke-width="1"/><path d="M192 115 Q215 115 222 126 Q208 126 192 120Z" fill="#c89000" stroke="#c8960a" stroke-width="1"/><ellipse cx="112" cy="95" rx="30" ry="27" fill="#f5c800" stroke="#c8960a" stroke-width="1.5"/><path d="M85 92 L62 88 L64 95 L85 97Z" fill="#e8a020" stroke="#c8760a" stroke-width="1"/><ellipse cx="100" cy="90" rx="6" ry="5.5" fill="#1a1a18"/><line x1="145" y1="143" x2="142" y2="165" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round"/><line x1="142" y1="165" x2="134" y2="174" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="142" y1="165" x2="151" y2="173" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="162" y1="143" x2="160" y2="165" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round"/><line x1="160" y1="165" x2="152" y2="174" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="160" y1="165" x2="168" y2="173" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/></svg>Canary</span>
+    <span class="logo-sub">in a coal mine</span>
+  </a>
+  <div class="nav-links">
+    <a href="/career">Career</a>
+    <a href="/pigeon" class="blue">Cher Ami</a>
+    <a href="/about">About</a>
+    <a href="/support" class="nav-support">Support Canary</a>
+    <a href="/" class="nav-btn">Home</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">Life intelligence for uncertain times</div>
+  <div class="title-row"><svg width="92" height="92" viewBox="58 60 175 123" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;margin-top:14px"><ellipse cx="150" cy="110" rx="45" ry="35" fill="#f5c800" stroke="#c8960a" stroke-width="1.5"/><ellipse cx="158" cy="125" rx="32" ry="20" fill="#f7d940" stroke="none"/><path d="M192 105 Q215 88 225 95 Q210 108 192 112Z" fill="#e8b400" stroke="#c8960a" stroke-width="1"/><path d="M192 110 Q218 100 226 110 Q210 118 192 118Z" fill="#d4a000" stroke="#c8960a" stroke-width="1"/><path d="M192 115 Q215 115 222 126 Q208 126 192 120Z" fill="#c89000" stroke="#c8960a" stroke-width="1"/><ellipse cx="112" cy="95" rx="30" ry="27" fill="#f5c800" stroke="#c8960a" stroke-width="1.5"/><path d="M85 92 L62 88 L64 95 L85 97Z" fill="#e8a020" stroke="#c8760a" stroke-width="1"/><line x1="85" y1="94" x2="64" y2="91" stroke="#c8760a" stroke-width="0.8"/><ellipse cx="100" cy="90" rx="6" ry="5.5" fill="#1a1a18"/><ellipse cx="99" cy="89" rx="2" ry="1.5" fill="#3a3a38"/><line x1="145" y1="143" x2="142" y2="165" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round"/><line x1="142" y1="165" x2="134" y2="174" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="142" y1="165" x2="144" y2="175" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="142" y1="165" x2="151" y2="173" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="162" y1="143" x2="160" y2="165" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round"/><line x1="160" y1="165" x2="152" y2="174" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="160" y1="165" x2="162" y2="175" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="160" y1="165" x2="168" y2="173" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/></svg><h1 class="hero-title">The early warning<br>system <em>for life.</em></h1></div>
+  <p class="hero-sub">A career risk scorer that measures what AI can actually take against what keeps you in the chair — and a crisis resource page that is free forever. Know where you stand before you have to find out the hard way.</p>
+  <div class="hero-cta-row">
+    <a href="/career" class="cta-primary">Start with Career →</a>
+    <div class="cta-secondary">Free. No account required. Or go straight to <a href="/pigeon">Cher Ami</a> for crisis resources.</div>
+  </div>
+</div>
+
+<div class="flock-section">
+  <div class="flock-label">The flock</div>
+  <h2 class="flock-headline">Two birds. <em>One job each.</em></h2>
+  <p class="flock-sub">One watches your career. One carries help to anyone who needs it.</p>
+  <div class="flock-grid">
+    <div class="bird-card">
+      <div class="bird-icon"><svg width="92" height="65" viewBox="58 60 175 123" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:3px"><ellipse cx="150" cy="110" rx="45" ry="35" fill="#f5c800" stroke="#c8960a" stroke-width="1.5"/><ellipse cx="158" cy="125" rx="32" ry="20" fill="#f7d940" stroke="none"/><path d="M192 105 Q215 88 225 95 Q210 108 192 112Z" fill="#e8b400" stroke="#c8960a" stroke-width="1"/><path d="M192 110 Q218 100 226 110 Q210 118 192 118Z" fill="#d4a000" stroke="#c8960a" stroke-width="1"/><path d="M192 115 Q215 115 222 126 Q208 126 192 120Z" fill="#c89000" stroke="#c8960a" stroke-width="1"/><ellipse cx="112" cy="95" rx="30" ry="27" fill="#f5c800" stroke="#c8960a" stroke-width="1.5"/><path d="M85 92 L62 88 L64 95 L85 97Z" fill="#e8a020" stroke="#c8760a" stroke-width="1"/><ellipse cx="100" cy="90" rx="6" ry="5.5" fill="#1a1a18"/><line x1="145" y1="143" x2="142" y2="165" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round"/><line x1="142" y1="165" x2="134" y2="174" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="142" y1="165" x2="151" y2="173" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="162" y1="143" x2="160" y2="165" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round"/><line x1="160" y1="165" x2="152" y2="174" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="160" y1="165" x2="168" y2="173" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/></svg></div>
+      <div class="bird-tag tag-amber">Scorer</div>
+      <div class="bird-name">Career Canary</div>
+      <div class="bird-desc">Nine questions about the work you actually do. Exposure × Holding — what AI can take today versus what keeps a human in the chair. Scored against deployment reality, not capability hype.</div>
+      <a href="/career" class="bird-link">Map my position →</a>
+    </div>
+    <div class="bird-card blue-card">
+      <div class="bird-icon"><svg width="118" height="73" viewBox="210 130 265 165" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:3px"><ellipse cx="360" cy="192" rx="78" ry="52" fill="#8a7e6e" stroke="#6b5c4a" stroke-width="1"/><ellipse cx="340" cy="214" rx="50" ry="26" fill="#b0a48e" stroke="none"/><ellipse cx="365" cy="178" rx="62" ry="28" fill="#7a6e5e" stroke="#6b5c4a" stroke-width="0.8"/><path d="M310 183 Q338 160 420 168 Q396 184 310 183Z" fill="#6b5c4a"/><path d="M312 191 Q341 170 418 176 Q394 193 312 191Z" fill="#5c4e3e"/><path d="M320 180 Q350 164 405 169" fill="none" stroke="#5a4e3e" stroke-width="0.7"/><path d="M318 186 Q348 171 407 176" fill="none" stroke="#5a4e3e" stroke-width="0.7"/><path d="M430 192 Q458 181 466 202 Q455 213 430 208Z" fill="#7a6e5e" stroke="#6b5c4a" stroke-width="0.8"/><ellipse cx="294" cy="178" rx="52" ry="42" fill="#9a8e7c" stroke="#6b5c4a" stroke-width="1"/><ellipse cx="294" cy="178" rx="50" ry="40" fill="#9a8e7c" stroke="none"/><path d="M246 172 L218 167 L220 176 L246 178 Z" fill="#c8a060" stroke="#9a7040" stroke-width="0.8"/><ellipse cx="276" cy="172" rx="13" ry="12" fill="#1a1208" stroke="#0a0800" stroke-width="1.5"/><rect x="244" y="168" width="102" height="7" rx="0" fill="#1a1208" stroke="#0a0800" stroke-width="0.8"/><path d="M342 170 L358 162 L374 170" fill="none" stroke="#c8a060" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M342 178 L358 170 L374 178" fill="none" stroke="#c8a060" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="348" y="202" width="30" height="12" rx="5" fill="#c8a060" stroke="#9a7040" stroke-width="1"/><line x1="368" y1="240" x2="366" y2="268" stroke="#c8a060" stroke-width="3" stroke-linecap="round"/><line x1="366" y1="268" x2="354" y2="279" stroke="#c8a060" stroke-width="2.5" stroke-linecap="round"/><line x1="366" y1="268" x2="368" y2="281" stroke="#c8a060" stroke-width="2.5" stroke-linecap="round"/><line x1="366" y1="268" x2="378" y2="278" stroke="#c8a060" stroke-width="2.5" stroke-linecap="round"/><line x1="340" y1="240" x2="338" y2="254" stroke="#c8a060" stroke-width="3" stroke-linecap="round"/><ellipse cx="338" cy="255" rx="4" ry="3" fill="#8a4040" stroke="#6a2020" stroke-width="0.8"/></svg></div>
+      <div class="bird-tag tag-free">Always free</div>
+      <div class="bird-name">Cher Ami</div>
+      <div class="bird-desc">Crisis resources. Real numbers, verified links. Job loss, housing, food, mental health, veterans, domestic violence, and more. No email. No paywall. Ever.</div>
+      <a href="/pigeon" class="bird-link blue-link">Find resources →</a>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<div class="pricing-section">
+  <div class="pricing-inner">
+    <div class="section-label">Pricing</div>
+    <h2 class="section-headline">Free to use. <em>Tip if it earns it.</em></h2>
+
+    <div class="coffee-card">
+      <div class="coffee-head">Canary is free. <em>Keeping it current isn't.</em></div>
+      <div class="coffee-sub">Every score is only as good as the facts behind it — the model kept current against what AI actually deploys, Cher Ami's crisis links re-checked so none go stale. If that's worth something to you, a coffee helps justify the time.</div>
+      <a class="coffee-btn" href="https://www.buymeacoffee.com/jimcantrell2" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+      <div class="coffee-micro">One-time. No account needed.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="testimonials">
+  <div class="testimonials-inner">
+    <div class="section-label">From the flock</div>
+    <h2 class="section-headline">What people <em>are saying.</em></h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-quote">"Results not far off my opinion for my industry."</div>
+        <div class="testi-name">Will G.</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"Helped offer perspective on transitioning into a new field."</div>
+        <div class="testi-name">Anastasiya A.</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"Pretty spot-on. Already shared it with my network."</div>
+        <div class="testi-name">Pauline B.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EMAIL -->
+<div class="email-section">
+  <div class="email-inner">
+    <div class="email-box">
+      <div class="email-copy">
+        <h3>One thing to think about this month.</h3>
+        <p>A monthly career awareness nudge — not advice, just a question worth asking yourself.</p>
+      </div>
+      <form class="email-form" action="https://canaryinacoalmine.us9.list-manage.com/subscribe/post?u=b7808ba80769041231277d503&id=9cd2e5fe8b&f_id=000f16e1f0" method="post" target="_blank">
+        <div style="position:absolute;left:-5000px;" aria-hidden="true">
+          <input type="text" name="b_b7808ba80769041231277d503_9cd2e5fe8b" tabindex="-1" value="">
+        </div>
+        <input class="email-input" type="email" name="EMAIL" placeholder="your@email.com" required>
+        <button class="email-submit" type="submit">Send me my monthly nudge →</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/career">Career</a>
+    <a href="/pigeon">Cher Ami</a><a href="/about">About</a><a href="/support">Support Canary</a>
+  </div>
+  <div class="footer-note">Not advice · Not investment guidance · Just awareness · canaryinacoalmine.ai</div>
+</footer>
+
+</body>
+</html>

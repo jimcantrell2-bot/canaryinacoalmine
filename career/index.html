@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career Canary — AI &amp; Job Risk Scorer | Canary in a Coal Mine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #0e0e0c;
+  --off-white: #f5f3ee;
+  --cream: #ede9e0;
+  --amber: #d4850a;
+  --amber-light: #fdf3e0;
+  --muted: #6b6860;
+  --border: rgba(14,14,12,0.1);
+  --blue: #1a4f8a;
+  --blue-light: #e8f0fa;
+  --green: #2d7a3a;
+  --red: #c0392b;
+  --stone: #a89880;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--off-white); color: var(--black); font-family: 'Instrument Sans', sans-serif; line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+
+nav { background: var(--off-white); border-bottom: 1px solid var(--border); padding: 0 28px; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 100; }
+.logo-wrap { display: flex; flex-direction: column; gap: 1px; line-height: 1; align-items: center; }
+.logo-top { font-family: 'DM Serif Display', serif; font-size: 17px; color: var(--black); letter-spacing: -.01em; }
+.logo-sub { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 11px; color: var(--stone); }
+.nav-links { display: flex; align-items: center; gap: 20px; font-size: 13px; color: var(--muted); }
+.nav-links a:hover { color: var(--black); }
+.nav-links a.active { color: var(--amber); font-weight: 500; }
+.nav-links a.blue { color: var(--blue); font-weight: 500; }
+.nav-btn { background: var(--black); color: var(--off-white); padding: 7px 16px; border-radius: 4px; font-size: 13px; font-weight: 500; }
+.nav-btn:hover { background: #2a2a28; color: var(--off-white); }
+.nav-links a.nav-support { color: var(--amber); font-weight: 500; }
+.nav-links a.nav-support:hover { color: #b8730a; }
+
+.page-header { padding: 48px 28px 36px; max-width: 720px; margin: 0 auto; }
+.eyebrow { font-family: 'DM Mono', monospace; font-size: 18px; letter-spacing: .1em; text-transform: uppercase; color: var(--amber); margin-bottom: 12px; font-weight: 500; }
+.page-title { font-family: 'DM Serif Display', serif; font-size: 36px; line-height: 1.15; margin-bottom: 10px; }
+.page-title em { font-style: italic; color: var(--stone); }
+.page-sub { font-size: 15px; color: var(--muted); line-height: 1.6; max-width: 520px; }
+
+.scorer-wrap { max-width: 720px; margin: 0 auto; padding: 0 28px; }
+.q-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 20px 22px; margin-bottom: 12px; }
+.q-num { font-family: 'DM Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 8px; }
+.q-text { font-size: 15px; font-weight: 500; color: var(--black); margin-bottom: 14px; line-height: 1.35; }
+.q-options { display: flex; flex-wrap: wrap; gap: 7px; }
+.q-opt { font-size: 12px; padding: 6px 13px; border: 1px solid var(--border); border-radius: 4px; background: var(--off-white); color: var(--black); cursor: pointer; font-family: 'Instrument Sans', sans-serif; transition: all .12s; }
+.q-opt:hover { border-color: var(--amber); background: var(--amber-light); color: #854f0b; }
+.q-opt.sel { border-color: var(--amber); background: var(--amber-light); color: #854f0b; font-weight: 500; }
+
+.score-btn { display: block; margin: 20px 0 0; background: var(--black); color: var(--off-white); border: none; padding: 13px 32px; border-radius: 4px; font-size: 14px; font-weight: 500; font-family: 'Instrument Sans', sans-serif; cursor: pointer; opacity: .35; transition: opacity .2s; }
+.score-btn.ready { opacity: 1; }
+
+.result-box { display: none; background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 24px; margin-top: 12px; }
+.result-box.show { display: block; }
+.result-score { font-family: 'DM Serif Display', serif; font-size: 48px; color: var(--black); line-height: 1; margin-bottom: 4px; }
+.result-label { font-family: 'DM Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: 16px; }
+.result-bar-wrap { height: 6px; background: var(--cream); border-radius: 3px; overflow: hidden; margin-bottom: 20px; }
+.result-bar { height: 100%; border-radius: 3px; transition: width .6s ease; }
+.result-text { font-size: 14px; color: var(--muted); line-height: 1.6; }
+.result-dims { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 16px; }
+.dim-card { background: var(--off-white); border-radius: 6px; padding: 12px 14px; }
+.dim-label { font-family: 'DM Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 4px; }
+.dim-val { font-size: 20px; font-weight: 500; color: var(--black); }
+
+.section-rule { border: none; border-top: 1px solid var(--border); margin: 40px 28px 0; }
+
+.intel-section { max-width: 720px; margin: 0 auto; padding: 32px 28px 0; }
+.intel-header { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+.intel-header-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--amber); flex-shrink: 0; }
+.intel-header-label { font-family: 'DM Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+.intel-header-date { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--stone); margin-left: auto; }
+.intel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 600px) { .intel-grid { grid-template-columns: 1fr; } }
+
+.icard { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 16px 18px; }
+.icard-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 8px; gap: 8px; }
+.icard-topic { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.pill { font-family: 'DM Mono', monospace; font-size: 9px; padding: 2px 7px; border-radius: 3px; font-weight: 500; white-space: nowrap; flex-shrink: 0; }
+.pill-red { background: #fce8e8; color: #a32d2d; }
+.pill-amber { background: #faeeda; color: #854f0b; }
+.pill-green { background: #eaf3de; color: #3b6d11; }
+.pill-blue { background: #e6f1fb; color: #0c447c; }
+.icard-headline { font-size: 13px; font-weight: 500; color: var(--black); line-height: 1.35; margin-bottom: 6px; }
+.icard-body { font-size: 12px; color: var(--muted); line-height: 1.5; }
+.icard-divider { height: 1px; background: var(--border); margin: 10px 0; }
+.irow { display: flex; align-items: baseline; gap: 5px; font-size: 11.5px; color: var(--muted); margin-top: 5px; line-height: 1.4; }
+.rr { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--red); flex-shrink: 0; }
+.rg { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--green); flex-shrink: 0; }
+.ra { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--amber); flex-shrink: 0; }
+
+.intel-note { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--stone); margin-top: 10px; padding-bottom: 2px; }
+
+.email-section { max-width: 720px; margin: 0 auto; padding: 32px 28px; }
+.email-box { background: var(--cream); border-radius: 8px; padding: 24px 28px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.email-copy h3 { font-family: 'DM Serif Display', serif; font-size: 18px; margin-bottom: 4px; }
+.email-copy p { font-size: 13px; color: var(--muted); }
+.email-form { display: flex; gap: 8px; flex-shrink: 0; }
+.email-input { padding: 9px 14px; border: 1px solid var(--border); border-radius: 4px; font-size: 13px; font-family: 'Instrument Sans', sans-serif; background: #fff; width: 220px; }
+.email-submit { padding: 9px 18px; background: var(--black); color: var(--off-white); border: none; border-radius: 4px; font-size: 13px; font-weight: 500; font-family: 'Instrument Sans', sans-serif; cursor: pointer; white-space: nowrap; }
+
+footer { border-top: 1px solid var(--border); padding: 20px 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+.footer-links { display: flex; gap: 16px; font-size: 12px; color: var(--muted); font-family: 'DM Mono', monospace; }
+.footer-links a { color: var(--muted); }
+.footer-links a:hover { color: var(--black); }
+.footer-note { font-size: 11px; color: var(--stone); font-family: 'DM Mono', monospace; }
+
+
+.q-hint { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--stone); margin-top: 9px; letter-spacing: .03em; }
+.axis-block { margin-bottom: 16px; }
+.axis-head { display: flex; justify-content: space-between; align-items: baseline; font-family: 'DM Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--black); margin-bottom: 6px; }
+.axis-head .axis-num { font-size: 14px; font-weight: 500; }
+.axis-sub { font-size: 11px; color: var(--stone); margin-top: 4px; }
+.result-section { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+.rs-label { font-family: 'DM Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--amber); margin-bottom: 4px; }
+.result-section p { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+.pos-name { font-family: 'DM Serif Display', serif; font-size: 34px; line-height: 1.1; margin-bottom: 8px; }
+
+.title-row { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+.title-row h1 { margin-bottom: 0; }
+
+/* mobile nav */
+.logo-top{white-space:nowrap;display:inline-flex;align-items:center;}
+.nav-links a{white-space:nowrap;}
+@media(max-width:680px){
+  nav{padding:0 14px;}
+  .logo-sub{display:none;}
+  .nav-links{gap:12px;font-size:12px;overflow-x:auto;}
+  .nav-btn{display:none;}
+}
+
+.nav-links{scrollbar-width:none;-ms-overflow-style:none;}
+.nav-links::-webkit-scrollbar{display:none;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo-wrap">
+    <span class="logo-top"><svg width="22" height="22" viewBox="58 60 175 123" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:3px"><ellipse cx="150" cy="110" rx="45" ry="35" fill="#f5c800" stroke="#c8960a" stroke-width="1.5"/><ellipse cx="158" cy="125" rx="32" ry="20" fill="#f7d940" stroke="none"/><path d="M192 105 Q215 88 225 95 Q210 108 192 112Z" fill="#e8b400" stroke="#c8960a" stroke-width="1"/><path d="M192 110 Q218 100 226 110 Q210 118 192 118Z" fill="#d4a000" stroke="#c8960a" stroke-width="1"/><path d="M192 115 Q215 115 222 126 Q208 126 192 120Z" fill="#c89000" stroke="#c8960a" stroke-width="1"/><ellipse cx="112" cy="95" rx="30" ry="27" fill="#f5c800" stroke="#c8960a" stroke-width="1.5"/><path d="M85 92 L62 88 L64 95 L85 97Z" fill="#e8a020" stroke="#c8760a" stroke-width="1"/><ellipse cx="100" cy="90" rx="6" ry="5.5" fill="#1a1a18"/><line x1="145" y1="143" x2="142" y2="165" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round"/><line x1="142" y1="165" x2="134" y2="174" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="142" y1="165" x2="151" y2="173" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="162" y1="143" x2="160" y2="165" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round"/><line x1="160" y1="165" x2="152" y2="174" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="160" y1="165" x2="168" y2="173" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/></svg>Canary</span>
+    <span class="logo-sub">in a coal mine</span>
+  </a>
+  <div class="nav-links">
+    <a href="/career" class="active">Career</a>
+    <a href="/pigeon" class="blue">Cher Ami</a>
+    <a href="/about">About</a>
+    <a href="/support" class="nav-support">Support Canary</a>
+    <a href="/" class="nav-btn">Home</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="eyebrow">Career Canary</div>
+  <div class="title-row"><svg width="83" height="83" viewBox="58 60 175 123" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;margin-top:14px"><ellipse cx="150" cy="110" rx="45" ry="35" fill="#f5c800" stroke="#c8960a" stroke-width="1.5"/><ellipse cx="158" cy="125" rx="32" ry="20" fill="#f7d940" stroke="none"/><path d="M192 105 Q215 88 225 95 Q210 108 192 112Z" fill="#e8b400" stroke="#c8960a" stroke-width="1"/><path d="M192 110 Q218 100 226 110 Q210 118 192 118Z" fill="#d4a000" stroke="#c8960a" stroke-width="1"/><path d="M192 115 Q215 115 222 126 Q208 126 192 120Z" fill="#c89000" stroke="#c8960a" stroke-width="1"/><ellipse cx="112" cy="95" rx="30" ry="27" fill="#f5c800" stroke="#c8960a" stroke-width="1.5"/><path d="M85 92 L62 88 L64 95 L85 97Z" fill="#e8a020" stroke="#c8760a" stroke-width="1"/><line x1="85" y1="94" x2="64" y2="91" stroke="#c8760a" stroke-width="0.8"/><ellipse cx="100" cy="90" rx="6" ry="5.5" fill="#1a1a18"/><ellipse cx="99" cy="89" rx="2" ry="1.5" fill="#3a3a38"/><line x1="145" y1="143" x2="142" y2="165" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round"/><line x1="142" y1="165" x2="134" y2="174" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="142" y1="165" x2="144" y2="175" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="142" y1="165" x2="151" y2="173" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="162" y1="143" x2="160" y2="165" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round"/><line x1="160" y1="165" x2="152" y2="174" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="160" y1="165" x2="162" y2="175" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="160" y1="165" x2="168" y2="173" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/></svg><h1 class="page-title">How exposed are you<br><em>to what's coming?</em></h1></div>
+  <p class="page-sub">Nine questions about the work you actually do. We score what AI can take today (Exposure) against what keeps a human in the chair (Holding) — measured against deployment reality, not capability hype.</p>
+</div>
+
+<div class="scorer-wrap">
+
+  <div class="q-card" id="q1">
+    <div class="q-num">Question 1 of 9 · Exposure</div>
+    <div class="q-text">Which kinds of work fill most of your week?</div>
+    <div class="q-options">
+      <div class="q-opt" data-v="90" onclick="selMulti(this)">Data entry, scheduling, or admin processing</div>
+      <div class="q-opt" data-v="85" onclick="selMulti(this)">Writing, editing, or content production</div>
+      <div class="q-opt" data-v="80" onclick="selMulti(this)">Routine analysis, research, or reporting</div>
+      <div class="q-opt" data-v="70" onclick="selMulti(this)">Customer communication or sales outreach</div>
+      <div class="q-opt" data-v="70" onclick="selMulti(this)">Design or creative production</div>
+      <div class="q-opt" data-v="60" onclick="selMulti(this)">Software development or engineering</div>
+      <div class="q-opt" data-v="45" onclick="selMulti(this)">Teaching, training, or advising people</div>
+      <div class="q-opt" data-v="40" onclick="selMulti(this)">Managing people or projects</div>
+      <div class="q-opt" data-v="30" onclick="selMulti(this)">Negotiation or high-stakes decisions</div>
+      <div class="q-opt" data-v="25" onclick="selMulti(this)">Operating vehicles or machinery</div>
+      <div class="q-opt" data-v="15" onclick="selMulti(this)">Physical, hands-on skilled work</div>
+      <div class="q-opt" data-v="10" onclick="selMulti(this)">Treating or caring for people in person</div>
+    </div>
+    <div class="q-hint">Pick up to three. Most jobs are a mix — your score blends them.</div>
+  </div>
+
+  <div class="q-card" id="q2">
+    <div class="q-num">Question 2 of 9 · Exposure</div>
+    <div class="q-text">Who checks your work before it counts?</div>
+    <div class="q-options">
+      <div class="q-opt" data-v="10" onclick="sel(this,'q2')">Someone senior reviews it</div>
+      <div class="q-opt" data-v="0" onclick="sel(this,'q2')">Peers — shared review</div>
+      <div class="q-opt" data-v="-10" onclick="sel(this,'q2')">I'm the final check — others' work comes to me</div>
+    </div>
+  </div>
+
+  <div class="q-card" id="q3">
+    <div class="q-num">Question 3 of 9 · Exposure</div>
+    <div class="q-text">Is AI actually deployed in your line of work — not piloted, deployed?</div>
+    <div class="q-options">
+      <div class="q-opt" data-v="15" onclick="sel(this,'q3')">Yes — in daily use, producing real output</div>
+      <div class="q-opt" data-v="7" onclick="sel(this,'q3')">Piloting or limited rollout</div>
+      <div class="q-opt" data-v="0" onclick="sel(this,'q3')">Talked about, nothing real yet</div>
+      <div class="q-opt" data-v="-8" onclick="sel(this,'q3')">No — not on the radar</div>
+    </div>
+  </div>
+
+  <div class="q-card" id="q4">
+    <div class="q-num">Question 4 of 9 · Exposure</div>
+    <div class="q-text">When an AI tool gets something wrong in your field, what does the error cost?</div>
+    <div class="q-options">
+      <div class="q-opt" data-v="10" onclick="sel(this,'q4')">Little — caught and fixed in minutes</div>
+      <div class="q-opt" data-v="0" onclick="sel(this,'q4')">Real — money, time, or reputation</div>
+      <div class="q-opt" data-v="-12" onclick="sel(this,'q4')">Severe — injury, legal, or regulatory consequences</div>
+    </div>
+  </div>
+
+  <div class="q-card" id="q5">
+    <div class="q-num">Question 5 of 9 · Holding</div>
+    <div class="q-text">Does your work legally require a licensed or certified human to sign off?</div>
+    <div class="q-options">
+      <div class="q-opt" data-v="100" onclick="sel(this,'q5')">Yes — I hold the license</div>
+      <div class="q-opt" data-v="45" onclick="sel(this,'q5')">Yes — someone above me holds it</div>
+      <div class="q-opt" data-v="0" onclick="sel(this,'q5')">No license required</div>
+    </div>
+  </div>
+
+  <div class="q-card" id="q6">
+    <div class="q-num">Question 6 of 9 · Holding</div>
+    <div class="q-text">Does the job need you physically on site?</div>
+    <div class="q-options">
+      <div class="q-opt" data-v="100" onclick="sel(this,'q6')">Most days — the work is hands-on</div>
+      <div class="q-opt" data-v="50" onclick="sel(this,'q6')">Sometimes — a mix</div>
+      <div class="q-opt" data-v="0" onclick="sel(this,'q6')">No — it could be done fully remote</div>
+    </div>
+  </div>
+
+  <div class="q-card" id="q7">
+    <div class="q-num">Question 7 of 9 · Holding</div>
+    <div class="q-text">When something goes wrong, whose name is on it?</div>
+    <div class="q-options">
+      <div class="q-opt" data-v="100" onclick="sel(this,'q7')">Mine — I'm accountable by name</div>
+      <div class="q-opt" data-v="50" onclick="sel(this,'q7')">Shared — team accountability</div>
+      <div class="q-opt" data-v="0" onclick="sel(this,'q7')">Someone above me</div>
+    </div>
+  </div>
+
+  <div class="q-card" id="q8">
+    <div class="q-num">Question 8 of 9 · Holding</div>
+    <div class="q-text">How much of your job is judgment calls on incomplete information?</div>
+    <div class="q-options">
+      <div class="q-opt" data-v="100" onclick="sel(this,'q8')">Most of it — few defined procedures</div>
+      <div class="q-opt" data-v="50" onclick="sel(this,'q8')">A mix of judgment and procedure</div>
+      <div class="q-opt" data-v="0" onclick="sel(this,'q8')">Mostly defined procedure</div>
+    </div>
+  </div>
+
+  <div class="q-card" id="q9">
+    <div class="q-num">Question 9 of 9 · Context</div>
+    <div class="q-text">If your income stopped today, how long could you cover expenses?</div>
+    <div class="q-options">
+      <div class="q-opt" data-v="0" onclick="sel(this,'q9')">Less than 1 month</div>
+      <div class="q-opt" data-v="1" onclick="sel(this,'q9')">1–3 months</div>
+      <div class="q-opt" data-v="2" onclick="sel(this,'q9')">3–6 months</div>
+      <div class="q-opt" data-v="3" onclick="sel(this,'q9')">6–12 months</div>
+      <div class="q-opt" data-v="4" onclick="sel(this,'q9')">12+ months</div>
+    </div>
+  </div>
+
+  <button class="score-btn" id="scoreBtn" onclick="showResult()">Map my position →</button>
+
+  <div class="result-box" id="resultBox">
+    <div class="result-label">Your position</div>
+    <div class="pos-name" id="posName">—</div>
+    <div class="result-text" id="posText" style="margin-bottom:20px;"></div>
+
+    <div class="axis-block">
+      <div class="axis-head"><span>Exposure</span><span class="axis-num" id="expVal">—</span></div>
+      <div class="result-bar-wrap"><div class="result-bar" id="expBar"></div></div>
+      <div class="axis-sub">How much of your work AI tools can do well today — in deployment, not in demos.</div>
+    </div>
+    <div class="axis-block">
+      <div class="axis-head"><span>Holding</span><span class="axis-num" id="holdVal">—</span></div>
+      <div class="result-bar-wrap"><div class="result-bar" id="holdBar"></div></div>
+      <div class="axis-sub">What keeps a human in the chair — license, presence, accountability, judgment.</div>
+    </div>
+
+    <div class="result-section">
+      <div class="rs-label">Exposed</div>
+      <p id="rsExposed"></p>
+    </div>
+    <div class="result-section">
+      <div class="rs-label">Leverage</div>
+      <p id="rsLeverage"></p>
+    </div>
+    <div class="result-section">
+      <div class="rs-label">Forward read</div>
+      <p id="rsForward"></p>
+    </div>
+    <div class="intel-note" style="margin-top:14px;">Scored against deployment reality, not capability hype · Not advice, just awareness</div>
+  </div>
+
+</div>
+
+<div class="email-section">
+  <div class="email-box">
+    <div class="email-copy">
+      <h3>One thing to think about this month.</h3>
+      <p>A monthly career awareness nudge — not advice, just a question worth asking yourself.</p>
+    </div>
+    <form class="email-form" action="https://canaryinacoalmine.us9.list-manage.com/subscribe/post?u=b7808ba80769041231277d503&id=9cd2e5fe8b&f_id=000f16e1f0" method="post" target="_blank">
+      <div style="position:absolute;left:-5000px;" aria-hidden="true">
+        <input type="text" name="b_b7808ba80769041231277d503_9cd2e5fe8b" tabindex="-1" value="">
+      </div>
+      <input class="email-input" type="email" name="EMAIL" placeholder="your@email.com" required>
+      <button class="email-submit" type="submit">Send me my monthly nudge →</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/career">Career</a>
+    <a href="/pigeon">Cher Ami</a><a href="/about">About</a><a href="/support">Support Canary</a>
+  </div>
+  <div class="footer-note">Not advice · Not investment guidance · Just awareness</div>
+</footer>
+
+<script>
+var answers = {};
+var q1picks = [];
+
+function selMulti(el) {
+  var i = q1picks.indexOf(el);
+  if (i > -1) { q1picks.splice(i, 1); el.classList.remove('sel'); }
+  else {
+    if (q1picks.length >= 3) return;
+    q1picks.push(el); el.classList.add('sel');
+  }
+  checkReady();
+}
+
+function sel(el, q) {
+  el.closest('.q-options').querySelectorAll('.q-opt').forEach(function(o){ o.classList.remove('sel'); });
+  el.classList.add('sel');
+  answers[q] = { v: parseFloat(el.dataset.v), label: el.textContent.trim() };
+  checkReady();
+}
+
+function checkReady() {
+  var all = q1picks.length >= 1 && ['q2','q3','q4','q5','q6','q7','q8','q9'].every(function(k){ return answers[k]; });
+  document.getElementById('scoreBtn').classList.toggle('ready', all);
+}
+
+function clamp(n) { return Math.min(100, Math.max(0, Math.round(n))); }
+
+function showResult() {
+  if (q1picks.length < 1) return;
+  if (!['q2','q3','q4','q5','q6','q7','q8','q9'].every(function(k){ return answers[k]; })) return;
+
+  // ----- EXPOSURE -----
+  var taskAvg = q1picks.reduce(function(s, el){ return s + parseFloat(el.dataset.v); }, 0) / q1picks.length;
+  var exposure = clamp(taskAvg + answers.q2.v + answers.q3.v + answers.q4.v);
+
+  // ----- HOLDING (license .35 > presence .28 > accountability .20 > judgment .17) -----
+  var holding = clamp(
+    answers.q5.v * 0.35 +
+    answers.q6.v * 0.28 +
+    answers.q7.v * 0.20 +
+    answers.q8.v * 0.17
+  );
+
+  // ----- POSITION -----
+  var hiExp = exposure >= 55, hiHold = holding >= 50;
+  var pos, posText;
+  if (hiExp && !hiHold) {
+    pos = 'Exposed';
+    posText = 'A meaningful share of your work is within reach of AI tools that are deployed and working today, and little structural reason keeps a human in the loop. That is not a judgment — it is information. The value of knowing early is that you can move before you have to.';
+  } else if (hiExp && hiHold) {
+    pos = 'Augmented';
+    posText = 'AI can already do a real share of your tasks — but holding factors keep you in the chair. Expect the job to change shape around you rather than disappear. The risk is standing still while it does.';
+  } else if (!hiExp && !hiHold) {
+    pos = 'Watchlist';
+    posText = 'Your day-to-day work is not something AI does well in deployment yet. But little is structurally holding you in place if that changes. Insulated is not the same as anchored.';
+  } else {
+    pos = 'Anchored';
+    posText = 'Low current exposure and strong holding factors. This is the most defensible position on the map. Defensible is not permanent — recheck when the ground shifts.';
+  }
+
+  // ----- EXPOSED section: name the highest-exposure task picked -----
+  var topTask = q1picks.slice().sort(function(a,b){ return parseFloat(b.dataset.v) - parseFloat(a.dataset.v); })[0];
+  var deployLine = '';
+  if (answers.q3.v >= 15) deployLine = ' Your field already has AI in daily production use — this is measured displacement pressure, not a forecast.';
+  else if (answers.q3.v >= 7) deployLine = ' Your field is piloting AI now. Pilots that survive contact with real work tend to scale fast.';
+  else if (answers.q3.v <= -8) deployLine = ' Nothing is deployed in your field yet, which buys time — but it measures adoption, not capability.';
+  var errLine = answers.q4.v <= -12 ? ' High error costs in your domain slow real deployment — premature rollouts in fields like yours are where AI is backfiring publicly.' : '';
+  var rsExposed = 'Of the work you selected, "' + topTask.textContent.trim().toLowerCase() + '" is the most within reach of today\u2019s tools.' + deployLine + errLine;
+
+  // ----- LEVERAGE section: name the strongest holding factor -----
+  var rsLeverage;
+  if (answers.q5.v >= 100) {
+    rsLeverage = 'Your license is your strongest hold. The law requires a credentialed human to sign, and licenses change slower than robots improve. Pair it with judgment and it compounds.';
+  } else if (answers.q6.v >= 100) {
+    rsLeverage = 'Physical presence is your strongest hold — the work needs hands on site, and that protects you now. It protects less over time than a license does, so watch automation in your specific tasks, not the headlines.';
+  } else if (answers.q7.v >= 100) {
+    rsLeverage = 'Named accountability is your strongest hold. Organizations still need a person to answer for outcomes, and AI cannot be fired, sued, or promoted. Keep your name on decisions, not just output.';
+  } else if (answers.q8.v >= 100) {
+    rsLeverage = 'Judgment is your strongest hold — calls made on incomplete information are still where AI underperforms in deployment. Judgment without accountability is fragile, though. Move toward owning outcomes.';
+  } else if (holding >= 35) {
+    rsLeverage = 'Your holds are partial — some review responsibility, some judgment, some presence — but no single anchor. Strengthening one (a credential, named accountability) does more than spreading thinner.';
+  } else {
+    rsLeverage = 'No strong holding factor showed up: no required license, no on-site need, accountability sits above you. Building one hold — a credential, an accountable role — changes this score more than anything else.';
+  }
+
+  // ----- FORWARD READ: runway + the live cards -----
+  var runwayLabels = ['under 1 month', '1\u20133 months', '3\u20136 months', '6\u201312 months', '12+ months'];
+  var rw = answers.q9.v;
+  var rwLine = rw <= 1
+    ? 'Your runway is ' + runwayLabels[rw] + ' — short enough that any move should start before a forced one.'
+    : 'Your runway is ' + runwayLabels[rw] + ', which buys you the one thing this score is for: time to move deliberately.';
+  var rsForward = rwLine + ' The cards below are the live read. When deployment reality shifts in your field — real rollouts, real postings data, real reversals — it shows there first. Recheck your score when it does.';
+
+  // ----- RENDER -----
+  var expColor = exposure >= 65 ? '#c0392b' : exposure >= 40 ? '#d4850a' : '#2d7a3a';
+  var holdColor = holding >= 50 ? '#2d7a3a' : holding >= 30 ? '#d4850a' : '#c0392b';
+
+  document.getElementById('posName').textContent = pos;
+  document.getElementById('posText').textContent = posText;
+  document.getElementById('expVal').textContent = exposure;
+  document.getElementById('holdVal').textContent = holding;
+  document.getElementById('expBar').style.width = exposure + '%';
+  document.getElementById('expBar').style.background = expColor;
+  document.getElementById('holdBar').style.width = holding + '%';
+  document.getElementById('holdBar').style.background = holdColor;
+  document.getElementById('rsExposed').textContent = rsExposed;
+  document.getElementById('rsLeverage').textContent = rsLeverage;
+  document.getElementById('rsForward').textContent = rsForward;
+
+  var box = document.getElementById('resultBox');
+  box.classList.add('show');
+  setTimeout(function(){ box.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 100);
+}
+</script>
+</body>
+</html>

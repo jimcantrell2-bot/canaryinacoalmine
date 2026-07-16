@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Canary in a Coal Mine</title>
+<meta name="description" content="What Canary in a Coal Mine is, the thinking behind it, and who built it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0e0e0c;--off-white:#f5f3ee;--cream:#ede9e0;--amber:#d4850a;--amber-light:#fdf3e0;--muted:#6b6860;--border:rgba(14,14,12,0.1);--blue:#1a4f8a;--green:#2d7a3a;--stone:#a89880;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--off-white);color:var(--black);font-family:'Instrument Sans',sans-serif;line-height:1.6;}
+a{color:inherit;text-decoration:none;}
+nav{background:var(--off-white);border-bottom:1px solid var(--border);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;}
+.logo-wrap{display:flex;flex-direction:column;gap:1px;line-height:1;align-items:center;}
+.logo-top{font-family:'DM Serif Display',serif;font-size:17px;color:var(--black);letter-spacing:-.01em;}
+.logo-sub{font-family:'DM Serif Display',serif;font-style:italic;font-size:11px;color:var(--stone);}
+.nav-links{display:flex;align-items:center;gap:20px;font-size:13px;color:var(--muted);}
+.nav-links a:hover{color:var(--black);}
+.nav-links a.active{color:var(--amber);font-weight:500;}
+.nav-links a.blue{color:var(--blue);font-weight:500;}
+.nav-links a.nav-support{color:var(--amber);font-weight:500;}
+.nav-links a.nav-support:hover{color:#b8730a;}
+.nav-btn{background:var(--black);color:var(--off-white);padding:7px 16px;border-radius:4px;font-size:13px;font-weight:500;}
+.nav-btn:hover{background:#2a2a28;color:var(--off-white);}
+
+.page-header{padding:56px 28px 24px;max-width:720px;margin:0 auto;}
+.eyebrow{font-family:'DM Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:14px;font-weight:500;}
+.page-title{font-family:'DM Serif Display',serif;font-size:40px;line-height:1.12;margin-bottom:16px;}
+.page-title em{font-style:italic;color:var(--stone);}
+.lede{font-size:17px;color:var(--black);line-height:1.6;max-width:600px;}
+.lede strong{font-weight:600;}
+
+.body-wrap{max-width:720px;margin:0 auto;padding:8px 28px 40px;}
+section{padding:28px 0;border-top:1px solid var(--border);}
+section:first-of-type{border-top:none;}
+h2{font-family:'DM Serif Display',serif;font-size:24px;margin-bottom:14px;line-height:1.2;}
+h2 em{font-style:italic;color:var(--stone);}
+p{font-size:15px;color:var(--muted);line-height:1.65;margin-bottom:14px;}
+p strong{color:var(--black);font-weight:600;}
+p:last-child{margin-bottom:0;}
+
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px;}
+@media(max-width:600px){.pillars{grid-template-columns:1fr;}}
+.pillar{background:#fff;border:1px solid var(--border);border-radius:8px;padding:16px 18px;}
+.pillar-name{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);margin-bottom:6px;}
+.pillar-desc{font-size:13px;color:var(--muted);line-height:1.5;}
+
+.thesis{background:var(--cream);border-radius:8px;border-left:3px solid var(--amber);padding:20px 22px;margin:4px 0;}
+.thesis p{color:var(--black);margin-bottom:10px;}
+.thesis p:last-child{margin-bottom:0;}
+
+.lens-row{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);margin-top:10px;letter-spacing:.03em;}
+.lens-row b{color:var(--black);}
+
+.build-list{list-style:none;margin-top:6px;}
+.build-list li{font-size:14.5px;color:var(--muted);line-height:1.55;padding:8px 0 8px 22px;position:relative;border-bottom:1px solid var(--border);}
+.build-list li:last-child{border-bottom:none;}
+.build-list li::before{content:'→';position:absolute;left:0;color:var(--amber);font-family:'DM Mono',monospace;}
+.build-list li b{color:var(--black);font-weight:600;}
+
+.stack{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);line-height:2;margin-top:4px;}
+.stack span{display:inline-block;background:#fff;border:1px solid var(--border);border-radius:4px;padding:3px 10px;margin:2px 4px 2px 0;}
+
+.cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;}
+.cta{font-size:14px;font-weight:500;padding:11px 22px;border-radius:4px;border:1px solid var(--black);}
+.cta-primary{background:var(--black);color:var(--off-white);}
+.cta-primary:hover{background:#2a2a28;}
+.cta-ghost{background:transparent;color:var(--black);}
+.cta-ghost:hover{background:var(--cream);}
+
+.byline{font-size:14px;color:var(--muted);margin-top:8px;}
+.byline b{color:var(--black);}
+
+footer{border-top:1px solid var(--border);padding:20px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;max-width:720px;margin:0 auto;}
+.footer-links{display:flex;gap:16px;font-size:12px;color:var(--muted);font-family:'DM Mono',monospace;}
+.footer-links a:hover{color:var(--black);}
+.footer-note{font-size:11px;color:var(--stone);font-family:'DM Mono',monospace;}
+
+/* mobile nav */
+.logo-top{white-space:nowrap;display:inline-flex;align-items:center;}
+.nav-links a{white-space:nowrap;}
+@media(max-width:680px){
+  nav{padding:0 14px;}
+  .logo-sub{display:none;}
+  .nav-links{gap:12px;font-size:12px;overflow-x:auto;}
+  .nav-btn{display:none;}
+}
+
+.nav-links{scrollbar-width:none;-ms-overflow-style:none;}
+.nav-links::-webkit-scrollbar{display:none;}
+</style>
+</head>
+<body>
+<nav>
+  <a class='logo-wrap' href='/'>
+    <span class="logo-top"><svg width="22" height="22" viewBox="58 60 175 123" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:3px"><ellipse cx="150" cy="110" rx="45" ry="35" fill="#f5c800" stroke="#c8960a" stroke-width="1.5"/><ellipse cx="158" cy="125" rx="32" ry="20" fill="#f7d940" stroke="none"/><path d="M192 105 Q215 88 225 95 Q210 108 192 112Z" fill="#e8b400" stroke="#c8960a" stroke-width="1"/><path d="M192 110 Q218 100 226 110 Q210 118 192 118Z" fill="#d4a000" stroke="#c8960a" stroke-width="1"/><path d="M192 115 Q215 115 222 126 Q208 126 192 120Z" fill="#c89000" stroke="#c8960a" stroke-width="1"/><ellipse cx="112" cy="95" rx="30" ry="27" fill="#f5c800" stroke="#c8960a" stroke-width="1.5"/><path d="M85 92 L62 88 L64 95 L85 97Z" fill="#e8a020" stroke="#c8760a" stroke-width="1"/><ellipse cx="100" cy="90" rx="6" ry="5.5" fill="#1a1a18"/><line x1="145" y1="143" x2="142" y2="165" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round"/><line x1="142" y1="165" x2="134" y2="174" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="142" y1="165" x2="151" y2="173" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="162" y1="143" x2="160" y2="165" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round"/><line x1="160" y1="165" x2="152" y2="174" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="160" y1="165" x2="168" y2="173" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/></svg>Canary</span>
+    <span class="logo-sub">in a coal mine</span>
+  </a>
+  <div class="nav-links">
+    <a href='/career'>Career</a>
+    <a class='blue' href='/pigeon'>Cher Ami</a>
+    <a class='active' href='/about'>About</a>
+    <a class='nav-support' href='/support'>Support Canary</a>
+    <a class='nav-btn' href='/'>Home</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="eyebrow">About</div>
+  <h1 class="page-title">An early warning system,<br><em>built and watched by a person.</em></h1>
+  <p class="lede">Canary in a Coal Mine scores the condition most in motion right now — your career in the AI era — against what AI is <strong>actually deploying today</strong>, not a snapshot frozen in hype. Alongside it: Cher Ami, a crisis-resource page that is free forever.</p>
+</div>
+
+<div class="body-wrap">
+
+  <section>
+    <h2>What it is</h2>
+    <p>A free career risk scorer and a crisis-resource page. You answer nine questions about the work you actually do; you get a position on a map — not a doom number — and a plain-language read on where you stand. No account. No paywall. No ideology — just awareness.</p>
+    <div class="pillars">
+      <div class="pillar"><div class="pillar-name">Career</div><div class="pillar-desc">Exposure × Holding — what AI can take today versus what keeps a human in the chair.</div></div>
+      <div class="pillar"><div class="pillar-name">Cher Ami</div><div class="pillar-desc">Verified crisis resources. No email, no paywall, ever.</div></div>
+      <div class="pillar"><div class="pillar-name">The discipline</div><div class="pillar-desc">Every claim sourced, every figure dated, anything unverifiable softened — not restamped.</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The thinking <em>behind it</em></h2>
+    <p>Anyone can scrape a job-risk calculator. What's hard to copy is <strong>judgment about what AI can actually do today</strong> — the difference between what a vendor demo promises and what's shipping in production. A score built on hype is worse than no score. So the discipline behind the questions is simple and strict:</p>
+    <div class="thesis">
+      <p><strong>Every figure is dated. Every claim is sourced. When a fact can't be re-verified, it's softened rather than asserted — and when it goes stale, it comes out rather than getting a cosmetic date bump.</strong></p>
+      <p>The editorial point of view on Career is that the honest signal is deployment reality, not capability hype — what AI is actually doing in production today, where premature rollouts are backfiring, and what that means for the person holding the job.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>What it took <em>to build</em></h2>
+    <p>Canary is a solo project — designed, written, built, and maintained by one person. The work spans more than code:</p>
+    <ul class="build-list">
+      <li><b>Product &amp; information design</b> — eight pages designed and built, five live after a deliberate scope cut; a consistent scoring model and a visual system from scratch.</li>
+      <li><b>Editorial judgment</b> — reading fast-moving technical and geopolitical news with a calm, plain-language eye, a discipline now baked into how the scorer weighs deployment reality.</li>
+      <li><b>Data integrity under change</b> — when a live geopolitical event made the site's intelligence stale, the fix was a sourced, dated, cross-page rewrite — not a cosmetic date bump.</li>
+      <li><b>Full deployment</b> — custom domain, hosting, clean-URL structure, email capture, and payment scaffolding, owned end to end.</li>
+    </ul>
+    <div class="stack" style="margin-top:14px;">
+      <span>HTML / CSS / JS</span><span>Netlify</span><span>custom .ai domain</span><span>Mailchimp</span><span>responsive design</span><span>client-side scoring engine</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Who built it</h2>
+    <p class="byline">Canary is built and maintained by <b>Jim</b> — a systems and IT professional with a background spanning federal law enforcement technology, media, and advertising, plus paralegal work at an AmLaw Top 100 firm specializing in labor and employment law. Canary brings that operational, security-minded discipline to a consumer product: accurate, current, and honest about what it does and doesn't know.</p>
+    <div class="cta-row">
+      <a class="cta cta-primary" href="/">Meet the birds →</a>
+      <a class="cta cta-ghost" href="/support">Support the project</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href='/'>Home</a><a href='/career'>Career</a><a href='/pigeon'>Cher Ami</a><a href='/about'>About</a><a href='/support'>Support Canary</a>
+  </div>
+  <div class="footer-note">Not advice · Just awareness · canaryinacoalmine.ai</div>
+</footer>
+</body>
+</html>
