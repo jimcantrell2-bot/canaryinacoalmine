@@ -255,15 +255,15 @@ footer { border-top: 1px solid var(--border); padding: 20px 28px; display: flex;
   </div>
 
   <div class="q-card" id="q9">
-    <div class="q-num">Question 9 of 9 · Context</div>
-    <div class="q-text">If your income stopped today, how long could you cover expenses?</div>
+    <div class="q-num">Question 9 of 9 · Exposure</div>
+    <div class="q-text">Over the past two years, what's happened to headcount in your role — at your employer and places like it?</div>
     <div class="q-options">
-      <div class="q-opt" data-v="0" onclick="sel(this,'q9')">Less than 1 month</div>
-      <div class="q-opt" data-v="1" onclick="sel(this,'q9')">1–3 months</div>
-      <div class="q-opt" data-v="2" onclick="sel(this,'q9')">3–6 months</div>
-      <div class="q-opt" data-v="3" onclick="sel(this,'q9')">6–12 months</div>
-      <div class="q-opt" data-v="4" onclick="sel(this,'q9')">12+ months</div>
+      <div class="q-opt" data-v="-8" onclick="sel(this,'q9')">Growing — hiring for my role</div>
+      <div class="q-opt" data-v="0" onclick="sel(this,'q9')">Flat — steady, replacements only</div>
+      <div class="q-opt" data-v="10" onclick="sel(this,'q9')">Shrinking through attrition — people leave, roles aren't backfilled</div>
+      <div class="q-opt" data-v="15" onclick="sel(this,'q9')">Actively cut — with AI or automation cited</div>
     </div>
+    <div class="q-hint">Answer from what you've observed, not headlines. Backfill freezes are the quiet signal.</div>
   </div>
 
   <button class="score-btn" id="scoreBtn" onclick="showResult()">Map my position →</button>
@@ -360,7 +360,7 @@ function showResult() {
 
   // ----- EXPOSURE -----
   var taskAvg = q1picks.reduce(function(s, el){ return s + parseFloat(el.dataset.v); }, 0) / q1picks.length;
-  var exposure = clamp(taskAvg + answers.q2.v + answers.q3.v + answers.q4.v);
+  var exposure = clamp(taskAvg + answers.q2.v + answers.q3.v + answers.q4.v + answers.q9.v);
 
   // ----- HOLDING (license .35 > presence .28 > accountability .20 > judgment .17) -----
   var holding = clamp(
@@ -369,6 +369,8 @@ function showResult() {
     answers.q7.v * 0.20 +
     answers.q8.v * 0.17
   );
+  // A personally held license is the strongest structural hold — it alone reaches the Holding boundary.
+  if (answers.q5.v >= 100 && holding < 50) holding = 50;
 
   // ----- POSITION -----
   var hiExp = exposure >= 55, hiHold = holding >= 50;
@@ -412,13 +414,14 @@ function showResult() {
     rsLeverage = 'No strong holding factor showed up: no required license, no on-site need, accountability sits above you. Building one hold — a credential, an accountable role — changes this score more than anything else.';
   }
 
-  // ----- FORWARD READ: runway + the live cards -----
-  var runwayLabels = ['under 1 month', '1\u20133 months', '3\u20136 months', '6\u201312 months', '12+ months'];
-  var rw = answers.q9.v;
-  var rwLine = rw <= 1
-    ? 'Your runway is ' + runwayLabels[rw] + ' — short enough that any move should start before a forced one.'
-    : 'Your runway is ' + runwayLabels[rw] + ', which buys you the one thing this score is for: time to move deliberately.';
-  var rsForward = rwLine + ' The cards below are the live read. When deployment reality shifts in your field — real rollouts, real postings data, real reversals — it shows there first. Recheck your score when it does.';
+  // ----- FORWARD READ: headcount trend as the observed leading indicator -----
+  var hc = answers.q9.v;
+  var hcLine;
+  if (hc >= 15) hcLine = 'Headcount in your role is being cut with AI cited — displacement in your field is measured, not forecast. Any move you make should be on your timeline, not your employer\u2019s.';
+  else if (hc >= 10) hcLine = 'Roles like yours are shrinking through attrition — the quiet form of displacement. Nobody announces it; the org chart just gets thinner. Treat it as an early signal, because that is what it is.';
+  else if (hc >= 0) hcLine = 'Headcount in your role is holding flat. That is neither shelter nor threat — it means the leading indicator has not moved yet. Watch backfills: the first roles that quietly go unfilled tell you which tasks stopped needing a person.';
+  else hcLine = 'Your role is still growing — the strongest observed signal that demand for the human version of this work is real. Growth can coexist with change, though: watch what the new hires are asked to do differently.';
+  var rsForward = hcLine + ' Recheck your score when conditions shift in your field — real rollouts, real cuts, real reversals — not when the headlines do.';
 
   // ----- RENDER -----
   var expColor = exposure >= 65 ? '#c0392b' : exposure >= 40 ? '#d4850a' : '#2d7a3a';
