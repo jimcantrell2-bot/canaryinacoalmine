@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Will AI Take My Job? Free AI Risk Score for Your Career</title>
-<meta name="description" content="Answer nine questions and see how exposed your job is to AI — scored against what AI is actually doing now, not the hype. Free, no signup.">
+<title>How Could AI Change Your Work? | Career Canary</title>
+<meta name="description" content="Answer nine questions about your work, see where AI may affect your tasks, and choose a practical next step. Free, no signup.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Will AI Take My Job? Free AI Risk Score for Your Career">
-<meta property="og:description" content="Answer nine questions and see how exposed your job is to AI — scored against what AI is actually doing now, not the hype. Free, no signup.">
+<meta property="og:title" content="How Could AI Change Your Work? | Career Canary">
+<meta property="og:description" content="Answer nine questions about your work, see where AI may affect your tasks, and choose a practical next step. Free, no signup.">
 <meta property="og:url" content="https://canaryinacoalmine.ai/career/">
 <meta property="og:image" content="https://canaryinacoalmine.ai/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Will AI Take My Job? Free AI Risk Score for Your Career">
-<meta name="twitter:description" content="Answer nine questions and see how exposed your job is to AI — scored against what AI is actually doing now, not the hype. Free, no signup.">
+<meta name="twitter:title" content="How Could AI Change Your Work? | Career Canary">
+<meta name="twitter:description" content="Answer nine questions about your work, see where AI may affect your tasks, and choose a practical next step. Free, no signup.">
 <meta name="twitter:image" content="https://canaryinacoalmine.ai/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -147,6 +147,49 @@ footer { border-top: 1px solid var(--border); padding: 20px 28px; display: flex;
 
 .nav-links{scrollbar-width:none;-ms-overflow-style:none;}
 .nav-links::-webkit-scrollbar{display:none;}
+
+fieldset.q-card { min-width:0; padding-top:12px; }
+legend { float:left; width:100%; }
+legend + .q-options { clear:both; }
+.q-num, .q-text { display:block; }
+.q-num { color:#6b6860; font-size:11px; }
+.q-hint, .intel-note { color:#6b6860; font-size:12px; }
+.q-choice { position:relative; display:inline-flex; }
+.q-choice input { position:absolute; width:1px; height:1px; opacity:0; }
+.q-opt { display:inline-flex; align-items:center; min-height:44px; font-size:13px; text-align:left; }
+.q-choice input:checked + .q-opt { border-color:#854f0b; background:var(--amber-light); color:#854f0b; font-weight:600; }
+.q-choice input:checked + .q-opt::before { content:'✓'; margin-right:6px; }
+.q-choice input:focus-visible + .q-opt, button:focus-visible, a:focus-visible, summary:focus-visible { outline:3px solid var(--blue); outline-offset:3px; }
+.q-choice input:disabled + .q-opt { opacity:.55; cursor:not-allowed; }
+.q-card.missing { border:2px solid var(--red); }
+.q-options { margin-top:8px; }
+.form-error { color:#a32d2d; margin:16px 0; }
+.result-box { scroll-margin-top:80px; }
+.result-list { margin:10px 0 12px 22px; color:var(--muted); font-size:14px; }
+.result-list li { margin:8px 0; }
+.rs-label { font-size:12px; color:#854f0b; }
+.method { margin:24px 0; font-size:14px; color:var(--muted); }
+.method summary { cursor:pointer; color:var(--black); padding:12px 0; font-weight:600; }
+.method p { margin:12px 0; }
+.text-link { text-decoration:underline; color:var(--blue); }
+.edit-btn { margin-top:12px; border:1px solid var(--border); padding:10px 16px; min-height:44px; background:var(--off-white); color:var(--black); border-radius:4px; font:inherit; cursor:pointer; }
+#progress { margin-bottom:16px; }
+@media(max-width:600px) {
+ .email-form { flex-wrap:wrap; width:100%; min-width:0; }
+ .email-input { width:100%; min-width:0; }
+ .email-submit { white-space:normal; }
+ .title-row svg { width:56px; height:56px; }
+ .page-title { font-size:30px; }
+ .page-header, .scorer-wrap, .email-section { padding-left:18px; padding-right:18px; }
+ .q-card { padding:16px; }
+ nav { gap:12px; }
+ .nav-links { min-width:0; }
+}
+@media(prefers-reduced-motion:reduce) { * { scroll-behavior:auto !important; transition:none !important; } }
+
+.assessment-summary { font-size:17px; color:var(--black); line-height:1.65; }
+.main-action { background:var(--amber-light); padding:18px; border-radius:6px; margin-top:20px; }
+.answer-detail { margin-bottom:0; }
 </style>
 </head>
 <body>
@@ -167,149 +210,149 @@ footer { border-top: 1px solid var(--border); padding: 20px 28px; display: flex;
 
 <div class="page-header">
   <div class="eyebrow">Career Canary</div>
-  <div class="title-row"><svg width="83" height="83" viewBox="58 60 175 123" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;margin-top:14px"><ellipse cx="150" cy="110" rx="45" ry="35" fill="#f5c800" stroke="#c8960a" stroke-width="1.5"/><ellipse cx="158" cy="125" rx="32" ry="20" fill="#f7d940" stroke="none"/><path d="M192 105 Q215 88 225 95 Q210 108 192 112Z" fill="#e8b400" stroke="#c8960a" stroke-width="1"/><path d="M192 110 Q218 100 226 110 Q210 118 192 118Z" fill="#d4a000" stroke="#c8960a" stroke-width="1"/><path d="M192 115 Q215 115 222 126 Q208 126 192 120Z" fill="#c89000" stroke="#c8960a" stroke-width="1"/><ellipse cx="112" cy="95" rx="30" ry="27" fill="#f5c800" stroke="#c8960a" stroke-width="1.5"/><path d="M85 92 L62 88 L64 95 L85 97Z" fill="#e8a020" stroke="#c8760a" stroke-width="1"/><line x1="85" y1="94" x2="64" y2="91" stroke="#c8760a" stroke-width="0.8"/><ellipse cx="100" cy="90" rx="6" ry="5.5" fill="#1a1a18"/><ellipse cx="99" cy="89" rx="2" ry="1.5" fill="#3a3a38"/><line x1="145" y1="143" x2="142" y2="165" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round"/><line x1="142" y1="165" x2="134" y2="174" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="142" y1="165" x2="144" y2="175" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="142" y1="165" x2="151" y2="173" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="162" y1="143" x2="160" y2="165" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round"/><line x1="160" y1="165" x2="152" y2="174" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="160" y1="165" x2="162" y2="175" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="160" y1="165" x2="168" y2="173" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/></svg><h1 class="page-title">How exposed are you<br><em>to what's coming?</em></h1></div>
-  <p class="page-sub">Nine questions about the work you actually do. We score what AI can take today (Exposure) against what keeps a human in the chair (Holding) — measured against deployment reality, not capability hype.</p>
+  <div class="title-row"><svg width="83" height="83" viewBox="58 60 175 123" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;margin-top:14px"><ellipse cx="150" cy="110" rx="45" ry="35" fill="#f5c800" stroke="#c8960a" stroke-width="1.5"/><ellipse cx="158" cy="125" rx="32" ry="20" fill="#f7d940" stroke="none"/><path d="M192 105 Q215 88 225 95 Q210 108 192 112Z" fill="#e8b400" stroke="#c8960a" stroke-width="1"/><path d="M192 110 Q218 100 226 110 Q210 118 192 118Z" fill="#d4a000" stroke="#c8960a" stroke-width="1"/><path d="M192 115 Q215 115 222 126 Q208 126 192 120Z" fill="#c89000" stroke="#c8960a" stroke-width="1"/><ellipse cx="112" cy="95" rx="30" ry="27" fill="#f5c800" stroke="#c8960a" stroke-width="1.5"/><path d="M85 92 L62 88 L64 95 L85 97Z" fill="#e8a020" stroke="#c8760a" stroke-width="1"/><line x1="85" y1="94" x2="64" y2="91" stroke="#c8760a" stroke-width="0.8"/><ellipse cx="100" cy="90" rx="6" ry="5.5" fill="#1a1a18"/><ellipse cx="99" cy="89" rx="2" ry="1.5" fill="#3a3a38"/><line x1="145" y1="143" x2="142" y2="165" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round"/><line x1="142" y1="165" x2="134" y2="174" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="142" y1="165" x2="144" y2="175" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="142" y1="165" x2="151" y2="173" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="162" y1="143" x2="160" y2="165" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round"/><line x1="160" y1="165" x2="152" y2="174" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="160" y1="165" x2="162" y2="175" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="160" y1="165" x2="168" y2="173" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/></svg><h1 class="page-title">Where could AI<br><em>change your work?</em></h1></div>
+  <p class="page-sub">Nine questions about the work you actually do, where a person still matters, and what you see changing around you. Your answers stay in this browser tab. No account needed.</p>
 </div>
 
-<div class="scorer-wrap">
+<main class="scorer-wrap" id="check">
+<noscript><p>This check needs JavaScript. You can still read how it works below and use <a href="/pigeon/">Cher Ami’s resources</a>.</p></noscript>
+<p class="q-hint" id="progress" role="status" aria-live="polite">0 of 9 answered</p>
+<form id="careerForm" novalidate>
 
-  <div class="q-card" id="q1">
-    <div class="q-num">Question 1 of 9 · Exposure</div>
-    <div class="q-text">Which kinds of work fill most of your week?</div>
+  <fieldset class="q-card" id="q1">
+    <legend><span class="q-num">Question 1 of 9 · Exposure</span><span class="q-text">Which kinds of work fill most of your week?</span></legend>
     <div class="q-options">
-      <div class="q-opt" data-v="90" onclick="selMulti(this)">Data entry, scheduling, or admin processing</div>
-      <div class="q-opt" data-v="85" onclick="selMulti(this)">Writing, editing, or content production</div>
-      <div class="q-opt" data-v="80" onclick="selMulti(this)">Routine analysis, research, or reporting</div>
-      <div class="q-opt" data-v="70" onclick="selMulti(this)">Customer communication or sales outreach</div>
-      <div class="q-opt" data-v="70" onclick="selMulti(this)">Design or creative production</div>
-      <div class="q-opt" data-v="60" onclick="selMulti(this)">Software development or engineering</div>
-      <div class="q-opt" data-v="45" onclick="selMulti(this)">Teaching, training, or advising people</div>
-      <div class="q-opt" data-v="40" onclick="selMulti(this)">Managing people or projects</div>
-      <div class="q-opt" data-v="30" onclick="selMulti(this)">Negotiation or high-stakes decisions</div>
-      <div class="q-opt" data-v="25" onclick="selMulti(this)">Operating vehicles or machinery</div>
-      <div class="q-opt" data-v="15" onclick="selMulti(this)">Physical, hands-on skilled work</div>
-      <div class="q-opt" data-v="10" onclick="selMulti(this)">Treating or caring for people in person</div>
+      <label class="q-choice"><input type="checkbox" name="q1" value="admin"><span class="q-opt">Data entry, scheduling, or admin processing</span></label>
+      <label class="q-choice"><input type="checkbox" name="q1" value="writing"><span class="q-opt">Writing, editing, or content production</span></label>
+      <label class="q-choice"><input type="checkbox" name="q1" value="analysis"><span class="q-opt">Routine analysis, research, or reporting</span></label>
+      <label class="q-choice"><input type="checkbox" name="q1" value="communication"><span class="q-opt">Customer communication or sales outreach</span></label>
+      <label class="q-choice"><input type="checkbox" name="q1" value="design"><span class="q-opt">Design or creative production</span></label>
+      <label class="q-choice"><input type="checkbox" name="q1" value="software"><span class="q-opt">Software development or engineering</span></label>
+      <label class="q-choice"><input type="checkbox" name="q1" value="teaching"><span class="q-opt">Teaching, training, or advising people</span></label>
+      <label class="q-choice"><input type="checkbox" name="q1" value="management"><span class="q-opt">Managing people or projects</span></label>
+      <label class="q-choice"><input type="checkbox" name="q1" value="decisions"><span class="q-opt">Negotiation or high-stakes decisions</span></label>
+      <label class="q-choice"><input type="checkbox" name="q1" value="vehicles"><span class="q-opt">Operating vehicles or machinery</span></label>
+      <label class="q-choice"><input type="checkbox" name="q1" value="hands"><span class="q-opt">Physical, hands-on skilled work</span></label>
+      <label class="q-choice"><input type="checkbox" name="q1" value="care"><span class="q-opt">Treating or caring for people in person</span></label>
     </div>
-    <div class="q-hint">Pick up to three. Most jobs are a mix — your score blends them.</div>
-  </div>
+    <div class="q-hint">Pick up to three. These may take different amounts of your time; the check does not assume they are equal.</div>
+  </fieldset>
 
-  <div class="q-card" id="q2">
-    <div class="q-num">Question 2 of 9 · Exposure</div>
-    <div class="q-text">Who checks your work before it counts?</div>
+  <fieldset class="q-card" id="q2">
+    <legend><span class="q-num">Question 2 of 9 · Review</span><span class="q-text">Who checks your work before it counts?</span></legend>
     <div class="q-options">
-      <div class="q-opt" data-v="10" onclick="sel(this,'q2')">Someone senior reviews it</div>
-      <div class="q-opt" data-v="0" onclick="sel(this,'q2')">Peers — shared review</div>
-      <div class="q-opt" data-v="-10" onclick="sel(this,'q2')">I'm the final check — others' work comes to me</div>
+      <label class="q-choice"><input type="radio" name="q2" value="senior"><span class="q-opt">Someone senior reviews it</span></label>
+      <label class="q-choice"><input type="radio" name="q2" value="peers"><span class="q-opt">Peers — shared review</span></label>
+      <label class="q-choice"><input type="radio" name="q2" value="final"><span class="q-opt">I'm the final check — others' work comes to me</span></label>
+      <label class="q-choice"><input type="radio" name="q2" value="unknown"><span class="q-opt">Not sure</span></label>
     </div>
-  </div>
+  </fieldset>
 
-  <div class="q-card" id="q3">
-    <div class="q-num">Question 3 of 9 · Exposure</div>
-    <div class="q-text">Is AI actually deployed in your line of work — not piloted, deployed?</div>
+  <fieldset class="q-card" id="q3">
+    <legend><span class="q-num">Question 3 of 9 · What you see</span><span class="q-text">Are AI tools being used for work like yours at your employer?</span></legend>
     <div class="q-options">
-      <div class="q-opt" data-v="15" onclick="sel(this,'q3')">Yes — in daily use, producing real output</div>
-      <div class="q-opt" data-v="7" onclick="sel(this,'q3')">Piloting or limited rollout</div>
-      <div class="q-opt" data-v="0" onclick="sel(this,'q3')">Talked about, nothing real yet</div>
-      <div class="q-opt" data-v="-8" onclick="sel(this,'q3')">No — not on the radar</div>
+      <label class="q-choice"><input type="radio" name="q3" value="daily"><span class="q-opt">Yes — in daily use, producing real output</span></label>
+      <label class="q-choice"><input type="radio" name="q3" value="pilot"><span class="q-opt">Piloting or limited rollout</span></label>
+      <label class="q-choice"><input type="radio" name="q3" value="talk"><span class="q-opt">Talked about, nothing real yet</span></label>
+      <label class="q-choice"><input type="radio" name="q3" value="none"><span class="q-opt">No — not on the radar</span></label>
+      <label class="q-choice"><input type="radio" name="q3" value="unknown"><span class="q-opt">Not sure</span></label>
     </div>
-  </div>
+  </fieldset>
 
-  <div class="q-card" id="q4">
-    <div class="q-num">Question 4 of 9 · Exposure</div>
-    <div class="q-text">When an AI tool gets something wrong in your field, what does the error cost?</div>
+  <fieldset class="q-card" id="q4">
+    <legend><span class="q-num">Question 4 of 9 · Consequences</span><span class="q-text">If an AI tool got your work wrong, what could the error cost?</span></legend>
     <div class="q-options">
-      <div class="q-opt" data-v="10" onclick="sel(this,'q4')">Little — caught and fixed in minutes</div>
-      <div class="q-opt" data-v="0" onclick="sel(this,'q4')">Real — money, time, or reputation</div>
-      <div class="q-opt" data-v="-12" onclick="sel(this,'q4')">Severe — injury, legal, or regulatory consequences</div>
+      <label class="q-choice"><input type="radio" name="q4" value="low"><span class="q-opt">Little — caught and fixed in minutes</span></label>
+      <label class="q-choice"><input type="radio" name="q4" value="real"><span class="q-opt">Real — money, time, or reputation</span></label>
+      <label class="q-choice"><input type="radio" name="q4" value="severe"><span class="q-opt">Severe — injury, legal, or regulatory consequences</span></label>
+      <label class="q-choice"><input type="radio" name="q4" value="unknown"><span class="q-opt">Not sure</span></label>
     </div>
-  </div>
+  </fieldset>
 
-  <div class="q-card" id="q5">
-    <div class="q-num">Question 5 of 9 · Holding</div>
-    <div class="q-text">Does your work legally require a licensed or certified human to sign off?</div>
+  <fieldset class="q-card" id="q5">
+    <legend><span class="q-num">Question 5 of 9 · Holding</span><span class="q-text">Does your work legally require a licensed or certified human to sign off?</span></legend>
     <div class="q-options">
-      <div class="q-opt" data-v="100" onclick="sel(this,'q5')">Yes — I hold the license</div>
-      <div class="q-opt" data-v="45" onclick="sel(this,'q5')">Yes — someone above me holds it</div>
-      <div class="q-opt" data-v="0" onclick="sel(this,'q5')">No license required</div>
+      <label class="q-choice"><input type="radio" name="q5" value="own"><span class="q-opt">Yes — I hold the license</span></label>
+      <label class="q-choice"><input type="radio" name="q5" value="other"><span class="q-opt">Yes — someone above me holds it</span></label>
+      <label class="q-choice"><input type="radio" name="q5" value="none"><span class="q-opt">No license required</span></label>
+      <label class="q-choice"><input type="radio" name="q5" value="unknown"><span class="q-opt">Not sure</span></label>
     </div>
-  </div>
+  </fieldset>
 
-  <div class="q-card" id="q6">
-    <div class="q-num">Question 6 of 9 · Holding</div>
-    <div class="q-text">Does the job need you physically on site?</div>
+  <fieldset class="q-card" id="q6">
+    <legend><span class="q-num">Question 6 of 9 · Holding</span><span class="q-text">Does the work itself need a person physically there?</span></legend>
     <div class="q-options">
-      <div class="q-opt" data-v="100" onclick="sel(this,'q6')">Most days — the work is hands-on</div>
-      <div class="q-opt" data-v="50" onclick="sel(this,'q6')">Sometimes — a mix</div>
-      <div class="q-opt" data-v="0" onclick="sel(this,'q6')">No — it could be done fully remote</div>
+      <label class="q-choice"><input type="radio" name="q6" value="hands"><span class="q-opt">Most days — hands-on work or in-person care</span></label>
+      <label class="q-choice"><input type="radio" name="q6" value="mixed"><span class="q-opt">Sometimes — a mix</span></label>
+      <label class="q-choice"><input type="radio" name="q6" value="remote"><span class="q-opt">No — the work could be done fully remote</span></label>
+      <label class="q-choice"><input type="radio" name="q6" value="unknown"><span class="q-opt">Not sure</span></label>
     </div>
-  </div>
+  </fieldset>
 
-  <div class="q-card" id="q7">
-    <div class="q-num">Question 7 of 9 · Holding</div>
-    <div class="q-text">When something goes wrong, whose name is on it?</div>
+  <fieldset class="q-card" id="q7">
+    <legend><span class="q-num">Question 7 of 9 · Holding</span><span class="q-text">When something goes wrong, whose name is on it?</span></legend>
     <div class="q-options">
-      <div class="q-opt" data-v="100" onclick="sel(this,'q7')">Mine — I'm accountable by name</div>
-      <div class="q-opt" data-v="50" onclick="sel(this,'q7')">Shared — team accountability</div>
-      <div class="q-opt" data-v="0" onclick="sel(this,'q7')">Someone above me</div>
+      <label class="q-choice"><input type="radio" name="q7" value="own"><span class="q-opt">Mine — I'm accountable by name</span></label>
+      <label class="q-choice"><input type="radio" name="q7" value="shared"><span class="q-opt">Shared — team accountability</span></label>
+      <label class="q-choice"><input type="radio" name="q7" value="other"><span class="q-opt">Someone above me</span></label>
+      <label class="q-choice"><input type="radio" name="q7" value="unknown"><span class="q-opt">Not sure</span></label>
     </div>
-  </div>
+  </fieldset>
 
-  <div class="q-card" id="q8">
-    <div class="q-num">Question 8 of 9 · Holding</div>
-    <div class="q-text">How much of your job is judgment calls on incomplete information?</div>
+  <fieldset class="q-card" id="q8">
+    <legend><span class="q-num">Question 8 of 9 · Holding</span><span class="q-text">How much of your job is judgment calls on incomplete information?</span></legend>
     <div class="q-options">
-      <div class="q-opt" data-v="100" onclick="sel(this,'q8')">Most of it — few defined procedures</div>
-      <div class="q-opt" data-v="50" onclick="sel(this,'q8')">A mix of judgment and procedure</div>
-      <div class="q-opt" data-v="0" onclick="sel(this,'q8')">Mostly defined procedure</div>
+      <label class="q-choice"><input type="radio" name="q8" value="mostly"><span class="q-opt">Most of it — few defined procedures</span></label>
+      <label class="q-choice"><input type="radio" name="q8" value="mixed"><span class="q-opt">A mix of judgment and procedure</span></label>
+      <label class="q-choice"><input type="radio" name="q8" value="procedure"><span class="q-opt">Mostly defined procedure</span></label>
+      <label class="q-choice"><input type="radio" name="q8" value="unknown"><span class="q-opt">Not sure</span></label>
     </div>
-  </div>
+  </fieldset>
 
-  <div class="q-card" id="q9">
-    <div class="q-num">Question 9 of 9 · Exposure</div>
-    <div class="q-text">Over the past two years, what's happened to headcount in your role — at your employer and places like it?</div>
+  <fieldset class="q-card" id="q9">
+    <legend><span class="q-num">Question 9 of 9 · What you see</span><span class="q-text">Over the past two years, what has happened to staffing for work like yours at your employer?</span></legend>
     <div class="q-options">
-      <div class="q-opt" data-v="-8" onclick="sel(this,'q9')">Growing — hiring for my role</div>
-      <div class="q-opt" data-v="0" onclick="sel(this,'q9')">Flat — steady, replacements only</div>
-      <div class="q-opt" data-v="10" onclick="sel(this,'q9')">Shrinking through attrition — people leave, roles aren't backfilled</div>
-      <div class="q-opt" data-v="15" onclick="sel(this,'q9')">Actively cut — with AI or automation cited</div>
-    </div>
-    <div class="q-hint">Answer from what you've observed, not headlines. Backfill freezes are the quiet signal.</div>
-  </div>
-
-  <button class="score-btn" id="scoreBtn" onclick="showResult()">Map my position →</button>
-
-  <div class="result-box" id="resultBox">
-    <div class="result-label">Your position</div>
-    <div class="pos-name" id="posName">—</div>
-    <div class="result-text" id="posText" style="margin-bottom:20px;"></div>
-
-    <div class="axis-block">
-      <div class="axis-head"><span>Exposure</span><span class="axis-num" id="expVal">—</span></div>
-      <div class="result-bar-wrap"><div class="result-bar" id="expBar"></div></div>
-      <div class="axis-sub">How much of your work AI tools can do well today — in deployment, not in demos.</div>
-    </div>
-    <div class="axis-block">
-      <div class="axis-head"><span>Holding</span><span class="axis-num" id="holdVal">—</span></div>
-      <div class="result-bar-wrap"><div class="result-bar" id="holdBar"></div></div>
-      <div class="axis-sub">What keeps a human in the chair — license, presence, accountability, judgment.</div>
-    </div>
-
-    <div class="result-section">
-      <div class="rs-label">Exposed</div>
-      <p id="rsExposed"></p>
-    </div>
-    <div class="result-section">
-      <div class="rs-label">Leverage</div>
-      <p id="rsLeverage"></p>
-    </div>
-    <div class="result-section">
-      <div class="rs-label">Forward read</div>
-      <p id="rsForward"></p>
-    </div>
-    <div class="intel-note" style="margin-top:14px;">Scored against deployment reality, not capability hype · Not advice, just awareness</div>
-  </div>
-
+      <label class="q-choice"><input type="radio" name="q9" value="growing"><span class="q-opt">Growing — hiring for my role</span></label>
+      <label class="q-choice"><input type="radio" name="q9" value="flat"><span class="q-opt">Flat — steady, replacements only</span></label>
+      <label class="q-choice"><input type="radio" name="q9" value="attrition"><span class="q-opt">Shrinking through attrition — people leave, roles aren't backfilled</span></label>
+      <label class="q-choice"><input type="radio" name="q9" value="aiCuts"><span class="q-opt">Jobs cut — employer cited AI or automation</span></label>
+      <label class="q-choice"><input type="radio" name="q9" value="otherCuts"><span class="q-opt">Jobs cut — other or unclear reasons</span></label>
+      <label class="q-choice"><input type="radio" name="q9" value="unknown"><span class="q-opt">Not sure</span></label>
 </div>
+    <div class="q-hint">Answer from what you've observed. Staff cuts can have many causes; the check does not assume AI caused them.</div>
+  </fieldset>
+
+  <p id="formError" class="form-error" role="alert" hidden></p>
+  <button class="score-btn ready" id="scoreBtn" type="submit">See my results →</button>
+</form>
+
+<section class="result-box" id="resultBox" aria-labelledby="posName" tabindex="-1">
+  <div class="result-label">Your assessment</div>
+  <h2 class="pos-name" id="posName"></h2>
+  <p class="result-text assessment-summary" id="posText"></p>
+  <div class="result-section"><h3 class="rs-label">Why this matters for you</h3><ul id="mainReasons" class="result-list"></ul></div>
+  <div class="result-section main-action"><h3 class="rs-label">What to do next</h3><p id="mainAction"></p></div>
+  <details class="method answer-detail"><summary>See the detail behind this assessment</summary>
+  <div class="result-section"><h3 class="rs-label">Exposure · Your tasks</h3><p id="rsExposed"></p><ul id="taskDetails" class="result-list"></ul></div>
+  <div class="result-section"><h3 class="rs-label">Holding · Where a person matters</h3><ul id="holdDetails" class="result-list"></ul><p id="holdNote"></p></div>
+  <div class="result-section"><h3 class="rs-label">What you’ve observed</h3><p id="rsForward"></p></div>
+  <div class="result-section"><h3 class="rs-label">A practical next step</h3><ol id="nextSteps" class="result-list"></ol></div>
+  </details>
+  <p class="intel-note">This assessment uses the checklist’s rules and your answers. It cannot predict whether your employer will keep, change, or cut your job.</p>
+  <button type="button" id="editAnswers" class="edit-btn">Review my answers ↑</button>
+  <p class="result-text" style="margin-top:14px">Need help with job loss, money, or housing? <a class="text-link" href="/pigeon/">Cher Ami has free resources →</a></p>
+</section>
+
+<details class="method" id="method">
+  <summary>How this check works</summary>
+  <p><strong>Exposure</strong> means possible effects on tasks. <strong>Holding</strong> means reasons a person may still be needed. Neither is a measure of job security.</p>
+  <p>The assessment gives priority to actual job cuts, then unfilled vacancies. With four or more unknown answers it recommends gathering information. Otherwise it considers digital tasks alongside adoption and specific reasons for human involvement: personal required sign-off, physical work, or substantial judgment combined with final review or personal accountability. These are editorial rules, not validated predictions. The detail remains available under the result.</p>
+  <p>The first six task choices involve digital output that generative AI may assist with. The next three involve working with people or making decisions; the final three involve physical work or care. The result describes the groups you select and keeps their differences visible. It does not estimate how much of your week could be automated.</p>
+  <p>The other questions add context: review, error costs, required sign-off, physical work, accountability, judgment, AI use, and staffing changes. They do not add or subtract points. A license does not guarantee a job, AI use does not prove job losses, and staff reductions do not establish their cause. “Not sure” stays unknown.</p>
+  <p>This is Jim’s practical checklist, not a validated prediction model. The <a class="text-link" href="https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure">ILO–NASK study, May 2025</a>, provides background on task exposure and the distinction between job transformation and replacement. Its occupational scores are not used here, and it does not validate this checklist’s task groups.</p>
+  <p>Checklist revised October 8, 2026. Answers are held in this tab only and are cleared when you reload. The check sends no answers or results to a server; the optional email form below is separate.</p>
+</details>
+</main>
 
 <div class="email-section">
   <div class="email-box">
@@ -321,7 +364,7 @@ footer { border-top: 1px solid var(--border); padding: 20px 28px; display: flex;
       <div style="position:absolute;left:-5000px;" aria-hidden="true">
         <input type="text" name="b_b7808ba80769041231277d503_9cd2e5fe8b" tabindex="-1" value="">
       </div>
-      <input class="email-input" type="email" name="EMAIL" placeholder="your@email.com" required>
+      <input aria-label="Email address for monthly nudge" class="email-input" type="email" name="EMAIL" placeholder="your@email.com" required>
       <button class="email-submit" type="submit">Send me my monthly nudge →</button>
     </form>
   </div>
@@ -336,123 +379,7 @@ footer { border-top: 1px solid var(--border); padding: 20px 28px; display: flex;
   <div class="footer-note">Not advice · Not investment guidance · Just awareness</div>
 </footer>
 
-<script>
-var answers = {};
-var q1picks = [];
-
-function selMulti(el) {
-  var i = q1picks.indexOf(el);
-  if (i > -1) { q1picks.splice(i, 1); el.classList.remove('sel'); }
-  else {
-    if (q1picks.length >= 3) return;
-    q1picks.push(el); el.classList.add('sel');
-  }
-  checkReady();
-}
-
-function sel(el, q) {
-  el.closest('.q-options').querySelectorAll('.q-opt').forEach(function(o){ o.classList.remove('sel'); });
-  el.classList.add('sel');
-  answers[q] = { v: parseFloat(el.dataset.v), label: el.textContent.trim() };
-  checkReady();
-}
-
-function checkReady() {
-  var all = q1picks.length >= 1 && ['q2','q3','q4','q5','q6','q7','q8','q9'].every(function(k){ return answers[k]; });
-  document.getElementById('scoreBtn').classList.toggle('ready', all);
-}
-
-function clamp(n) { return Math.min(100, Math.max(0, Math.round(n))); }
-
-function showResult() {
-  if (q1picks.length < 1) return;
-  if (!['q2','q3','q4','q5','q6','q7','q8','q9'].every(function(k){ return answers[k]; })) return;
-
-  // ----- EXPOSURE -----
-  var taskAvg = q1picks.reduce(function(s, el){ return s + parseFloat(el.dataset.v); }, 0) / q1picks.length;
-  var exposure = clamp(taskAvg + answers.q2.v + answers.q3.v + answers.q4.v + answers.q9.v);
-
-  // ----- HOLDING (license .35 > presence .28 > accountability .20 > judgment .17) -----
-  var holding = clamp(
-    answers.q5.v * 0.35 +
-    answers.q6.v * 0.28 +
-    answers.q7.v * 0.20 +
-    answers.q8.v * 0.17
-  );
-  // A personally held license is the strongest structural hold — it alone reaches the Holding boundary.
-  if (answers.q5.v >= 100 && holding < 50) holding = 50;
-
-  // ----- POSITION -----
-  var hiExp = exposure >= 55, hiHold = holding >= 50;
-  var pos, posText;
-  if (hiExp && !hiHold) {
-    pos = 'Exposed';
-    posText = 'A meaningful share of your work is within reach of AI tools that are deployed and working today, and little structural reason keeps a human in the loop. That is not a judgment — it is information. The value of knowing early is that you can move before you have to.';
-  } else if (hiExp && hiHold) {
-    pos = 'Augmented';
-    posText = 'AI can already do a real share of your tasks — but holding factors keep you in the chair. Expect the job to change shape around you rather than disappear. The risk is standing still while it does.';
-  } else if (!hiExp && !hiHold) {
-    pos = 'Watchlist';
-    posText = 'Your day-to-day work is not something AI does well in deployment yet. But little is structurally holding you in place if that changes. Insulated is not the same as anchored.';
-  } else {
-    pos = 'Anchored';
-    posText = 'Low current exposure and strong holding factors. This is the most defensible position on the map. Defensible is not permanent — recheck when the ground shifts.';
-  }
-
-  // ----- EXPOSED section: name the highest-exposure task picked -----
-  var topTask = q1picks.slice().sort(function(a,b){ return parseFloat(b.dataset.v) - parseFloat(a.dataset.v); })[0];
-  var deployLine = '';
-  if (answers.q3.v >= 15) deployLine = ' Your field already has AI in daily production use — this is measured displacement pressure, not a forecast.';
-  else if (answers.q3.v >= 7) deployLine = ' Your field is piloting AI now. Pilots that survive contact with real work tend to scale fast.';
-  else if (answers.q3.v <= -8) deployLine = ' Nothing is deployed in your field yet, which buys time — but it measures adoption, not capability.';
-  var errLine = answers.q4.v <= -12 ? ' High error costs in your domain slow real deployment — premature rollouts in fields like yours are where AI is backfiring publicly.' : '';
-  var rsExposed = 'Of the work you selected, "' + topTask.textContent.trim().toLowerCase() + '" is the most within reach of today\u2019s tools.' + deployLine + errLine;
-
-  // ----- LEVERAGE section: name the strongest holding factor -----
-  var rsLeverage;
-  if (answers.q5.v >= 100) {
-    rsLeverage = 'Your license is your strongest hold. The law requires a credentialed human to sign, and licenses change slower than robots improve. Pair it with judgment and it compounds.';
-  } else if (answers.q6.v >= 100) {
-    rsLeverage = 'Physical presence is your strongest hold — the work needs hands on site, and that protects you now. It protects less over time than a license does, so watch automation in your specific tasks, not the headlines.';
-  } else if (answers.q7.v >= 100) {
-    rsLeverage = 'Named accountability is your strongest hold. Organizations still need a person to answer for outcomes, and AI cannot be fired, sued, or promoted. Keep your name on decisions, not just output.';
-  } else if (answers.q8.v >= 100) {
-    rsLeverage = 'Judgment is your strongest hold — calls made on incomplete information are still where AI underperforms in deployment. Judgment without accountability is fragile, though. Move toward owning outcomes.';
-  } else if (holding >= 35) {
-    rsLeverage = 'Your holds are partial — some review responsibility, some judgment, some presence — but no single anchor. Strengthening one (a credential, named accountability) does more than spreading thinner.';
-  } else {
-    rsLeverage = 'No strong holding factor showed up: no required license, no on-site need, accountability sits above you. Building one hold — a credential, an accountable role — changes this score more than anything else.';
-  }
-
-  // ----- FORWARD READ: headcount trend as the observed leading indicator -----
-  var hc = answers.q9.v;
-  var hcLine;
-  if (hc >= 15) hcLine = 'Headcount in your role is being cut with AI cited — displacement in your field is measured, not forecast. Any move you make should be on your timeline, not your employer\u2019s.';
-  else if (hc >= 10) hcLine = 'Roles like yours are shrinking through attrition — the quiet form of displacement. Nobody announces it; the org chart just gets thinner. Treat it as an early signal, because that is what it is.';
-  else if (hc >= 0) hcLine = 'Headcount in your role is holding flat. That is neither shelter nor threat — it means the leading indicator has not moved yet. Watch backfills: the first roles that quietly go unfilled tell you which tasks stopped needing a person.';
-  else hcLine = 'Your role is still growing — the strongest observed signal that demand for the human version of this work is real. Growth can coexist with change, though: watch what the new hires are asked to do differently.';
-  var rsForward = hcLine + ' Recheck your score when conditions shift in your field — real rollouts, real cuts, real reversals — not when the headlines do.';
-
-  // ----- RENDER -----
-  var expColor = exposure >= 65 ? '#c0392b' : exposure >= 40 ? '#d4850a' : '#2d7a3a';
-  var holdColor = holding >= 50 ? '#2d7a3a' : holding >= 30 ? '#d4850a' : '#c0392b';
-
-  document.getElementById('posName').textContent = pos;
-  document.getElementById('posText').textContent = posText;
-  document.getElementById('expVal').textContent = exposure;
-  document.getElementById('holdVal').textContent = holding;
-  document.getElementById('expBar').style.width = exposure + '%';
-  document.getElementById('expBar').style.background = expColor;
-  document.getElementById('holdBar').style.width = holding + '%';
-  document.getElementById('holdBar').style.background = holdColor;
-  document.getElementById('rsExposed').textContent = rsExposed;
-  document.getElementById('rsLeverage').textContent = rsLeverage;
-  document.getElementById('rsForward').textContent = rsForward;
-
-  var box = document.getElementById('resultBox');
-  box.classList.add('show');
-  setTimeout(function(){ box.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 100);
-}
-</script>
+<script src="/career/check.js"></script>
+<script src="/career/app.js"></script>
 </body>
 </html>
