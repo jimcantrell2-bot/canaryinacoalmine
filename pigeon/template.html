@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cher Ami — U.S. and NYC Help Resources</title>
+<meta name="description" content="Find U.S. crisis support, food, housing, health and legal resources, plus a separate NYC help section. Provider sources and review dates included.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cher Ami — U.S. and NYC Help Resources">
+<meta property="og:description" content="Find U.S. crisis support, food, housing, health and legal resources, plus a separate NYC help section. Provider sources and review dates included.">
+<meta property="og:url" content="https://canaryinacoalmine.ai/pigeon/">
+<meta property="og:image" content="https://canaryinacoalmine.ai/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cher Ami — U.S. and NYC Help Resources">
+<meta name="twitter:description" content="Find U.S. crisis support, food, housing, health and legal resources, plus a separate NYC help section. Provider sources and review dates included.">
+<meta name="twitter:image" content="https://canaryinacoalmine.ai/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0e0e0c;--off-white:#f5f3ee;--cream:#ede9e0;--amber:#d4850a;--amber-light:#fdf3e0;--muted:#6b6860;--border:rgba(14,14,12,0.1);--blue:#1a4f8a;--blue-light:#e8f0fa;--green:#2d7a3a;--red:#c0392b;--stone:#a89880;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--off-white);color:var(--black);font-family:'Instrument Sans',sans-serif;line-height:1.6;}
+a{color:inherit;text-decoration:none;}
+nav{background:var(--off-white);border-bottom:1px solid var(--border);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;}
+.logo-wrap{display:flex;flex-direction:column;gap:1px;line-height:1;align-items:center;}
+.logo-top{font-family:'DM Serif Display',serif;font-size:17px;color:var(--black);letter-spacing:-.01em;}
+.logo-sub{font-family:'DM Serif Display',serif;font-style:italic;font-size:11px;color:var(--stone);}
+.nav-links{display:flex;align-items:center;gap:20px;font-size:13px;color:var(--muted);}
+.nav-links a:hover{color:var(--black);}
+.nav-links a.active{color:var(--blue);font-weight:500;}
+.nav-btn{background:var(--black);color:var(--off-white);padding:7px 16px;border-radius:4px;font-size:13px;font-weight:500;}
+.nav-btn:hover{background:#2a2a28;color:var(--off-white);}
+.nav-links a.nav-support{color:var(--amber);font-weight:500;}
+.nav-links a.nav-support:hover{color:#b8730a;}
+.page-header{padding:48px 28px 36px;max-width:720px;margin:0 auto;}
+.eyebrow{font-family:'DM Mono',monospace;font-size:18px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:12px;font-weight:500;}
+.page-title{font-family:'DM Serif Display',serif;font-size:36px;line-height:1.15;margin-bottom:10px;}
+.page-title em{font-style:italic;color:var(--stone);}
+.page-sub{font-size:15px;color:var(--muted);line-height:1.6;max-width:520px;}
+.quick-exit{position:fixed;bottom:20px;right:20px;z-index:999;background:var(--red);color:#fff;border:none;border-radius:6px;padding:12px 18px;font-family:'DM Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.08em;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.25);}
+.quick-exit:hover{background:#a02f22;}
+.quick-exit:focus-visible{outline:3px solid var(--black);outline-offset:3px;}
+body{padding-bottom:90px;}
+.quick-exit{min-height:44px;bottom:max(20px,env(safe-area-inset-bottom));}
+.exit-note a{text-decoration:underline;}
+.exit-note{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.5;}
+.page-lede{margin-top:14px;font-size:13px;color:var(--muted);line-height:1.6;max-width:520px;padding:12px 16px;background:var(--blue-light);border-left:3px solid var(--blue);border-radius:0 4px 4px 0;}
+.page-lede strong{color:var(--blue);}
+.crisis-wrap{max-width:720px;margin:0 auto;padding:0 28px;}
+.crisis-grid{column-count:2;column-gap:14px;}
+.crisis-grid > .crisis-card{break-inside:avoid;display:inline-block;width:100%;margin-bottom:14px;vertical-align:top;}
+@media(max-width:600px){.crisis-grid{column-count:1;}}
+.crisis-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:18px 20px;}
+.crisis-card-header{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.crisis-icon{width:30px;height:30px;border-radius:6px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.crisis-title{font-family:'DM Serif Display',serif;font-size:15px;color:var(--black);}
+.crisis-resources{list-style:none;}
+.crisis-resources li{padding:7px 0;border-top:1px solid var(--border);font-size:13px;line-height:1.45;}
+.crisis-resources li:first-child{border-top:none;}
+.resource-name{font-weight:500;color:var(--black);display:block;margin-bottom:1px;}
+.resource-line{color:var(--muted);font-size:12px;display:block;}
+.resource-link{color:var(--blue);font-size:12px;font-weight:500;}
+.resource-link:hover{text-decoration:underline;}
+.hotline{font-family:'DM Mono',monospace;font-size:12px;font-weight:500;color:var(--black);}
+.tag-free{display:inline-block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.06em;text-transform:uppercase;background:#eaf3de;color:#2d5a1a;padding:1px 5px;border-radius:2px;margin-left:4px;vertical-align:middle;}
+.section-rule{border:none;border-top:1px solid var(--border);margin:40px 28px 0;}
+.intel-section{max-width:720px;margin:0 auto;padding:32px 28px 0;}
+.intel-header{display:flex;align-items:center;gap:8px;margin-bottom:16px;}
+.intel-header-dot{width:7px;height:7px;border-radius:50%;background:var(--blue);flex-shrink:0;}
+.intel-header-label{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);}
+.intel-header-date{font-family:'DM Mono',monospace;font-size:10px;color:var(--stone);margin-left:auto;}
+.intel-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+@media(max-width:600px){.intel-grid{grid-template-columns:1fr;}}
+.icard{background:#fff;border:1px solid var(--border);border-radius:8px;padding:16px 18px;}
+.icard-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;gap:8px;}
+.icard-topic{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+.pill{font-family:'DM Mono',monospace;font-size:9px;padding:2px 7px;border-radius:3px;font-weight:500;white-space:nowrap;flex-shrink:0;}
+.pill-red{background:#fce8e8;color:#a32d2d;}
+.pill-amber{background:#faeeda;color:#854f0b;}
+.pill-green{background:#eaf3de;color:#3b6d11;}
+.icard-headline{font-size:13px;font-weight:500;color:var(--black);line-height:1.35;margin-bottom:6px;}
+.icard-body{font-size:12px;color:var(--muted);line-height:1.5;}
+.icard-divider{height:1px;background:var(--border);margin:10px 0;}
+.irow{display:flex;align-items:baseline;gap:5px;font-size:11.5px;color:var(--muted);margin-top:5px;line-height:1.4;}
+.rr{font-family:'DM Mono',monospace;font-size:10px;color:var(--red);flex-shrink:0;}
+.rg{font-family:'DM Mono',monospace;font-size:10px;color:var(--green);flex-shrink:0;}
+.ra{font-family:'DM Mono',monospace;font-size:10px;color:var(--amber);flex-shrink:0;}
+.intel-note{font-family:'DM Mono',monospace;font-size:10px;color:var(--stone);margin-top:10px;padding-bottom:32px;}
+footer{border-top:1px solid var(--border);padding:20px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.footer-links{display:flex;gap:16px;font-size:12px;color:var(--muted);font-family:'DM Mono',monospace;}
+.footer-links a{color:var(--muted);}
+.footer-links a:hover{color:var(--black);}
+.footer-note{font-size:11px;color:var(--stone);font-family:'DM Mono',monospace;}
+
+.title-row { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+.title-row h1 { margin-bottom: 0; }
+
+/* mobile nav */
+.logo-top{white-space:nowrap;display:inline-flex;align-items:center;}
+.nav-links a{white-space:nowrap;}
+@media(max-width:680px){
+  nav{padding:0 14px;}
+  .logo-sub{display:none;}
+  .nav-links{gap:12px;font-size:12px;overflow-x:auto;}
+  .nav-btn{display:none;}
+}
+
+.nav-links{scrollbar-width:none;-ms-overflow-style:none;}
+.nav-links::-webkit-scrollbar{display:none;}
+
+/* Resource directory */
+:root{--muted:#57544e;--stone:#746856;}
+html{scroll-padding-top:76px;}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offset:3px;}
+.skip-link{position:fixed;left:12px;top:-100px;z-index:1000;background:#fff;padding:12px;}
+.skip-link:focus{top:8px;}
+.page-header{padding-top:28px;padding-bottom:22px;}
+.page-sub{max-width:none;}
+.page-title{font-size:34px;}
+.eyebrow{font-size:14px;}
+.title-row{align-items:center;}
+.crisis-wrap{padding-bottom:24px;}
+.section-heading{font-family:'DM Serif Display',serif;font-weight:400;font-size:25px;margin:24px 0 8px;}
+.section-intro{font-size:14px;color:var(--muted);margin:0 0 16px;}
+.crisis-title{font-size:20px;font-weight:400;}
+.crisis-card-header{margin-bottom:10px;}
+.crisis-resources li{padding:12px 0;font-size:15px;}
+.resource-name{font-size:15px;font-weight:600;}
+.resource-line{font-size:14px;line-height:1.55;margin:4px 0;}
+.resource-detail{font-size:12px;line-height:1.5;color:var(--muted);margin:6px 0;}
+.resource-link{font-size:14px;text-decoration:underline;display:inline-block;padding:5px 0;}
+.contact-line{margin:7px 0;}
+.hotline{font-size:13px;display:inline-block;padding:6px 0;text-decoration:underline;}
+.text-contact{display:block;font-size:13px;margin:4px 0;}
+.resource-source{font-size:11px;color:var(--muted);margin-top:5px;}
+.resource-source summary{cursor:pointer;min-height:24px;}
+.resource-source a{text-decoration:underline;display:block;overflow-wrap:anywhere;padding:4px 0;}
+.priority-card{border-top:4px solid var(--red);margin-bottom:18px;}
+.priority-card > .crisis-resources{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.priority-card > .crisis-resources li{border-top:none;}
+.exit-note{font-size:13px;}
+.urgent-help{background:var(--blue-light);border-radius:6px;padding:12px 16px;margin:16px 0;font-size:14px;}
+.urgent-help p+p{margin-top:8px;}
+.urgent-help a{text-decoration:underline;}
+.jump-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.jump-links a{padding:8px 12px;border:1px solid var(--border);border-radius:5px;font-size:13px;background:#fff;}
+.jump-links a:hover{background:var(--blue-light);}
+.topic-list{margin:12px 0 18px;font-size:14px;}
+.topic-list summary{cursor:pointer;padding:6px 0;}
+.local-help{background:var(--blue-light);border-radius:8px;padding:16px 20px;margin:0 0 18px;}
+.local-help .resource-name{font-size:18px;}
+.nyc-section{border-top:2px solid var(--blue);margin-top:28px;padding-top:8px;}
+.review-note{font-size:13px;margin:20px 0;line-height:1.6;}
+.review-note summary{cursor:pointer;font-weight:600;padding:8px 0;}
+.review-note a{text-decoration:underline;}
+.review-note p{margin:8px 0;}
+.footer-note{color:var(--muted);max-width:720px;}
+@media(max-width:600px){.priority-card > .crisis-resources{grid-template-columns:1fr;gap:0;}.priority-card > .crisis-resources li+li{border-top:1px solid var(--border);}.title-row svg{width:66px;height:48px;}.page-title{font-size:29px;}.page-header,.crisis-wrap{padding-left:18px;padding-right:18px;}}
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to resources</a>
+<a class="quick-exit" id="quick-exit" href="https://www.google.com/" referrerpolicy="no-referrer" aria-keyshortcuts="Escape" aria-label="Quick exit to Google — or press Escape">Quick exit — ESC</a>
+<script>
+// Keep the native link usable when JavaScript is unavailable.
+function quickExit(event){
+  event.preventDefault();
+  window.location.replace('https://www.google.com/');
+}
+document.getElementById('quick-exit').addEventListener('click',quickExit);
+document.addEventListener('keydown',function(event){
+  if(event.key==='Escape'){quickExit(event);}
+},true);
+</script>
+<nav>
+  <a href="/" class="logo-wrap"><span class="logo-top"><svg width="38" height="24" viewBox="210 130 265 165" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:3px"><ellipse cx="360" cy="192" rx="78" ry="52" fill="#8a7e6e" stroke="#6b5c4a" stroke-width="1"/><ellipse cx="340" cy="214" rx="50" ry="26" fill="#b0a48e" stroke="none"/><ellipse cx="365" cy="178" rx="62" ry="28" fill="#7a6e5e" stroke="#6b5c4a" stroke-width="0.8"/><path d="M310 183 Q338 160 420 168 Q396 184 310 183Z" fill="#6b5c4a"/><path d="M312 191 Q341 170 418 176 Q394 193 312 191Z" fill="#5c4e3e"/><path d="M320 180 Q350 164 405 169" fill="none" stroke="#5a4e3e" stroke-width="0.7"/><path d="M318 186 Q348 171 407 176" fill="none" stroke="#5a4e3e" stroke-width="0.7"/><path d="M430 192 Q458 181 466 202 Q455 213 430 208Z" fill="#7a6e5e" stroke="#6b5c4a" stroke-width="0.8"/><ellipse cx="294" cy="178" rx="52" ry="42" fill="#9a8e7c" stroke="#6b5c4a" stroke-width="1"/><ellipse cx="294" cy="178" rx="50" ry="40" fill="#9a8e7c" stroke="none"/><path d="M246 172 L218 167 L220 176 L246 178 Z" fill="#c8a060" stroke="#9a7040" stroke-width="0.8"/><ellipse cx="276" cy="172" rx="13" ry="12" fill="#1a1208" stroke="#0a0800" stroke-width="1.5"/><rect x="244" y="168" width="102" height="7" rx="0" fill="#1a1208" stroke="#0a0800" stroke-width="0.8"/><path d="M342 170 L358 162 L374 170" fill="none" stroke="#c8a060" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M342 178 L358 170 L374 178" fill="none" stroke="#c8a060" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="348" y="202" width="30" height="12" rx="5" fill="#c8a060" stroke="#9a7040" stroke-width="1"/><line x1="368" y1="240" x2="366" y2="268" stroke="#c8a060" stroke-width="3" stroke-linecap="round"/><line x1="366" y1="268" x2="354" y2="279" stroke="#c8a060" stroke-width="2.5" stroke-linecap="round"/><line x1="366" y1="268" x2="368" y2="281" stroke="#c8a060" stroke-width="2.5" stroke-linecap="round"/><line x1="366" y1="268" x2="378" y2="278" stroke="#c8a060" stroke-width="2.5" stroke-linecap="round"/><line x1="340" y1="240" x2="338" y2="254" stroke="#c8a060" stroke-width="3" stroke-linecap="round"/><ellipse cx="338" cy="255" rx="4" ry="3" fill="#8a4040" stroke="#6a2020" stroke-width="0.8"/></svg>Canary</span><span class="logo-sub">in a coal mine</span></a>
+  <div class="nav-links">
+    <a href="/career">Career</a>
+    <a href="/pigeon" class="active">Cher Ami</a>
+    <a href="/about">About</a>
+    <a href="/support" class="nav-support">Support Canary</a>
+    <a href="/" class="nav-btn">Home</a>
+  </div>
+</nav>
+<main id="main">
+<div class="page-header">
+  <div class="eyebrow">Cher Ami — Help Resources</div>
+  <div class="title-row"><svg width="90" height="60" viewBox="210 130 265 165" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;margin-top:0"><ellipse cx="360" cy="192" rx="78" ry="52" fill="#8a7e6e" stroke="#6b5c4a" stroke-width="1"/><ellipse cx="340" cy="214" rx="50" ry="26" fill="#b0a48e" stroke="none"/><ellipse cx="365" cy="178" rx="62" ry="28" fill="#7a6e5e" stroke="#6b5c4a" stroke-width="0.8"/><path d="M310 183 Q338 160 420 168 Q396 184 310 183Z" fill="#6b5c4a"/><path d="M312 191 Q341 170 418 176 Q394 193 312 191Z" fill="#5c4e3e"/><path d="M320 180 Q350 164 405 169" fill="none" stroke="#5a4e3e" stroke-width="0.7"/><path d="M318 186 Q348 171 407 176" fill="none" stroke="#5a4e3e" stroke-width="0.7"/><path d="M430 192 Q458 181 466 202 Q455 213 430 208Z" fill="#7a6e5e" stroke="#6b5c4a" stroke-width="0.8"/><ellipse cx="294" cy="178" rx="52" ry="42" fill="#9a8e7c" stroke="#6b5c4a" stroke-width="1"/><ellipse cx="294" cy="178" rx="50" ry="40" fill="#9a8e7c" stroke="none"/><path d="M246 172 L218 167 L220 176 L246 178 Z" fill="#c8a060" stroke="#9a7040" stroke-width="0.8"/><ellipse cx="276" cy="172" rx="13" ry="12" fill="#1a1208" stroke="#0a0800" stroke-width="1.5"/><rect x="244" y="168" width="102" height="7" rx="0" fill="#1a1208" stroke="#0a0800" stroke-width="0.8"/><path d="M342 170 L358 162 L374 170" fill="none" stroke="#c8a060" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M342 178 L358 170 L374 178" fill="none" stroke="#c8a060" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="348" y="202" width="30" height="12" rx="5" fill="#c8a060" stroke="#9a7040" stroke-width="1"/><line x1="368" y1="240" x2="366" y2="268" stroke="#c8a060" stroke-width="3" stroke-linecap="round"/><line x1="366" y1="268" x2="354" y2="279" stroke="#c8a060" stroke-width="2.5" stroke-linecap="round"/><line x1="366" y1="268" x2="368" y2="281" stroke="#c8a060" stroke-width="2.5" stroke-linecap="round"/><line x1="366" y1="268" x2="378" y2="278" stroke="#c8a060" stroke-width="2.5" stroke-linecap="round"/><line x1="340" y1="240" x2="338" y2="254" stroke="#c8a060" stroke-width="3" stroke-linecap="round"/><ellipse cx="338" cy="255" rx="4" ry="3" fill="#8a4040" stroke="#6a2020" stroke-width="0.8"/></svg><h1 class="page-title">When you need help,<br><em>start here.</em></h1></div>
+  <p class="page-sub">U.S. resources for difficult moments. No account needed here. This directory is free; some services have costs or eligibility requirements.</p>
+  <div class="urgent-help">
+    <p><strong>Immediate danger or a medical emergency:</strong> <a href="tel:911">call 911</a>.</p>
+    <p><strong>Need crisis support?</strong> <a href="tel:988">Call 988</a> or text 988, 24/7. You don’t have to be suicidal to reach out.</p>
+  </div>
+  <div class="jump-links" role="navigation" aria-label="Main resource sections"><a href="#domestic-violence">Domestic violence</a><a href="#national-resources">U.S. resources</a><a href="#nyc-help">New York City help</a></div>
+</div>
+<div class="crisis-wrap">
+<!-- DIRECTORY -->
+<details class="review-note" id="about-resources">
+  <summary>About these resources and their review dates</summary>
+  <p>Each entry links to provider information checked on the date shown. We reviewed the linked information and the contact details we list. We did not place test calls, submit applications, or confirm current openings. A review date is not a guarantee of availability.</p>
+  <p>Confirm hours, eligibility and any fees with the provider before travelling or committing to a service. Linked sites have their own privacy policies. Links open in this tab. Cher Ami does not provide crisis counseling or monitor requests for help.</p>
+  <p>Outside the U.S.? <a href="https://findahelpline.com/" rel="noreferrer">Find a Helpline</a> lets you look for crisis and emotional support by country.</p>
+  <p>Named for <a href="https://americanhistory.si.edu/collections/object/nmah_425415" rel="noreferrer">Cher Ami, the World War I messenger pigeon preserved at the Smithsonian</a>.</p>
+</details>
+</div>
+</main>
+<footer>
+  <div class="footer-links"><a href="/">Home</a><a href="/career">Career</a><a href="/pigeon">Cher Ami</a><a href="/about">About</a><a href="/support">Support Canary</a></div>
+  <div class="footer-note">Provider information reviewed @@REVIEW_DATE@@ · <a href="#about-resources">What we checked</a> · Directory free; service fees vary</div>
+</footer>
+</body>
+</html>

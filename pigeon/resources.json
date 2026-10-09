@@ -1,0 +1,824 @@
+{
+  "reviewedOn": "2026-10-08",
+  "reviewDue": "2026-11-07",
+  "resources": {
+    "hotline": {
+      "name": "National Domestic Violence Hotline",
+      "description": "Support, safety planning and referrals for relationship abuse.",
+      "url": "https://www.thehotline.org/",
+      "linkLabel": "Talk to an advocate or find support",
+      "detail": "Free support, 24/7. Message and data rates may apply.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.thehotline.org/"
+      ],
+      "phone": {
+        "number": "+18007997233",
+        "label": "Call 1-800-799-7233"
+      },
+      "text": "Text START to 88788"
+    },
+    "loveisrespect": {
+      "name": "love is respect",
+      "description": "Relationship and dating abuse support for young people.",
+      "url": "https://www.loveisrespect.org/",
+      "linkLabel": "Visit love is respect",
+      "detail": "Phone, text and online support.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.loveisrespect.org/",
+        "https://www.thehotline.org/"
+      ],
+      "phone": {
+        "number": "+18663319474",
+        "label": "Call 1-866-331-9474"
+      }
+    },
+    "988": {
+      "name": "988 Suicide & Crisis Lifeline",
+      "description": "Talk with a counselor about emotional distress, suicidal thoughts, or mental health and substance use concerns.",
+      "url": "https://988lifeline.org/",
+      "linkLabel": "Visit 988 for chat and support",
+      "detail": "Free support, 24/7.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://988lifeline.org/"
+      ],
+      "phone": {
+        "number": "988",
+        "label": "Call 988"
+      },
+      "text": "Text 988"
+    },
+    "crisis-text": {
+      "name": "Crisis Text Line",
+      "description": "Text with a trained volunteer crisis counselor.",
+      "url": "https://www.crisistextline.org/",
+      "linkLabel": "About text support",
+      "detail": "Free service, 24/7. Message and data rates may apply.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.crisistextline.org/"
+      ],
+      "text": "Text HOME to 741741"
+    },
+    "nami": {
+      "name": "NAMI HelpLine",
+      "description": "Mental health information, peer support and referrals. Not a crisis line.",
+      "url": "https://www.nami.org/nami-helpline/",
+      "linkLabel": "NAMI HelpLine options",
+      "detail": "Monday–Friday, 10am–10pm Eastern, excluding federal holidays.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.nami.org/nami-helpline/"
+      ],
+      "phone": {
+        "number": "+18009506264",
+        "label": "Call 1-800-950-6264"
+      },
+      "text": "Text NAMI to 62640"
+    },
+    "unemployment": {
+      "name": "Unemployment benefits",
+      "description": "Find the official application and eligibility information for the state where you worked.",
+      "url": "https://www.careeronestop.org/LocalHelp/UnemploymentBenefits/find-unemployment-benefits.aspx",
+      "linkLabel": "Find your state’s unemployment office",
+      "detail": "Eligibility and application rules vary by state.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.careeronestop.org/LocalHelp/UnemploymentBenefits/find-unemployment-benefits.aspx"
+      ]
+    },
+    "job-centers": {
+      "name": "American Job Centers",
+      "description": "Find local job-search help and employment or training services.",
+      "url": "https://www.careeronestop.org/LocalHelp/AmericanJobCenters/find-american-job-centers.aspx",
+      "linkLabel": "Find a job center",
+      "detail": "Ask the center which services it offers before visiting.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.careeronestop.org/LocalHelp/AmericanJobCenters/find-american-job-centers.aspx"
+      ]
+    },
+    "career": {
+      "name": "CareerOneStop",
+      "description": "Job-search tools, career information and training resources.",
+      "url": "https://www.careeronestop.org/",
+      "linkLabel": "Explore CareerOneStop",
+      "detail": "Training programs have their own costs and eligibility.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.careeronestop.org/"
+      ]
+    },
+    "nfcc": {
+      "name": "NFCC credit counseling",
+      "description": "Connect with a nonprofit credit counselor to discuss debt and budgeting.",
+      "url": "https://www.nfcc.org/contact-us/",
+      "linkLabel": "Connect with a counselor",
+      "detail": "Free and low-cost services. Ask about fees before agreeing to a plan.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.nfcc.org/contact-us/",
+        "https://www.nfcc.org/blog/can-i-trust-the-credit-counseling-agencies-2/"
+      ],
+      "phone": {
+        "number": "+18003882227",
+        "label": "Call 1-800-388-2227"
+      }
+    },
+    "cfpb": {
+      "name": "Consumer Financial Protection Bureau",
+      "description": "Submit a complaint about a financial product or service.",
+      "url": "https://www.consumerfinance.gov/complaint/",
+      "linkLabel": "Start with the complaint guide",
+      "detail": "A complaint is not a promise of reimbursement or immediate financial help.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.consumerfinance.gov/complaint/"
+      ]
+    },
+    "hud": {
+      "name": "HUD housing counseling",
+      "description": "Find a HUD-participating counselor for housing problems.",
+      "url": "https://www.hud.gov/counseling",
+      "linkLabel": "Find housing counseling",
+      "detail": "Foreclosure, eviction and homelessness counseling is free. Other counseling may have fees.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.hud.gov/hud-partners/single-family-about-housing-counseling"
+      ],
+      "phone": {
+        "number": "+18005694287",
+        "label": "Call 1-800-569-4287"
+      }
+    },
+    "shelter": {
+      "name": "HUD Find Shelter",
+      "description": "Look for nearby shelter, housing, food and clothing resources.",
+      "url": "https://www.hud.gov/findshelter",
+      "linkLabel": "Find nearby resources",
+      "detail": "Contact the provider to confirm hours, eligibility and availability.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.hud.gov/findshelter"
+      ]
+    },
+    "food": {
+      "name": "Feeding America",
+      "description": "Find a local food bank that can connect you with pantries and meal programs.",
+      "url": "https://www.feedingamerica.org/find-your-local-foodbank",
+      "linkLabel": "Find a food bank near you",
+      "detail": "Check where food is distributed and the current opening hours before going.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.feedingamerica.org/find-your-local-foodbank"
+      ]
+    },
+    "snap": {
+      "name": "SNAP food benefits",
+      "description": "See eligibility information and how to apply through your state.",
+      "url": "https://www.fna.usda.gov/snap/recipient/eligibility",
+      "linkLabel": "SNAP eligibility and applications",
+      "detail": "Eligibility depends on household circumstances and current program rules.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.fna.usda.gov/snap/recipient/eligibility"
+      ]
+    },
+    "wic": {
+      "name": "WIC",
+      "description": "Food and nutrition support for eligible pregnant or postpartum people, infants and children under five.",
+      "url": "https://www.fna.usda.gov/wic",
+      "linkLabel": "Find WIC in your state",
+      "detail": "Your local WIC program determines eligibility.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.fna.usda.gov/wic"
+      ]
+    },
+    "hrsa": {
+      "name": "Community health centers",
+      "description": "Find a health center for care with or without insurance.",
+      "url": "https://findahealthcenter.hrsa.gov/",
+      "linkLabel": "Find a health center",
+      "detail": "Sliding-scale fees; care is not necessarily free.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.hrsa.gov/get-health-care/affordable/eligibility",
+        "https://findahealthcenter.hrsa.gov/"
+      ]
+    },
+    "rx": {
+      "name": "RxAssist prescription assistance",
+      "description": "Look up patient assistance programs for prescription medicines.",
+      "url": "https://www.rxassist.org/",
+      "linkLabel": "Explore prescription assistance",
+      "detail": "Each program sets its own eligibility and assistance rules.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.rxassist.org/"
+      ]
+    },
+    "medicare": {
+      "name": "Medicare",
+      "description": "Official help with Medicare coverage, billing and claims.",
+      "url": "https://www.medicare.gov/about-us/contact-medicare",
+      "linkLabel": "Contact Medicare",
+      "detail": "Insurance costs and coverage vary. This is separate from Medicaid.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.medicare.gov/about-us/contact-medicare"
+      ],
+      "phone": {
+        "number": "+18006334227",
+        "label": "Call 1-800-633-4227"
+      }
+    },
+    "medicaid": {
+      "name": "Medicaid & CHIP",
+      "description": "Find your state agency to ask about eligibility, apply, or check coverage.",
+      "url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "linkLabel": "Find your state Medicaid agency",
+      "detail": "Eligibility and coverage rules vary by state.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      ]
+    },
+    "samhsa": {
+      "name": "SAMHSA National Helpline",
+      "description": "Treatment referrals and information for mental health and substance use concerns. This is not counseling.",
+      "url": "https://www.samhsa.gov/find-help/helplines/national-helpline",
+      "linkLabel": "About the referral service",
+      "detail": "Free referral service, 24/7, in English and Spanish. Treatment costs vary.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.samhsa.gov/find-help/helplines/national-helpline"
+      ],
+      "phone": {
+        "number": "+18006624357",
+        "label": "Call 1-800-662-4357"
+      }
+    },
+    "treatment": {
+      "name": "FindTreatment.gov",
+      "description": "Search for mental health and substance use treatment providers.",
+      "url": "https://findtreatment.gov/",
+      "linkLabel": "Search treatment providers",
+      "detail": "Ask providers about costs, insurance, eligibility and openings.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.samhsa.gov/find-help/helplines/national-helpline",
+        "https://findtreatment.gov/"
+      ]
+    },
+    "aa": {
+      "name": "Alcoholics Anonymous",
+      "description": "Peer recovery support for people concerned about their drinking.",
+      "url": "https://www.aa.org/",
+      "linkLabel": "Find A.A. near you",
+      "detail": "Peer support; not a medical treatment service.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.aa.org/"
+      ]
+    },
+    "na": {
+      "name": "Narcotics Anonymous",
+      "description": "Peer recovery support for people experiencing drug addiction.",
+      "url": "https://na.org/",
+      "linkLabel": "Find N.A. near you",
+      "detail": "Peer support; not a medical treatment service.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://na.org/"
+      ]
+    },
+    "veterans": {
+      "name": "Veterans Crisis Line",
+      "description": "Crisis support for veterans, service members and people who support them. VA enrollment is not required.",
+      "url": "https://www.veteranscrisisline.net/",
+      "linkLabel": "Veterans crisis chat and support",
+      "detail": "Free support, 24/7.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.veteranscrisisline.net/"
+      ],
+      "phone": {
+        "number": "988",
+        "label": "Call 988, then press 1"
+      },
+      "text": "Text 838255"
+    },
+    "vso": {
+      "name": "VA-accredited representatives",
+      "description": "Learn how to find an accredited representative for a VA benefit claim.",
+      "url": "https://www.va.gov/resources/va-accredited-representative-faqs/",
+      "linkLabel": "Find accredited claims help",
+      "detail": "Accredited VSO claims help is free. Attorneys and claims agents may charge fees.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.va.gov/resources/va-accredited-representative-faqs/"
+      ]
+    },
+    "fema": {
+      "name": "FEMA disaster assistance",
+      "description": "Official eligibility and application guidance after a declared disaster.",
+      "url": "https://www.usa.gov/disaster-assistance",
+      "linkLabel": "How to apply for disaster assistance",
+      "detail": "Help depends on the disaster declaration and your eligibility.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.usa.gov/disaster-assistance"
+      ],
+      "phone": {
+        "number": "+18006213362",
+        "label": "Call 1-800-621-3362"
+      }
+    },
+    "redcross": {
+      "name": "American Red Cross",
+      "description": "Find disaster support, open shelters and your local Red Cross.",
+      "url": "https://www.redcross.org/get-help.html",
+      "linkLabel": "Get disaster help",
+      "detail": "Check current local availability; this is not a shelter reservation.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.redcross.org/get-help.html"
+      ]
+    },
+    "lsc": {
+      "name": "Civil legal aid",
+      "description": "Find a local LSC-funded legal aid organization for a civil legal problem.",
+      "url": "https://www.lsc.gov/about-lsc/what-legal-aid/i-need-legal-help",
+      "linkLabel": "Find legal aid near you",
+      "detail": "For people who meet local eligibility requirements. Availability varies.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.lsc.gov/about-lsc/what-legal-aid/i-need-legal-help"
+      ]
+    },
+    "aba": {
+      "name": "American Bar Association legal-help finder",
+      "description": "Explore legal aid and lawyer-referral options in your state.",
+      "url": "https://www.americanbar.org/groups/legal_services/flh-home/",
+      "linkLabel": "Find legal-help options",
+      "detail": "Includes both free legal aid and paid lawyer referrals; ask about fees.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.americanbar.org/groups/legal_services/flh-home/"
+      ]
+    },
+    "eldercare": {
+      "name": "Eldercare Locator",
+      "description": "Find local services for older adults and family caregivers.",
+      "url": "https://eldercare.acl.gov/home",
+      "linkLabel": "Find aging and caregiver services",
+      "detail": "Ask local providers about service costs and eligibility.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://eldercare.acl.gov/home"
+      ],
+      "phone": {
+        "number": "+18006771116",
+        "label": "Call 1-800-677-1116"
+      }
+    },
+    "elderfraud": {
+      "name": "National Elder Fraud Hotline",
+      "description": "Help reporting financial fraud against someone age 60 or older.",
+      "url": "https://ovc.ojp.gov/program/stop-elder-fraud/providing-help-restoring-hope",
+      "linkLabel": "About elder fraud support",
+      "detail": "Free help. Monday–Friday, 10am–6pm Eastern.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://ovc.ojp.gov/program/stop-elder-fraud/providing-help-restoring-hope"
+      ],
+      "phone": {
+        "number": "+18333728311",
+        "label": "Call 1-833-372-8311"
+      }
+    },
+    "grief": {
+      "name": "GriefShare",
+      "description": "Christian grief support groups for people grieving a death.",
+      "url": "https://www.griefshare.org/",
+      "linkLabel": "Find a grief support group",
+      "detail": "Group or workbook fees may apply; check with the host.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.griefshare.org/"
+      ]
+    },
+    "hope": {
+      "name": "Alliance of Hope",
+      "description": "Information and support resources for people bereaved by suicide.",
+      "url": "https://allianceofhope.org/",
+      "linkLabel": "Explore suicide-loss support",
+      "detail": "Check any service’s fees before booking. For immediate crisis support, use 988.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://allianceofhope.org/"
+      ]
+    },
+    "childcare": {
+      "name": "Child Care Aware of America",
+      "description": "Find your local child care resource agency and state assistance information.",
+      "url": "https://www.childcareaware.org/families/",
+      "linkLabel": "Find child care resources",
+      "detail": "Child care costs and assistance eligibility vary. This link is for families generally.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.childcareaware.org/families/"
+      ]
+    },
+    "headstart": {
+      "name": "Head Start & Early Head Start",
+      "description": "Find local early-childhood programs and ask about enrollment.",
+      "url": "https://headstart.gov/center-locator",
+      "linkLabel": "Find a Head Start program",
+      "detail": "Contact the program about eligibility and available places.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://headstart.gov/center-locator"
+      ]
+    },
+    "ssdi": {
+      "name": "Social Security Disability Insurance",
+      "description": "Official information about disability benefits and how to apply.",
+      "url": "https://www.ssa.gov/disability",
+      "linkLabel": "Learn about SSDI",
+      "detail": "Social Security determines eligibility; this is separate from SSI.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.ssa.gov/disability"
+      ]
+    },
+    "ssi": {
+      "name": "Supplemental Security Income",
+      "description": "Benefits information for people with limited income and resources who meet disability, blindness or age criteria.",
+      "url": "https://www.ssa.gov/ssi",
+      "linkLabel": "Learn about SSI",
+      "detail": "Social Security determines eligibility.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.ssa.gov/ssi"
+      ]
+    },
+    "ada": {
+      "name": "ADA National Network",
+      "description": "Ask about disability rights and accommodations under the ADA.",
+      "url": "https://adata.org/",
+      "linkLabel": "Get ADA information",
+      "detail": "Information and guidance; not a promise of legal representation.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://adata.org/"
+      ],
+      "phone": {
+        "number": "+18009494232",
+        "label": "Call 1-800-949-4232"
+      }
+    },
+    "divorce": {
+      "name": "DivorceCare",
+      "description": "Christian support groups for separation and divorce.",
+      "url": "https://www.divorcecare.org/",
+      "linkLabel": "Find a DivorceCare group",
+      "detail": "Groups commonly charge a fee; check the group listing.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.divorcecare.org/about",
+        "https://www.divorcecare.org/faq"
+      ]
+    },
+    "211": {
+      "name": "211 local help",
+      "description": "Get connected to local food, housing, utility and other community services.",
+      "url": "https://211.org/",
+      "linkLabel": "Find your local 211",
+      "detail": "Texting options differ by location. Ask providers about eligibility and availability.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://211.org/"
+      ],
+      "phone": {
+        "number": "211",
+        "label": "Call 211"
+      }
+    },
+    "nyc-hope": {
+      "name": "NYC domestic violence support",
+      "description": "City guidance on shelter referrals and support for domestic and gender-based violence.",
+      "url": "https://www.nyc.gov/site/hra/help/domestic-violence-support.page",
+      "linkLabel": "NYC domestic violence support",
+      "detail": "NYC hotline available 24/7.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.nyc.gov/site/hra/help/domestic-violence-support.page",
+        "https://www.safehorizon.org/"
+      ],
+      "phone": {
+        "number": "+18006214673",
+        "label": "Call 1-800-621-4673"
+      }
+    },
+    "nyc-311": {
+      "name": "NYC 311",
+      "description": "Find non-emergency city services and help navigating local resources.",
+      "url": "https://portal.311.nyc.gov/",
+      "linkLabel": "Visit NYC 311",
+      "detail": "For emergencies, call 911.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://portal.311.nyc.gov/"
+      ],
+      "phone": {
+        "number": "311",
+        "label": "Call 311 in NYC"
+      }
+    },
+    "nyc-benefits": {
+      "name": "ACCESS NYC",
+      "description": "Explore city benefits and check what you may qualify for. Links to official applications, including ACCESS HRA.",
+      "url": "https://access.nyc.gov/",
+      "linkLabel": "Find benefits and application steps",
+      "detail": "A screening is not an eligibility decision. Official applications may require an account.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://access.nyc.gov/"
+      ]
+    },
+    "nyc-food": {
+      "name": "Food Help NYC",
+      "description": "Find food pantries and community kitchens through HRA’s food-help page.",
+      "url": "https://www.nyc.gov/site/hra/help/food-assistance.page",
+      "linkLabel": "Find food in NYC",
+      "detail": "Call 311 for help locating food; confirm opening hours before going.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.nyc.gov/site/hra/help/food-assistance.page"
+      ],
+      "phone": {
+        "number": "311",
+        "label": "Call 311 in NYC"
+      }
+    },
+    "nyc-homebase": {
+      "name": "Homebase housing support",
+      "description": "Homelessness prevention for New Yorkers at risk of losing housing.",
+      "url": "https://www.nyc.gov/site/hra/help/homebase.page",
+      "linkLabel": "Find your Homebase office",
+      "detail": "Call the local office before visiting to arrange an appointment. Eligibility applies.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.nyc.gov/site/hra/help/homebase.page"
+      ]
+    },
+    "nyc-shelter": {
+      "name": "NYC shelter information",
+      "description": "DHS guidance for families and single adults who need shelter.",
+      "url": "https://www.nyc.gov/site/dhs/shelter/shelter.page",
+      "linkLabel": "See NYC shelter options",
+      "detail": "Intake routes depend on household type; use the official guidance or call 311.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.nyc.gov/site/dhs/shelter/shelter.page"
+      ],
+      "phone": {
+        "number": "311",
+        "label": "Call 311 in NYC"
+      }
+    }
+  },
+  "categories": [
+    {
+      "id": "domestic-violence",
+      "title": "Domestic Violence",
+      "icon": "🛡️",
+      "resources": [
+        "hotline",
+        "loveisrespect"
+      ]
+    },
+    {
+      "id": "mental-health",
+      "title": "Mental Health",
+      "icon": "🧠",
+      "resources": [
+        "988",
+        "crisis-text",
+        "nami"
+      ]
+    },
+    {
+      "id": "job-loss",
+      "title": "Job Loss",
+      "icon": "💼",
+      "resources": [
+        "unemployment",
+        "job-centers",
+        "career"
+      ]
+    },
+    {
+      "id": "debt",
+      "title": "Debt & Financial Crisis",
+      "icon": "💳",
+      "resources": [
+        "nfcc",
+        "cfpb"
+      ]
+    },
+    {
+      "id": "housing",
+      "title": "Housing Instability",
+      "icon": "🏠",
+      "resources": [
+        "hud",
+        "shelter"
+      ]
+    },
+    {
+      "id": "food",
+      "title": "Food",
+      "icon": "🥫",
+      "resources": [
+        "food",
+        "snap",
+        "wic"
+      ]
+    },
+    {
+      "id": "medical",
+      "title": "Medical Care & Prescriptions",
+      "icon": "🩺",
+      "resources": [
+        "hrsa",
+        "rx",
+        "medicare",
+        "medicaid"
+      ]
+    },
+    {
+      "id": "addiction",
+      "title": "Addiction & Recovery",
+      "icon": "🤝",
+      "resources": [
+        "samhsa",
+        "treatment",
+        "aa",
+        "na"
+      ]
+    },
+    {
+      "id": "veterans",
+      "title": "Veterans",
+      "icon": "🎖️",
+      "resources": [
+        "veterans",
+        "vso"
+      ]
+    },
+    {
+      "id": "disaster",
+      "title": "Disaster Recovery",
+      "icon": "🌧️",
+      "resources": [
+        "fema",
+        "redcross"
+      ]
+    },
+    {
+      "id": "legal",
+      "title": "Legal Help",
+      "icon": "⚖️",
+      "resources": [
+        "lsc",
+        "aba"
+      ]
+    },
+    {
+      "id": "elder-care",
+      "title": "Older Adults & Caregivers",
+      "icon": "🌿",
+      "resources": [
+        "eldercare",
+        "elderfraud"
+      ]
+    },
+    {
+      "id": "grief",
+      "title": "Grief & Loss",
+      "icon": "🕯️",
+      "resources": [
+        "grief",
+        "hope"
+      ]
+    },
+    {
+      "id": "childcare",
+      "title": "Childcare",
+      "icon": "🧸",
+      "resources": [
+        "childcare",
+        "headstart"
+      ]
+    },
+    {
+      "id": "disability",
+      "title": "Disability",
+      "icon": "♿",
+      "resources": [
+        "ssdi",
+        "ssi",
+        "ada"
+      ]
+    },
+    {
+      "id": "separation",
+      "title": "Divorce & Separation",
+      "icon": "⚖️",
+      "resources": [
+        "lsc",
+        "divorce"
+      ]
+    }
+  ],
+  "localResource": "211",
+  "nycResources": [
+    "nyc-hope",
+    "nyc-311",
+    "nyc-benefits",
+    "nyc-food",
+    "nyc-homebase",
+    "nyc-shelter"
+  ],
+  "additionalLinks": {
+    "internetSafety": "https://www.thehotline.org/plan-for-safety/internet-safety/",
+    "safetyPlanning": "https://www.thehotline.org/plan-for-safety/",
+    "international": "https://findahelpline.com/",
+    "pigeonHistory": "https://americanhistory.si.edu/collections/object/nmah_425415"
+  },
+  "retired": [
+    {
+      "name": "NeedyMeds",
+      "reason": "Could not inspect useful page content during review; replaced by reviewed RxAssist and HRSA links."
+    },
+    {
+      "name": "LawHelp.org",
+      "reason": "Fetch errors during review; replaced with LSC and ABA official legal-help directories. This does not establish that the service is unavailable."
+    },
+    {
+      "name": "DisasterAssistance.gov direct link",
+      "reason": "Direct fetch was access-blocked; replaced with reviewed USA.gov application guidance, which links to the official application."
+    }
+  ]
+}
