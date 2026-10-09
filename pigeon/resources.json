@@ -636,6 +636,111 @@
         "number": "311",
         "label": "Call 311 in NYC"
       }
+    },
+    "trans-lifeline": {
+      "name": "Trans Lifeline",
+      "description": "Peer support from trans operators for trans and questioning people. You do not need to be in crisis to call.",
+      "url": "https://translifeline.org/hotline/",
+      "linkLabel": "See hotline hours and support options",
+      "detail": "Monday–Friday, 1pm–9pm Eastern. Scheduled closures and high call volumes may affect availability.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://translifeline.org/hotline/"
+      ],
+      "phone": {
+        "number": "+18775658860",
+        "label": "Call 1-877-565-8860"
+      }
+    },
+    "trevor-project": {
+      "name": "The Trevor Project",
+      "description": "Crisis support for LGBTQ+ young people in the U.S. by phone, text, or online chat.",
+      "url": "https://www.thetrevorproject.org/get-help/",
+      "linkLabel": "Chat with a counselor or learn what to expect",
+      "detail": "Free service, 24/7. Message and data rates may apply.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.thetrevorproject.org/get-help/"
+      ],
+      "phone": {
+        "number": "+18664887386",
+        "label": "Call 1-866-488-7386"
+      },
+      "text": "Text START to 678678"
+    },
+    "lgbt-national": {
+      "name": "LGBT National Hotline",
+      "description": "Peer support and local resource referrals for LGBTQ+ people of all ages, including questions about coming out, relationships, and gender identity.",
+      "url": "https://lgbthotline.org/national-hotline/",
+      "linkLabel": "See peer support and hotline information",
+      "detail": "Free service. Monday–Friday, 2pm–11pm; Saturday, noon–5pm Eastern.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://lgbthotline.org/national-hotline/"
+      ],
+      "phone": {
+        "number": "+18888434564",
+        "label": "Call 1-888-843-4564"
+      }
+    },
+    "nyc-center-tgnc": {
+      "name": "The Center — trans & gender nonconforming support",
+      "description": "Community groups and connections to health care, housing, benefits, and name-change support.",
+      "url": "https://gaycenter.org/tgnc/",
+      "linkLabel": "Find TGNC programs and referrals",
+      "detail": "Check the program’s intake requirements and current schedule.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://gaycenter.org/tgnc/"
+      ]
+    },
+    "nyc-avp": {
+      "name": "NYC Anti-Violence Project",
+      "description": "Support for LGBTQ+ and HIV-affected survivors of hate violence, relationship abuse, sexual violence, and other violence in NYC.",
+      "url": "https://avp.org/get-help/",
+      "linkLabel": "Find survivor support and legal services",
+      "detail": "English/Spanish hotline: Monday–Thursday, 10am–6pm; Friday, 10am–2pm Eastern.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://avp.org/get-help/"
+      ],
+      "phone": {
+        "number": "+12127141141",
+        "label": "Call 212-714-1141"
+      }
+    },
+    "nyc-callen-lorde": {
+      "name": "Callen-Lorde — trans health care",
+      "description": "Primary care, hormone care, and other trans health services, with care coordination and referrals.",
+      "url": "https://callen-lorde.org/trans-health/",
+      "linkLabel": "Explore trans health services",
+      "detail": "Ask about new-patient intake, appointment availability, insurance, and costs.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://callen-lorde.org/trans-health/"
+      ]
+    },
+    "nyc-lsnyc-lgbtq": {
+      "name": "Legal Services NYC — LGBTQ+ legal help",
+      "description": "Free civil legal help, including discrimination, housing, name changes, and identity-document updates.",
+      "url": "https://www.legalservicesnyc.org/resources/lgbtq-rights/",
+      "linkLabel": "Get legal help and find LGBTQ+ rights resources",
+      "detail": "Intake: Monday–Friday, 9:30am–4pm Eastern. Help depends on location and capacity.",
+      "reviewedOn": "2026-10-08",
+      "reviewDue": "2026-11-07",
+      "sources": [
+        "https://www.legalservicesnyc.org/resources/lgbtq-rights/"
+      ],
+      "phone": {
+        "number": "+19176614500",
+        "label": "Call 917-661-4500"
+      }
     }
   },
   "categories": [
@@ -820,5 +925,18 @@
       "name": "DisasterAssistance.gov direct link",
       "reason": "Direct fetch was access-blocked; replaced with reviewed USA.gov application guidance, which links to the official application."
     }
-  ]
+  ],
+  "lgbtqResources": {
+    "us": [
+      "trans-lifeline",
+      "trevor-project",
+      "lgbt-national"
+    ],
+    "nyc": [
+      "nyc-center-tgnc",
+      "nyc-avp",
+      "nyc-callen-lorde",
+      "nyc-lsnyc-lgbtq"
+    ]
+  }
 }

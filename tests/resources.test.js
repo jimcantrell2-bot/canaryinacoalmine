@@ -7,13 +7,17 @@ const data = JSON.parse(fs.readFileSync(path.join(root, 'pigeon/resources.json')
 const html = fs.readFileSync(path.join(root, 'pigeon/index.html'), 'utf8');
 
 test('all published resources have dated evidence and a next review date', () => {
-  const references = [...data.categories.flatMap(c => c.resources), ...data.nycResources, data.localResource];
+  const references = [...data.categories.flatMap(c => c.resources), ...data.nycResources, ...Object.values(data.lgbtqResources || {}).flat(), data.localResource];
   assert.deepEqual([...new Set(references)].sort(), Object.keys(data.resources).sort());
   for (const [id, r] of Object.entries(data.resources)) {
     assert.ok(r.sources.length, id);
     assert.ok(Date.parse(r.reviewDue) > Date.parse(r.reviewedOn), id);
     for (const url of [r.url, ...r.sources]) assert.equal(new URL(url).protocol, 'https:', id);
-    if (r.phone) assert.ok(r.phone.label.replace(/\D/g, '').includes(r.phone.number.replace(/\D/g, '')), id);
+    if (r.phone) {
+      const digits = r.phone.number.replace(/\D/g, '');
+      const displayed = r.phone.label.replace(/\D/g, '');
+      assert.ok(displayed.includes(digits) || (digits.length === 11 && digits.startsWith('1') && displayed.includes(digits.slice(1))), id);
+    }
     assert.ok(html.includes(`data-resource="${id}"`), id);
   }
 });

@@ -7,14 +7,15 @@ ROOT=Path(__file__).resolve().parents[1]
 data=json.loads((ROOT/'pigeon/resources.json').read_text())
 resources=data['resources']
 def e(text):return escape(text,quote=True)
-def resource(key):
+def resource(key,show_name=True):
  r=resources[key]
  contacts=''
  if 'phone' in r:
   p=r['phone'];contacts+=f'<a class="hotline" href="tel:{e(p["number"])}">{e(p["label"])}</a>'
  if 'text' in r:contacts+=f'<span class="text-contact">{e(r["text"])}</span>'
  sources=''.join(f'<a href="{e(url)}" rel="noreferrer">{e(url)}</a>' for url in r['sources'])
- return f'''<li data-resource="{e(key)}"><span class="resource-name">{e(r['name'])}</span><p class="resource-line">{e(r['description'])}</p><p class="resource-detail">{e(r['detail'])}</p><div class="contact-line">{contacts}</div><a class="resource-link" href="{e(r['url'])}" rel="noreferrer">{e(r['linkLabel'])}</a><details class="resource-source"><summary>Source · checked {e(r['reviewedOn'])}</summary>{sources}</details></li>'''
+ name=f'<span class="resource-name">{e(r["name"])}</span>' if show_name else ''
+ return f'''<li data-resource="{e(key)}">{name}<p class="resource-line">{e(r['description'])}</p><p class="resource-detail">{e(r['detail'])}</p><div class="contact-line">{contacts}</div><a class="resource-link" href="{e(r['url'])}" rel="noreferrer">{e(r['linkLabel'])}</a><details class="resource-source"><summary>Source · checked {e(r['reviewedOn'])}</summary>{sources}</details></li>'''
 def category(c,priority=False):
  extra=' priority-card' if priority else ''
  body=''.join(resource(k) for k in c['resources'])
@@ -22,12 +23,22 @@ def category(c,priority=False):
  if priority:
   safety='''<p class="exit-note"><strong>Need to leave?</strong> Quick Exit or one press of Escape opens Google in this tab. It does not erase browsing history, earlier visits, other tabs, or call and text records. Private browsing does not prevent device monitoring. If you suspect monitoring, consider using a safer device. <a href="https://www.thehotline.org/plan-for-safety/internet-safety/" rel="noreferrer">Internet safety guidance</a> · <a href="https://www.thehotline.org/plan-for-safety/" rel="noreferrer">Safety planning</a>.</p><noscript><p class="exit-note">JavaScript is off: use the Quick Exit link; the Escape shortcut is unavailable.</p></noscript>'''
  return f'''<section class="crisis-card{extra}" id="{e(c['id'])}" aria-labelledby="heading-{e(c['id'])}"><div class="crisis-card-header"><span class="crisis-icon" aria-hidden="true">{c['icon']}</span><h2 class="crisis-title" id="heading-{e(c['id'])}">{e(c['title'])}</h2></div><ul class="crisis-resources">{body}</ul>{safety}</section>'''
+def lgbtq_card(key):
+ r=resources[key]
+ return f'<section class="crisis-card" aria-labelledby="heading-{e(key)}"><div class="crisis-card-header"><h4 class="crisis-title" id="heading-{e(key)}">{e(r["name"])}</h4></div><ul class="crisis-resources">{resource(key,False)}</ul></section>'
+
 parts=[category(data['categories'][0],True)]
+if data.get('lgbtqResources'):
+ parts.append('<section class="lgbtq-section" id="lgbtq-help" aria-labelledby="lgbtq-heading"><h2 class="section-heading" id="lgbtq-heading">LGBTQ+ &amp; trans support</h2><p class="section-intro">People to talk with, community support, health care, and legal help. Choose a service that fits your needs.</p>')
+ for group,title in [('us','U.S. support'),('nyc','New York City')]:
+  anchor=' id="lgbtq-nyc"' if group=='nyc' else ''
+  parts.append(f'<h3 class="lgbtq-subheading"{anchor}>{title}</h3><div class="crisis-grid">'+''.join(lgbtq_card(key) for key in data['lgbtqResources'][group])+'</div>')
+ parts.append('</section>')
 parts.append('<section id="national-resources" aria-labelledby="national-heading"><h2 class="section-heading" id="national-heading">U.S. resources</h2><p class="section-intro">Choose the kind of help you need. For local options or help getting started, call 211.</p>')
 parts.append('<div class="local-help"><ul class="crisis-resources">'+resource(data['localResource'])+'</ul></div>')
 parts.append('<details class="topic-list"><summary>Jump to a topic</summary><div class="jump-links">'+''.join(f'<a href="#{e(c["id"])}">{e(c["title"])}</a>' for c in data['categories'][1:])+'</div></details>')
 parts.append('<div class="crisis-grid">'+''.join(category(c) for c in data['categories'][1:])+'</div></section>')
-parts.append('<section class="nyc-section" id="nyc-help" aria-labelledby="nyc-heading"><h2 class="section-heading" id="nyc-heading">New York City help</h2><p class="section-intro">Official city resources for the five boroughs. Local eligibility and intake rules apply.</p><div class="crisis-grid">')
+parts.append('<section class="nyc-section" id="nyc-help" aria-labelledby="nyc-heading"><h2 class="section-heading" id="nyc-heading">New York City help</h2><p class="section-intro"><a class="resource-link" href="#lgbtq-nyc">LGBTQ+ and trans services in NYC ↑</a></p><p class="section-intro">Official city resources for the five boroughs. Local eligibility and intake rules apply.</p><div class="crisis-grid">')
 for key in data['nycResources']:
  parts.append(f'<div class="crisis-card"><ul class="crisis-resources">{resource(key)}</ul></div>')
 parts.append('</div></section>')
