@@ -2,7 +2,10 @@
 """Render the static directory from manually reviewed resource records. No network."""
 from pathlib import Path
 from html import escape
-import json, sys, datetime
+import argparse, json, datetime
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--check',action='store_true',help='Check generated HTML without writing it.')
+args=parser.parse_args()
 ROOT=Path(__file__).resolve().parents[1]
 data=json.loads((ROOT/'pigeon/resources.json').read_text())
 resources=data['resources']
@@ -12,10 +15,14 @@ def resource(key,show_name=True):
  contacts=''
  if 'phone' in r:
   p=r['phone'];contacts+=f'<a class="hotline" href="tel:{e(p["number"])}">{e(p["label"])}</a>'
- if 'text' in r:contacts+=f'<span class="text-contact">{e(r["text"])}</span>'
+ if 'text' in r:
+  contacts+=(f'<a class="text-contact" href="sms:{e(r["textNumber"])}">{e(r["text"])}</a>' if r.get('textNumber') else f'<span class="text-contact">{e(r["text"])}</span>')
+ fallback=''
+ if r.get('fallback'):
+  f=r['fallback'];fallback=f'<p class="resource-detail">This search needs JavaScript. If it will not load, use <a class="fallback-link" href="{e(f["url"])}" rel="noreferrer">{e(f["label"])}</a>.</p>'
  sources=''.join(f'<a href="{e(url)}" rel="noreferrer">{e(url)}</a>' for url in r['sources'])
  name=f'<span class="resource-name">{e(r["name"])}</span>' if show_name else ''
- return f'''<li data-resource="{e(key)}">{name}<p class="resource-line">{e(r['description'])}</p><p class="resource-detail">{e(r['detail'])}</p><div class="contact-line">{contacts}</div><a class="resource-link" href="{e(r['url'])}" rel="noreferrer">{e(r['linkLabel'])}</a><details class="resource-source"><summary>Source · checked {e(r['reviewedOn'])}</summary>{sources}</details></li>'''
+ return f'''<li data-resource="{e(key)}">{name}<p class="resource-line">{e(r['description'])}</p><p class="resource-detail">{e(r['detail'])}</p><div class="contact-line">{contacts}</div><a class="resource-link" href="{e(r['url'])}" rel="noreferrer">{e(r['linkLabel'])}</a>{fallback}<details class="resource-source"><summary>Source · checked {e(r['reviewedOn'])}</summary>{sources}</details></li>'''
 def category(c,priority=False):
  extra=' priority-card' if priority else ''
  body=''.join(resource(k) for k in c['resources'])
@@ -39,7 +46,7 @@ for key in data['nycResources']:
 parts.append('</div></section>')
 output=(ROOT/'pigeon/template.html').read_text().replace('<!-- DIRECTORY -->','\n'.join(parts)).replace('@@REVIEW_DATE@@',datetime.date.fromisoformat(data['reviewedOn']).strftime('%B %d, %Y').replace(' 0',' '))
 path=ROOT/'pigeon/index.html'
-if '--check' in sys.argv:
+if args.check:
  if path.read_text()!=output:raise SystemExit('Resource page is out of date. Run scripts/build-resources.py.')
  print('Resource page matches reviewed data.')
 else:

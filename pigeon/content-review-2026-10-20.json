@@ -1,0 +1,1129 @@
+{
+  "reviewedOn": "2026-10-20",
+  "timezone": "America/New_York",
+  "resourceCount": 53,
+  "resourceAppearances": 54,
+  "scope": "Published provider content and contact details, URL availability and basic static/DOM interaction checks. Not live service delivery.",
+  "limits": [
+    "No test calls or texts.",
+    "No provider chats, searches, applications, appointment bookings, shelter openings or funding availability tested.",
+    "No rendered browser or mobile layout QA available."
+  ],
+  "findings": [
+    "HTTP 200 did not establish useful content at the old HUD counseling destination.",
+    "Two JavaScript-only finder shells have reviewed fallback routes.",
+    "The directory contains 53 unique resources; the old narrative review covered only 46."
+  ],
+  "resources": [
+    {
+      "id": "hotline",
+      "name": "National Domestic Violence Hotline",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Support, safety planning and referrals for relationship abuse.",
+      "detailChecked": "Free live advocates, 24/7. On the provider’s website, Ruth is an AI chatbot; choose live chat for a person. Message and data rates may apply.",
+      "phoneChecked": {
+        "number": "+18007997233",
+        "label": "Call 1-800-799-7233"
+      },
+      "textChecked": "Text START to 88788",
+      "sources": [
+        {
+          "url": "https://www.thehotline.org/",
+          "retrievedAt": "2026-10-20T18:48:17.501928+00:00",
+          "contentSha256": "58bb099253a08d2d11bc3cece5d440aa766cf10a12530f23b05c116a366a39cf"
+        }
+      ],
+      "notes": "Provider distinguishes live advocates from Ruth, its AI chatbot. Call/text/live-chat availability and the listed contact routes were read on the provider page."
+    },
+    {
+      "id": "loveisrespect",
+      "name": "love is respect",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Relationship and dating abuse support for young people.",
+      "detailChecked": "Phone, text and online support.",
+      "phoneChecked": {
+        "number": "+18663319474",
+        "label": "Call 1-866-331-9474"
+      },
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.loveisrespect.org/",
+          "retrievedAt": "2026-10-20T18:48:13.398388+00:00",
+          "contentSha256": "c529ae48714b329b72062bc1b44ef5694313d1395e8085c0e475180e8e93da3b"
+        },
+        {
+          "url": "https://www.thehotline.org/",
+          "retrievedAt": "2026-10-20T18:48:17.501928+00:00",
+          "contentSha256": "58bb099253a08d2d11bc3cece5d440aa766cf10a12530f23b05c116a366a39cf"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "988",
+      "name": "988 Suicide & Crisis Lifeline",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Talk with a counselor about emotional distress, suicidal thoughts, or mental health and substance use concerns.",
+      "detailChecked": "Free support, 24/7.",
+      "phoneChecked": {
+        "number": "988",
+        "label": "Call 988"
+      },
+      "textChecked": "Text 988",
+      "sources": [
+        {
+          "url": "https://988lifeline.org/",
+          "retrievedAt": "2026-10-20T18:48:00.835482+00:00",
+          "contentSha256": "6198f2c94f6233241a6722b887501105ba88e56025b340548a082954b6bd659f"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "crisis-text",
+      "name": "Crisis Text Line",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Text with a trained volunteer crisis counselor.",
+      "detailChecked": "Free service, 24/7. Message and data rates may apply.",
+      "phoneChecked": null,
+      "textChecked": "Text HOME to 741741",
+      "sources": [
+        {
+          "url": "https://www.crisistextline.org/",
+          "retrievedAt": "2026-10-20T18:48:07.720161+00:00",
+          "contentSha256": "5e30e8c5cc95c94d00e1978b3ba37a2c5b49847d4a041d5856c36ee4fa9c0698"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "nami",
+      "name": "NAMI HelpLine",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Mental health information, peer support and help finding resources. Not a crisis line or counseling service.",
+      "detailChecked": "Monday–Friday, 10am–10pm Eastern, excluding federal holidays.",
+      "phoneChecked": {
+        "number": "+18009506264",
+        "label": "Call 1-800-950-6264"
+      },
+      "textChecked": "Text NAMI to 62640",
+      "sources": [
+        {
+          "url": "https://www.nami.org/nami-helpline/",
+          "retrievedAt": "2026-10-20T18:48:13.812847+00:00",
+          "contentSha256": "165b6f2b3ecddf0f6201f84064a3864140baa257a20f6dac5998b2f9436bdbac"
+        }
+      ],
+      "notes": "Provider states its hours and holiday exception, describes information/peer support, and says it does not provide counseling or referrals to individual clinicians."
+    },
+    {
+      "id": "unemployment",
+      "name": "Unemployment benefits",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Find the official application and eligibility information for the state where you worked.",
+      "detailChecked": "Eligibility and application rules vary by state.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.careeronestop.org/LocalHelp/UnemploymentBenefits/find-unemployment-benefits.aspx",
+          "retrievedAt": "2026-10-20T18:48:08.941686+00:00",
+          "contentSha256": "24fc5a3ceb1f9cf65b6535e795ad79fa619edef1410eb2df409042819936e273"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "job-centers",
+      "name": "American Job Centers",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Find local job-search help and employment or training services.",
+      "detailChecked": "Ask the center which services it offers before visiting.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.careeronestop.org/LocalHelp/AmericanJobCenters/find-american-job-centers.aspx",
+          "retrievedAt": "2026-10-20T18:48:07.925976+00:00",
+          "contentSha256": "1ea56c62a0141c1fafcfdf05ce19cb52fea48b0dadb90a58115caeba94193525"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "career",
+      "name": "CareerOneStop",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Job-search tools, career information and training resources.",
+      "detailChecked": "Training programs have their own costs and eligibility.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.careeronestop.org/",
+          "retrievedAt": "2026-10-20T18:48:07.733722+00:00",
+          "contentSha256": "741655907309342e66c434d6d51bc20c6c9acc5b1fd69fd15a122eb3b0eb9901"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "nfcc",
+      "name": "NFCC credit counseling",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Connect with a nonprofit credit counselor to discuss debt and budgeting.",
+      "detailChecked": "Free and low-cost services. Ask about fees before agreeing to a plan.",
+      "phoneChecked": {
+        "number": "+18003882227",
+        "label": "Call 1-800-388-2227"
+      },
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.nfcc.org/contact-us/",
+          "retrievedAt": "2026-10-20T18:48:14.901770+00:00",
+          "contentSha256": "1957130c33b950468856d83ae7bb012840997278c87e5a3dafd33500312c8da9"
+        },
+        {
+          "url": "https://www.nfcc.org/blog/can-i-trust-the-credit-counseling-agencies-2/",
+          "retrievedAt": "2026-10-20T18:48:14.902413+00:00",
+          "contentSha256": "30aef6981da03b39d826dce81a80263818807026a850eef13beeefd2483c5943"
+        }
+      ],
+      "notes": "Provider contact page confirms counseling phone; provider article describes free and low-cost advice. No promise that every service or plan is free."
+    },
+    {
+      "id": "cfpb",
+      "name": "Consumer Financial Protection Bureau",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Submit a complaint about a financial product or service.",
+      "detailChecked": "A complaint is not a promise of reimbursement or immediate financial help.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.consumerfinance.gov/complaint/",
+          "retrievedAt": "2026-10-20T18:48:08.132997+00:00",
+          "contentSha256": "10f92bd0e2804e331b442af567acda8eda6fa8a1fa5079169f78b06f363964e8"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "hud",
+      "name": "HUD housing counseling",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Find a HUD-participating counselor for housing problems.",
+      "detailChecked": "Foreclosure, eviction and homelessness counseling is free. Other counseling may have fees.",
+      "phoneChecked": {
+        "number": "+18005694287",
+        "label": "Call 1-800-569-4287"
+      },
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.hud.gov/hud-partners/single-family-about-housing-counseling",
+          "retrievedAt": "2026-10-20T18:48:12.100949+00:00",
+          "contentSha256": "6826011294b447ae3116d4034a207a4ead13a49a8360ff4896a8b951799f2aa4"
+        }
+      ],
+      "notes": "Retired /counseling because the HTTP 200 page had no useful main content. Replacement About Housing Counseling page confirms the phone, services, and fee qualifications."
+    },
+    {
+      "id": "shelter",
+      "name": "HUD Find Shelter",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Find nearby shelter, food pantries, health clinics and clothing resources.",
+      "detailChecked": "Contact the provider to confirm hours, eligibility and availability.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.hud.gov/findshelter",
+          "retrievedAt": "2026-10-20T18:48:12.441355+00:00",
+          "contentSha256": "3106ff13a23b0befc088bcbd6040bfc17bd528522b28cdf4511ae9db57bdc992"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "food",
+      "name": "Feeding America",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Find a local food bank that can connect you with pantries and meal programs.",
+      "detailChecked": "Check where food is distributed and the current opening hours before going.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.feedingamerica.org/find-your-local-foodbank",
+          "retrievedAt": "2026-10-20T18:48:10.425952+00:00",
+          "contentSha256": "5b12237525764f086175b4fb9bbb0ebe0d3f76e7d3bdbbb0036174de1c3af21c"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "snap",
+      "name": "SNAP food benefits",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "See eligibility information and how to apply through your state.",
+      "detailChecked": "Eligibility depends on household circumstances and current program rules.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.fna.usda.gov/snap/recipient/eligibility",
+          "retrievedAt": "2026-10-20T18:48:10.763187+00:00",
+          "contentSha256": "fd39dc841d0a6b780eac743e665471fdb5c8e16fc603e762f88f9fe9e9a5d2ea"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "wic",
+      "name": "WIC",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Food and nutrition support for eligible pregnant or postpartum people, infants and children under five.",
+      "detailChecked": "Your local WIC program determines eligibility.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.fna.usda.gov/wic",
+          "retrievedAt": "2026-10-20T18:48:10.762667+00:00",
+          "contentSha256": "ca37bb91375d0ccb0f5eaf35bba604c1ed611b9f8ce51184db404501a1c8849e"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "hrsa",
+      "name": "Community health centers",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Find a health center for care with or without insurance.",
+      "detailChecked": "Sliding-scale fees; care is not necessarily free.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.hrsa.gov/get-health-care/affordable/eligibility",
+          "retrievedAt": "2026-10-20T18:48:12.222082+00:00",
+          "contentSha256": "771fe157b87c47055049bd9cbe79eb14ce8ebadc7374339631aabf2582859c05"
+        },
+        {
+          "url": "https://findahealthcenter.hrsa.gov/",
+          "retrievedAt": "2026-10-20T18:48:01.254050+00:00",
+          "contentSha256": "36e86177b33714ca8c07a67e09f89ebcbbcfc7bf1eae70e70d98c4a4f177e9a1"
+        }
+      ],
+      "notes": "Provider guidance confirms access with or without insurance and sliding-scale fees. Search returns a JavaScript shell; search interactions were not tested. Added a reviewed guidance fallback."
+    },
+    {
+      "id": "rx",
+      "name": "RxAssist prescription assistance",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Look up patient assistance programs for prescription medicines.",
+      "detailChecked": "Each program sets its own eligibility and assistance rules.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.rxassist.org/",
+          "retrievedAt": "2026-10-20T18:48:16.487660+00:00",
+          "contentSha256": "9dab557fff0f4001399e82c94e3b7cc1a8025b778532be330fc48f0df2f25f80"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "medicare",
+      "name": "Medicare",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Official help with Medicare coverage, billing and claims.",
+      "detailChecked": "Insurance costs and coverage vary. This is separate from Medicaid.",
+      "phoneChecked": {
+        "number": "+18006334227",
+        "label": "Call 1-800-633-4227"
+      },
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.medicare.gov/about-us/contact-medicare",
+          "retrievedAt": "2026-10-20T18:48:13.913705+00:00",
+          "contentSha256": "26814b8de5a0295426ecfefc868c6c90a7511a921b9b82de903e05d575bd008c"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "medicaid",
+      "name": "Medicaid & CHIP",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Find your state agency to ask about eligibility, apply, or check coverage.",
+      "detailChecked": "Eligibility and coverage rules vary by state.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+          "retrievedAt": "2026-10-20T18:48:13.570631+00:00",
+          "contentSha256": "6d6075383ff418d426e8678156629e4f3a3e80860fa73b113d619b9a32046e42"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "samhsa",
+      "name": "SAMHSA National Helpline",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Treatment referrals and information for mental health and substance use concerns. This is not counseling.",
+      "detailChecked": "Free referral service, 24/7, in English and Spanish. Treatment costs vary.",
+      "phoneChecked": {
+        "number": "+18006624357",
+        "label": "Call 1-800-662-4357"
+      },
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.samhsa.gov/find-help/helplines/national-helpline",
+          "retrievedAt": "2026-10-20T18:48:17.377321+00:00",
+          "contentSha256": "2596faa115fe8b2bffcad2928cda32f05ae99685c4b48ce7109452c95431a7d4"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "treatment",
+      "name": "FindTreatment.gov",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Search for mental health and substance use treatment providers.",
+      "detailChecked": "Ask providers about costs, insurance, eligibility and openings.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.samhsa.gov/find-help/helplines/national-helpline",
+          "retrievedAt": "2026-10-20T18:48:17.377321+00:00",
+          "contentSha256": "2596faa115fe8b2bffcad2928cda32f05ae99685c4b48ce7109452c95431a7d4"
+        },
+        {
+          "url": "https://findtreatment.gov/",
+          "retrievedAt": "2026-10-20T18:48:04.797046+00:00",
+          "contentSha256": "2af2ae359ccb61536671a86db7953f604d28c234a27d6434f016c68dfa3c1347"
+        }
+      ],
+      "notes": "SAMHSA describes treatment referrals and links to the finder. Finder returns a JavaScript shell; search interactions were not tested. Added a reviewed SAMHSA referral fallback."
+    },
+    {
+      "id": "aa",
+      "name": "Alcoholics Anonymous",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Peer recovery support for people concerned about their drinking.",
+      "detailChecked": "Peer support; not a medical treatment service.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.aa.org/",
+          "retrievedAt": "2026-10-20T18:48:05.725246+00:00",
+          "contentSha256": "8f2941aaef96ab547c82c3b184d6554cfc5bc4a3324b42f8634448747c75109f"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "na",
+      "name": "Narcotics Anonymous",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Peer recovery support for people experiencing drug addiction.",
+      "detailChecked": "Peer support; not a medical treatment service.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://na.org/",
+          "retrievedAt": "2026-10-20T18:48:04.502027+00:00",
+          "contentSha256": "26dbfe0d64f4ce21eaae74ff8eacd59e2408b556ae3bed17ab2626db64516d54"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "veterans",
+      "name": "Veterans Crisis Line",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Crisis support for veterans, service members and people who support them. VA enrollment is not required.",
+      "detailChecked": "Free support, 24/7.",
+      "phoneChecked": {
+        "number": "988",
+        "label": "Call 988, then press 1"
+      },
+      "textChecked": "Text 838255",
+      "sources": [
+        {
+          "url": "https://www.veteranscrisisline.net/",
+          "retrievedAt": "2026-10-20T18:48:20.583698+00:00",
+          "contentSha256": "6fd64b5a2be2de7bbbe53ad1e9bbc4d8ee3f0db65d954bf1dd7c13c4ffd20233"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "vso",
+      "name": "VA-accredited representatives",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Learn how to find an accredited representative for a VA benefit claim.",
+      "detailChecked": "Accredited VSO claims help is free. Attorneys and claims agents may charge fees.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.va.gov/resources/va-accredited-representative-faqs/",
+          "retrievedAt": "2026-10-20T18:48:19.472074+00:00",
+          "contentSha256": "2b6d95544157c25d6564a1c66fb9ee3620fbe4546c2df5412e0e004d56ff6813"
+        }
+      ],
+      "notes": "VA confirms accredited VSO claim services are free and distinguishes attorneys/agents who may charge for eligible work."
+    },
+    {
+      "id": "fema",
+      "name": "FEMA disaster assistance",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Official eligibility and application guidance after a declared disaster.",
+      "detailChecked": "Help depends on the disaster declaration and your eligibility.",
+      "phoneChecked": {
+        "number": "+18006213362",
+        "label": "Call 1-800-621-3362"
+      },
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.usa.gov/disaster-assistance",
+          "retrievedAt": "2026-10-20T18:48:19.386687+00:00",
+          "contentSha256": "46b84d1a6d4b430e022707d6f5b5b833dfe00f69043ffefabf21816a0a9f8aa2"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "redcross",
+      "name": "American Red Cross",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Find disaster support, open shelters and your local Red Cross.",
+      "detailChecked": "Check current local availability; this is not a shelter reservation.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.redcross.org/get-help.html",
+          "retrievedAt": "2026-10-20T18:48:16.479938+00:00",
+          "contentSha256": "b564c4d6f19d4787ccea9b811f2cf401b6c1c1c625290ec762b13358d587739b"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "lsc",
+      "name": "Civil legal aid",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Find a local LSC-funded legal aid organization for a civil legal problem.",
+      "detailChecked": "For people who meet local eligibility requirements. Availability varies.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.lsc.gov/about-lsc/what-legal-aid/i-need-legal-help",
+          "retrievedAt": "2026-10-20T18:48:14.751845+00:00",
+          "contentSha256": "6a465c56aeef18af81e791a8cd09dfc38e561f0633e61c43d6cc9dca73c0c0b1"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "aba",
+      "name": "American Bar Association legal-help finder",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Explore legal aid and lawyer-referral options in your state.",
+      "detailChecked": "Includes both free legal aid and paid lawyer referrals; ask about fees.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.americanbar.org/groups/legal_services/flh-home/",
+          "retrievedAt": "2026-10-20T18:48:07.994653+00:00",
+          "contentSha256": "14a0a24f663189f64307a6dad5519f82906f0d371bf69beabb4c67c772cab627"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "eldercare",
+      "name": "Eldercare Locator",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Find local services for older adults and family caregivers.",
+      "detailChecked": "Ask local providers about service costs and eligibility.",
+      "phoneChecked": {
+        "number": "+18006771116",
+        "label": "Call 1-800-677-1116"
+      },
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://eldercare.acl.gov/home",
+          "retrievedAt": "2026-10-20T18:48:01.749182+00:00",
+          "contentSha256": "b789850d8869ce28be5640ef3de98de928e709818a50f8e99753dee8c6f572ea"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "elderfraud",
+      "name": "National Elder Fraud Hotline",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Help reporting financial fraud against someone age 60 or older.",
+      "detailChecked": "Free help. Monday–Friday, 10am–6pm Eastern.",
+      "phoneChecked": {
+        "number": "+18333728311",
+        "label": "Call 1-833-372-8311"
+      },
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://ovc.ojp.gov/program/stop-elder-fraud/providing-help-restoring-hope",
+          "retrievedAt": "2026-10-20T18:48:04.562293+00:00",
+          "contentSha256": "2e976e9cbeb36fd40d8a62daa1cb0384b9191c90baa547b21bf2c34cd0730157"
+        }
+      ],
+      "notes": "DOJ page confirms age-60-or-older scope, listed phone, and weekday Eastern-time hours."
+    },
+    {
+      "id": "grief",
+      "name": "GriefShare",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Christian grief support groups for people grieving a death.",
+      "detailChecked": "Group or workbook fees may apply; check with the host.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.griefshare.org/",
+          "retrievedAt": "2026-10-20T18:48:10.882024+00:00",
+          "contentSha256": "6c0f9f937061b43b628826336fb04ef77c41ae7c771eb1cdd28e43918b9cabb7"
+        },
+        {
+          "url": "https://www.griefshare.org/faq",
+          "inspection": "Read via official provider webpage retrieval during this review."
+        }
+      ],
+      "notes": "Provider FAQ confirms Christian basis; homepage describes variable group/guide costs. Added the FAQ as a more specific source."
+    },
+    {
+      "id": "hope",
+      "name": "Alliance of Hope",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Information and support resources for people bereaved by suicide.",
+      "detailChecked": "Check any service’s fees before booking. For immediate crisis support, use 988.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://allianceofhope.org/",
+          "retrievedAt": "2026-10-20T18:48:02.550963+00:00",
+          "contentSha256": "d1440e32d29c2ce1e73f7ebdd485d47925656bd2e94627a5ce0319b24e2d3853"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "childcare",
+      "name": "Child Care Aware of America",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Find your local child care resource agency and state assistance information.",
+      "detailChecked": "Child care costs and assistance eligibility vary. This link is for families generally.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.childcareaware.org/families/",
+          "retrievedAt": "2026-10-20T18:48:07.757941+00:00",
+          "contentSha256": "c8ae1bba9d20761dabdb759a61008df50f12bb19e0525b80445d236070c3516b"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "headstart",
+      "name": "Head Start & Early Head Start",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Find local early-childhood programs and ask about enrollment.",
+      "detailChecked": "Contact the program about eligibility and available places.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://headstart.gov/center-locator",
+          "retrievedAt": "2026-10-20T18:48:04.375258+00:00",
+          "contentSha256": "432e87a788bd30288e0446dea2503ce456e344dfac94e67cf724382ceac7343c"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "ssdi",
+      "name": "Social Security Disability Insurance",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Official information about disability benefits and how to apply.",
+      "detailChecked": "Social Security determines eligibility; this is separate from SSI.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.ssa.gov/disability",
+          "retrievedAt": "2026-10-20T18:48:22.377624+00:00",
+          "contentSha256": "bcb06f91064c8ac42d586c21eae281729b9fcea58ce1d5483f0bf2c9e1cfd06b"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "ssi",
+      "name": "Supplemental Security Income",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Benefits information for people with limited income and resources who meet disability, blindness or age criteria.",
+      "detailChecked": "Social Security determines eligibility.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.ssa.gov/ssi",
+          "retrievedAt": "2026-10-20T18:48:22.359464+00:00",
+          "contentSha256": "2f45c657586eea824a61a8936682b0f2317da77620956ace606316eda89cee64"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "ada",
+      "name": "ADA National Network",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Ask about disability rights and accommodations under the ADA.",
+      "detailChecked": "Information and guidance; not a promise of legal representation.",
+      "phoneChecked": {
+        "number": "+18009494232",
+        "label": "Call 1-800-949-4232"
+      },
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://adata.org/",
+          "retrievedAt": "2026-10-20T18:48:02.655940+00:00",
+          "contentSha256": "aedd7a5645a49bee196eb9258cac026505953f3736464a909f1fcb3e71067c39"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "divorce",
+      "name": "DivorceCare",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Christian support groups for separation and divorce.",
+      "detailChecked": "Groups commonly charge a fee; check the group listing.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.divorcecare.org/about",
+          "retrievedAt": "2026-10-20T18:48:08.798470+00:00",
+          "contentSha256": "0dd38047aa04da084a82a8ad5bf4696741a0aaea316348ea93990424c0added5"
+        },
+        {
+          "url": "https://www.divorcecare.org/faq",
+          "retrievedAt": "2026-10-20T18:48:08.799155+00:00",
+          "contentSha256": "48c4492249ff0e45973e9f101c0ca40db7d4918e2ee4faaf26a87c8efcb60331"
+        }
+      ],
+      "notes": "Provider FAQ confirms Christian basis and commonly charged group/book costs."
+    },
+    {
+      "id": "211",
+      "name": "211 local help",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Get connected to local food, housing, utility and other community services.",
+      "detailChecked": "Texting options differ by location. Ask providers about eligibility and availability.",
+      "phoneChecked": {
+        "number": "211",
+        "label": "Call 211"
+      },
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://211.org/",
+          "retrievedAt": "2026-10-20T18:48:01.648953+00:00",
+          "contentSha256": "6ff8c5c1c04206c7b54e98d0d10a106faf28030008a3cce0ee72d62e25dde6db"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "nyc-hope",
+      "name": "NYC domestic violence support",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "City guidance on shelter referrals and support for domestic and gender-based violence.",
+      "detailChecked": "NYC hotline available 24/7.",
+      "phoneChecked": {
+        "number": "+18006214673",
+        "label": "Call 1-800-621-4673"
+      },
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.nyc.gov/site/hra/help/domestic-violence-support.page",
+          "retrievedAt": "2026-10-20T18:48:14.548318+00:00",
+          "contentSha256": "df99a61683fb1aac258b6a7e757e6d6632ac919ca08827134af4325afd79328e"
+        },
+        {
+          "url": "https://www.safehorizon.org/",
+          "retrievedAt": "2026-10-20T18:48:16.980841+00:00",
+          "contentSha256": "02d5e4079423e970b3036885d502015c69b5db19e07d050a496493c4d9649f63"
+        }
+      ],
+      "notes": "HRA confirms city domestic/gender-based violence support; Safe Horizon corroborates the numeric hotline and 24/7 hours."
+    },
+    {
+      "id": "nyc-311",
+      "name": "NYC 311",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Find non-emergency city services and help navigating local resources.",
+      "detailChecked": "For emergencies, call 911.",
+      "phoneChecked": {
+        "number": "311",
+        "label": "Call 311 in NYC"
+      },
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://portal.311.nyc.gov/",
+          "retrievedAt": "2026-10-20T18:48:04.678326+00:00",
+          "contentSha256": "cf80c74d74d41f35de2b2b438c764699ebd6e202c7d7afbb775d034a9ff87552"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "nyc-benefits",
+      "name": "ACCESS NYC",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Explore city benefits and check what you may qualify for. Links to official applications, including ACCESS HRA.",
+      "detailChecked": "A screening is not an eligibility decision. Official applications may require an account.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://access.nyc.gov/",
+          "retrievedAt": "2026-10-20T18:48:01.337699+00:00",
+          "contentSha256": "09e1501e8864d46b0b97aa0822478f677a3eb285eebd65a9ece3f8365468f97e"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "nyc-food",
+      "name": "Food Help NYC",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Find food pantries and community kitchens through HRA’s food-help page.",
+      "detailChecked": "Call 311 for help locating food; confirm opening hours before going.",
+      "phoneChecked": {
+        "number": "311",
+        "label": "Call 311 in NYC"
+      },
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.nyc.gov/site/hra/help/food-assistance.page",
+          "retrievedAt": "2026-10-20T18:48:14.611948+00:00",
+          "contentSha256": "e483d2e8fa76d93472515b643b1e82fc50789fabcd07104fd5fda78210a6e511"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "nyc-homebase",
+      "name": "Homebase housing support",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Homelessness prevention for New Yorkers at risk of losing housing.",
+      "detailChecked": "Call the local office before visiting to arrange an appointment. Eligibility applies.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.nyc.gov/site/hra/help/homebase.page",
+          "retrievedAt": "2026-10-20T18:48:14.535647+00:00",
+          "contentSha256": "0f070a757518132ccf54b5ab24d858b4ae01ae61440ff313c63974ef61d80448"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "nyc-shelter",
+      "name": "NYC shelter information",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "DHS guidance for families and single adults who need shelter.",
+      "detailChecked": "Intake routes depend on household type; use the official guidance or call 311.",
+      "phoneChecked": {
+        "number": "311",
+        "label": "Call 311 in NYC"
+      },
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.nyc.gov/site/dhs/shelter/shelter.page",
+          "retrievedAt": "2026-10-20T18:48:14.631970+00:00",
+          "contentSha256": "50a5735eeab49d490c7e72e94089039ff7f9dddea90dcb62cae2c017b0382ea5"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "trans-lifeline",
+      "name": "Trans Lifeline",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Peer support from trans operators for trans and questioning people. You do not need to be in crisis to call.",
+      "detailChecked": "Monday–Friday, 1pm–9pm Eastern. Scheduled closures and high call volumes may affect availability.",
+      "phoneChecked": {
+        "number": "+18775658860",
+        "label": "Call 1-877-565-8860"
+      },
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://translifeline.org/hotline/",
+          "retrievedAt": "2026-10-20T18:48:06.815907+00:00",
+          "contentSha256": "db61063648fb1257b8171408e3c12c96f44cad97739cf11e5b07bfade4af75ac"
+        }
+      ],
+      "notes": "Provider confirms weekday Eastern-time hours and trans peer support. Provider holiday list is dated 2025; no 2026 holiday schedule was inferred or published."
+    },
+    {
+      "id": "trevor-project",
+      "name": "The Trevor Project",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Crisis support for LGBTQ+ young people in the U.S. by phone, text, or online chat.",
+      "detailChecked": "Free service, 24/7. Message and data rates may apply.",
+      "phoneChecked": {
+        "number": "+18664887386",
+        "label": "Call 1-866-488-7386"
+      },
+      "textChecked": "Text START to 678678",
+      "sources": [
+        {
+          "url": "https://www.thetrevorproject.org/get-help/",
+          "retrievedAt": "2026-10-20T18:48:18.669343+00:00",
+          "contentSha256": "0382f03239b3bef36d1954da59f7ec90365fc4f135c68021e9b23d94649098a2"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "lgbt-national",
+      "name": "LGBT National Hotline",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Peer support and local resource referrals for LGBTQ+ people of all ages, including questions about coming out, relationships, and gender identity.",
+      "detailChecked": "Free service. Monday–Friday, 2pm–11pm; Saturday, noon–5pm Eastern.",
+      "phoneChecked": {
+        "number": "+18888434564",
+        "label": "Call 1-888-843-4564"
+      },
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://lgbthotline.org/national-hotline/",
+          "retrievedAt": "2026-10-20T18:48:04.905200+00:00",
+          "contentSha256": "3b040a41712d7cd445e66176bb28ee2ff3f86dde4644fdb8f556f4abf3538530"
+        }
+      ],
+      "notes": "Provider confirms all-ages peer support, listed phone and weekday/Saturday hours."
+    },
+    {
+      "id": "nyc-center-tgnc",
+      "name": "The Center — trans & gender nonconforming support",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Community groups and connections to health care, housing, benefits, and name-change support.",
+      "detailChecked": "Check the program’s intake requirements and current schedule.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://gaycenter.org/tgnc/",
+          "retrievedAt": "2026-10-20T18:48:04.653240+00:00",
+          "contentSha256": "ab81c0739ec927b82d77db24b2e00ec561eb933e522eecf686f0bea9618270fd"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "nyc-avp",
+      "name": "NYC Anti-Violence Project",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Support for LGBTQ+ and HIV-affected survivors of hate violence, relationship abuse, sexual violence, and other violence in NYC.",
+      "detailChecked": "English/Spanish hotline: Monday–Thursday, 10am–6pm; Friday, 10am–2pm Eastern.",
+      "phoneChecked": {
+        "number": "+12127141141",
+        "label": "Call 212-714-1141"
+      },
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://avp.org/get-help/",
+          "retrievedAt": "2026-10-20T18:48:01.524993+00:00",
+          "contentSha256": "14e665db3fffe6686b3367890af4582c5e40327552c8878d7534e2db45993064"
+        }
+      ],
+      "notes": "Provider confirms bilingual hotline and weekday hours; it is not described as a 24/7 line."
+    },
+    {
+      "id": "nyc-callen-lorde",
+      "name": "Callen-Lorde — trans health care",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Primary care, hormone care, and other trans health services, with care coordination and referrals.",
+      "detailChecked": "Ask about new-patient intake, appointment availability, insurance, and costs.",
+      "phoneChecked": null,
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://callen-lorde.org/trans-health/",
+          "retrievedAt": "2026-10-20T18:48:01.456032+00:00",
+          "contentSha256": "c26496187e19aa68fc2002ff4cced64a45aab73e8c2add7af9a3c7acffe22269"
+        }
+      ],
+      "notes": "Read the listed provider information against the published description, stated scope, and any listed contact details. Costs, eligibility and availability remain qualified; no live service interaction was performed."
+    },
+    {
+      "id": "nyc-lsnyc-lgbtq",
+      "name": "Legal Services NYC — LGBTQ+ legal help",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
+      "status": "provider-information-reviewed",
+      "descriptionChecked": "Free civil legal help, including discrimination, housing, name changes, and identity-document updates.",
+      "detailChecked": "Intake: Monday–Friday, 9:30am–4pm Eastern. Help depends on location and capacity.",
+      "phoneChecked": {
+        "number": "+19176614500",
+        "label": "Call 917-661-4500"
+      },
+      "textChecked": null,
+      "sources": [
+        {
+          "url": "https://www.legalservicesnyc.org/resources/lgbtq-rights/",
+          "retrievedAt": "2026-10-20T18:48:11.843375+00:00",
+          "contentSha256": "998ecd4ab2edb98d7781acacec61ef52f06289ec6f0962622e9d4bc9ac9b77d3"
+        }
+      ],
+      "notes": "Provider LGBTQ+ page confirms civil legal support, listed intake phone and weekday hours. No case acceptance or appointment was tested."
+    }
+  ]
+}

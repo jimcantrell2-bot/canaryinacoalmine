@@ -133,8 +133,9 @@ a:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offs
 .resource-detail{font-size:12px;line-height:1.5;color:var(--muted);margin:6px 0;}
 .resource-link{font-size:14px;text-decoration:underline;display:inline-block;padding:5px 0;}
 .contact-line{margin:7px 0;}
-.hotline{font-size:13px;display:inline-block;padding:6px 0;text-decoration:underline;}
-.text-contact{display:block;font-size:13px;margin:4px 0;}
+.hotline{font-size:13px;display:inline-block;min-height:44px;padding:10px 0;text-decoration:underline;}
+.text-contact{display:block;width:fit-content;font-size:13px;min-height:44px;padding:10px 0;text-decoration:underline;}
+.fallback-link{text-decoration:underline;}
 .resource-source{font-size:11px;color:var(--muted);margin-top:5px;}
 .resource-source summary{cursor:pointer;min-height:24px;}
 .resource-source a{text-decoration:underline;display:block;overflow-wrap:anywhere;padding:4px 0;}
@@ -193,7 +194,7 @@ document.addEventListener('keydown',function(event){
   <p class="page-sub">U.S. resources for difficult moments. No account needed here. This directory is free; some services have costs or eligibility requirements.</p>
   <div class="urgent-help">
     <p><strong>Immediate danger or a medical emergency:</strong> <a href="tel:911">call 911</a>.</p>
-    <p><strong>Need crisis support?</strong> <a href="tel:988">Call 988</a> or text 988, 24/7. You don’t have to be suicidal to reach out.</p>
+    <p><strong>Need crisis support?</strong> <a href="tel:988">Call 988</a> or <a href="sms:988">text 988</a>, 24/7. You don’t have to be suicidal to reach out.</p>
   </div>
   <div class="jump-links" role="navigation" aria-label="Main resource sections"><a href="#domestic-violence">Domestic violence</a><a href="#lgbtq-help">LGBTQ+ &amp; trans support</a><a href="#national-resources">U.S. resources</a><a href="#nyc-help">New York City help</a></div>
 </div>
@@ -201,7 +202,7 @@ document.addEventListener('keydown',function(event){
 <!-- DIRECTORY -->
 <details class="review-note" id="about-resources">
   <summary>About these resources and their review dates</summary>
-  <p>Each entry links to provider information checked on the date shown. We reviewed the linked information and the contact details we list. We did not place test calls, submit applications, or confirm current openings. A review date is not a guarantee of availability.</p>
+  <p>Each entry links to provider information checked on the date shown. We reviewed the linked information and the contact details we list. We did not place test calls or texts, exercise provider searches or chats, submit applications, or confirm current openings. Some external searches require JavaScript. A review date is not a guarantee of availability.</p>
   <p>Confirm hours, eligibility and any fees with the provider before travelling or committing to a service. Linked sites have their own privacy policies. Links open in this tab. Cher Ami does not provide crisis counseling or monitor requests for help.</p>
   <p>Outside the U.S.? <a href="https://findahelpline.com/" rel="noreferrer">Find a Helpline</a> lets you look for crisis and emotional support by country.</p>
   <p>Named for <a href="https://americanhistory.si.edu/collections/object/nmah_425415" rel="noreferrer">Cher Ami, the World War I messenger pigeon preserved at the Smithsonian</a>.</p>
