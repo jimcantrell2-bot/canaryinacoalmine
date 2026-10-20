@@ -4,7 +4,7 @@
 
 The restoration uses `afb2a34a8037c674c1f57acbf21fc86af3d343fe`, the version Jim originally supplied in this conversation. The current production version was `cf069c7` when work began. Git history preserves both. The original separate ChatGPT project instructions were not recovered through available conversation and Library searches; the recovered HTML and JavaScript are the original implementation, not a recovered prompt.
 
-The original navigation, bird illustrations, warm background, typography, home-page structure, About and Support layouts, and nine-question format are restored. Text changes align the site with the revised assessment. The existing Cher Ami resource audit, quick exit, NYC and LGBTQ+ sections, and resource share image are retained. Those resources were not re-audited or assigned a new review date in this assessment repair.
+The original navigation, bird illustrations, warm background, typography, home-page structure, About and Support layouts, and nine-question format are restored. Text changes align the site with the revised assessment. The existing Cher Ami resource audit, quick exit, NYC and LGBTQ+ sections, and resource share image are retained. A subsequent Cher Ami review on October 20 rechecked all 53 resources, corrected the HUD counseling destination, added two search fallbacks, and clarified contact options. See CHER-AMI-REVIEW.md for its scope and limits.
 
 The private review includes the exact original career HTML as a separate comparison page. The new assessment is not a claim that the original scoring was valid.
 

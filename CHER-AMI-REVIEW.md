@@ -1,106 +1,54 @@
-# Cher Ami resource review — October 8, 2026 (America/New_York)
+# Cher Ami review — October 20, 2026 (America/New_York)
 
-## Scope and result
+## Result and scope
 
-Reviewed the provider information used in all 46 distinct resource entries,
-including six NYC entries. The directory has 16 national categories; civil legal
-aid appears in both Legal Help and Divorce & Separation. Domestic Violence is
-first, above the national directory. NYC is a separate section reached directly
-from the top of the page.
+Reviewed all 53 unique resource entries (54 appearances, because civil legal aid is used twice), including the seven national/NYC LGBTQ+ resources and ten NYC resources in total. Domestic Violence remains first; LGBTQ+ support is near the top; NYC has a separate section.
 
-Every entry includes a dated source disclosure. `pigeon/resources.json` is the
-maintained source of truth, including sources and next-review dates. The static
-HTML is generated ahead of deployment and remains usable without JavaScript.
+All 63 current provider, evidence, fallback and supplementary URLs returned HTTP 200. The revised checker also inspects readable page content: 61 current destinations have readable content; two are declared JavaScript-only search shells with reviewed alternative routes. Interactive searches were not tested. The report is `pigeon/link-review-2026-10-20.json`.
 
-The final network check covered 56 distinct resource, evidence and supplementary
-URLs; all returned HTTP 200 with relevant page titles. Results are recorded in
-`pigeon/link-review-2026-10-08.json`. HTTP success is only an availability check.
-The provider text was separately read to assess the descriptions, contact details,
-hours, costs and eligibility language actually included on the page.
+Published provider information was read against the descriptions, contact details, hours, fees, eligibility qualifications and service limits actually listed. The per-resource record is `pigeon/content-review-2026-10-20.json`. Where source HTML was collected locally, the record retains its retrieval timestamp and content hash rather than reproducing provider pages.
 
-No test calls or texts were placed, no applications submitted, and no live bed,
-appointment, funding or program availability was confirmed. Embedded provider
-search tools and chats were not exercised. The page explains these limits.
+Resource review dates and the footer now show October 20, 2026. The next content review is due November 19, 2026. Dates were advanced after reviewing provider information, not merely after successful HTTP requests.
 
-## Material corrections
+## Changes
 
-- Removed universal “free” and “always confidential” claims. The directory is
-  free, but providers may charge or apply eligibility requirements.
-- Replaced “call or text 211” with “call 211”; local texting options vary.
-- NFCC: free and low-cost services, with fees to confirm before accepting a plan.
-- HUD: foreclosure, eviction and homelessness counseling is free; other housing
-  counseling can have fees. Health centers use sliding-scale charges.
-- Separated Medicare from Medicaid, and SSDI from SSI, with distinct official links.
-- NAMI: information and peer support, not a crisis line; current weekday hours and
-  federal-holiday exception. SAMHSA: treatment referrals, not counseling or a
-  promise of free treatment.
-- Veterans: 988 then press 1, or text 838255; no VA enrollment required. Free VSO
-  claims representation is distinguished from attorneys or agents who may charge.
-- Replaced the Child Care Aware number directed at military/DoD fee assistance
-  with the general family resource page.
-- Corrected GriefShare and DivorceCare fee claims and disclosed their Christian
-  orientation. No blanket free-services label remains on Alliance of Hope.
-- ABA's general finder includes paid referrals, not solely free pro bono help.
-- Removed unconfirmed Eldercare hours; retained the provider-confirmed phone.
-  Elder Fraud hours, age scope and number were checked against DOJ's page.
-- NeedyMeds and LawHelp could not be inspected reliably; they are omitted in favor
-  of the reviewed RxAssist/HRSA and LSC/ABA routes. This does not mean either
-  organization has ceased operating.
-- The direct disaster-assistance application was access-blocked during review;
-  the resource now links to USA.gov's official application guidance and includes
-  the corroborated FEMA application phone number.
-- NYC HOPE's app landing page had no readable title in the direct check. The
-  directory uses HRA's readable DV guidance; Safe Horizon corroborates the
-  1-800-621-4673 hotline and 24/7 hours.
-- Replaced the unsourced dramatic pigeon story with a short Smithsonian link.
-  Smithsonian's record identifies Cher Ami as male; the previous female pronoun
-  and unqualified rescue statistic were not retained.
-- Homepage and About descriptions now match the directory's scope and limits.
+- **HUD counseling:** the former `/counseling` destination returned HTTP 200 but contained no useful main information. The link now goes to HUD's substantive About Housing Counseling page. The existing phone and fee qualifications are supported there. An HTTP 200 alone no longer counts as a pass for an empty page.
+- **Two search fallbacks:** HRSA's health-center finder and FindTreatment.gov deliver JavaScript app shells. Both retain their search links, with an explicit JavaScript note and a link to readable official guidance or treatment-referral options. Their interactive searches remain untested.
+- **Live advocates versus AI:** the domestic-violence provider now promotes Ruth, an AI chatbot, alongside live support. Cher Ami distinguishes those options so visitors looking for a person can choose a live advocate. No chatbot is embedded in Cher Ami.
+- **NAMI scope:** clarified that the HelpLine provides information, peer support and resource navigation, rather than crisis counseling. Its weekday hours and holiday exception were confirmed.
+- **Text contacts:** the six existing text destinations are now tappable SMS links, with existing keywords retained in the visible labels. Links open the device's messaging app; no message is sent by Cher Ami. Call and text link targets have more generous touch areas.
+- **HUD shelter wording:** matches the actual finder categories: shelters, food pantries, health clinics and clothing resources.
+- **Evidence:** added GriefShare's FAQ as a specific source for its Christian basis; retained fee qualifications. Reconfirmed Trans Lifeline, LGBT National Hotline, NYC AVP and Legal Services NYC hours without inventing a current holiday schedule or 24/7 coverage.
+- **Maintenance:** review documentation now covers all 53 entries. The checker separates meaningful pages, unexpected thin/error pages, and declared interactive searches. The static-page generator now handles `--help` and invalid arguments without silently writing the page.
 
-## Validation
+## Safety and interaction checks
 
-19 Node tests passed, covering the career check, Quick Exit and directory safety
-regressions. DOM checks confirmed all 46 resources (47 appearances), six separate
-NYC cards, DV first, unique IDs, working topic anchors and telephone link markup.
-The generated page matches its source data and template. External links open in
-the current tab, and the no-referrer policy is retained.
+The static directory remains usable without JavaScript. Quick Exit retains a native link plus a single-Escape shortcut; the shortcut replaces the current history entry. The warning accurately explains that it cannot clear prior history, other tabs, call/text records or device monitoring. Links open in the current tab, and the no-referrer policy remains present.
 
-Rendered desktop/mobile browser QA was unavailable. Before approving a public
-release, inspect the private preview on desktop and phone, including text zoom,
-source disclosures, topic navigation and the Quick Exit link/key behavior.
+The existing crisis contact details, human/peer/information-service distinctions, national versus NYC scope, Christian-group disclosures, separate Medicare/Medicaid and SSDI/SSI routes, and service fee/eligibility qualifications were reviewed.
 
-## Keeping it current
+No test calls or texts were placed. No provider chat, interactive search, application, booking, funding, open-bed or appointment availability was exercised or confirmed. No blanket assurance of confidentiality, free provider services, or availability is made.
 
-Edit `pigeon/resources.json` and review provider sources before changing the
-review dates. The next content review is due November 7, 2026. Do not advance dates
-merely because an HTTP request succeeds.
+## Validation and limits
 
-From the repository root:
+- 30 Node tests pass: career model and simulated form checks, resource coverage, Quick Exit, SMS destinations and keywords, fallback routes, and prior safety regressions.
+- 3 Python checker tests pass: an empty page with a title/footer does not pass, known JavaScript shells are disclosed rather than treated as verified searches, and substantive content is distinguished from access-denied pages.
+- Generated HTML matches the resource data and template. DOM checks cover all 54 resource placements, every phone/SMS destination, IDs, topic links and fallback links.
+- The 63-URL network check has no unexpected failures; its two interactive-search limits remain explicit.
+- Rendered desktop/mobile browser QA was unavailable. DOM tests do not establish visual layout or prove external service operation.
+
+## Rechecking
 
 ```sh
-python scripts/build-resources.py
 python scripts/build-resources.py --check
-node --test tests/*.test.js
+node --test tests/check.test.js tests/resources.test.js tests/quick-exit.test.js
+CANARY_TEST_DOM=/absolute/path/to/node_modules/jsdom node --test tests/ui.test.js
+PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -p 'test_resource_link_checker.py'
 python scripts/check-resource-links.py --report /tmp/cher-ami-link-report.json
 ```
 
-The checker flags inaccessible/suspect destinations and overdue content reviews.
-It never changes resource details or their review dates. No recurring monitor has
-been activated; running this command is a maintenance step, not a guarantee.
+The checker does not change source review dates or verify service details. No recurring monitor or schedule has been activated. The prior October 8 URL report remains available in Git history and at `pigeon/link-review-2026-10-08.json`.
 
-## Established alternatives
+## Publication
 
-- https://211.org/ — local referrals with human help by phone.
-- https://www.findhelp.org/ — local social-service search by ZIP code. Its provider
-  documentation at https://company.findhelp.com/products/the-findhelp-network/
-  was reviewed; the public search site blocked automated retrieval here.
-- https://findahelpline.com/ — crisis/emotional-support helplines by country; the
-  provider describes direct verification relationships with helpline operators.
-- https://access.nyc.gov/ and https://portal.311.nyc.gov/ — city-specific benefits
-  information and non-emergency services.
-
-Cher Ami is a concise starting directory. These established services have deeper
-local or specialist coverage; directing visitors to them is part of its purpose.
-
-Only the owner-private Sites review was deployed. No GitHub push or live Netlify
-release was authorized or performed.
+This review updates the owner-private candidate and the existing draft GitHub PR. It does not publish the proposed changes to the public Netlify site.

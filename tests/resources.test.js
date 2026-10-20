@@ -52,3 +52,26 @@ test('DV leads the resources; NYC has its own section after national resources',
   assert.ok(data.nycResources.every(id => html.indexOf(`data-resource="${id}"`) > nyc));
   assert.doesNotMatch(html, /target="_blank"/);
 });
+
+test('text routes are tappable, keep their keywords, and match displayed destinations', () => {
+  for (const [id, r] of Object.entries(data.resources)) {
+    if (!r.text) continue;
+    assert.match(r.textNumber, /^\+?\d+$/, id);
+    assert.ok(r.text.replace(/\D/g, '').includes(r.textNumber.replace(/\D/g, '')), id);
+    assert.ok(html.includes(`href="sms:${r.textNumber}">${r.text}</a>`), id);
+  }
+  assert.match(data.resources.hotline.text, /START/);
+  assert.match(data.resources.nami.text, /NAMI/);
+});
+
+test('JavaScript-only finders provide reviewed fallback routes', () => {
+  for (const [id, r] of Object.entries(data.resources)) {
+    if (!r.requiresJavaScript) continue;
+    assert.equal(new URL(r.fallback.url).protocol, 'https:', id);
+    assert.ok(r.sources.includes(r.fallback.url), id);
+    assert.ok(html.includes(`href="${r.fallback.url}" rel="noreferrer">${r.fallback.label}</a>`), id);
+  }
+  assert.equal(data.resources.hud.url, 'https://www.hud.gov/hud-partners/single-family-about-housing-counseling');
+  assert.match(data.resources.hotline.detail, /Ruth is an AI chatbot/);
+  assert.match(data.resources.nami.description, /Not a crisis line or counseling service/);
+});

@@ -1,0 +1,511 @@
+{
+  "checkedAt": "2026-10-20T18:53:21.276798+00:00",
+  "scope": "HTTP availability, visible page-content checks and source-review age. Does not verify service details, calls, text messaging, chats, searches, applications or openings. Declared JavaScript searches with reviewed fallback links are marked interactive-not-tested.",
+  "overdueResources": [],
+  "links": [
+    {
+      "url": "https://211.org/",
+      "status": 200,
+      "finalUrl": "https://211.org/",
+      "title": "Call 211 for Essential Community Services | United Way 211",
+      "visibleTextCharacters": 1312,
+      "result": "reachable"
+    },
+    {
+      "url": "https://988lifeline.org/",
+      "status": 200,
+      "finalUrl": "https://988lifeline.org/",
+      "title": "988 Lifeline - If you need emotional support, reach out to the national mental health hotline: 988.",
+      "visibleTextCharacters": 1648,
+      "result": "reachable"
+    },
+    {
+      "url": "https://access.nyc.gov/",
+      "status": 200,
+      "finalUrl": "https://access.nyc.gov/",
+      "title": "ACCESS NYC",
+      "visibleTextCharacters": 1090,
+      "result": "reachable"
+    },
+    {
+      "url": "https://adata.org/",
+      "status": 200,
+      "finalUrl": "https://adata.org/",
+      "title": "ADA National Network",
+      "visibleTextCharacters": 3702,
+      "result": "reachable"
+    },
+    {
+      "url": "https://allianceofhope.org/",
+      "status": 200,
+      "finalUrl": "https://allianceofhope.org/",
+      "title": "Alliance of Hope For Suicide Loss Survivors | Home",
+      "visibleTextCharacters": 4643,
+      "result": "reachable"
+    },
+    {
+      "url": "https://americanhistory.si.edu/collections/object/nmah_425415",
+      "status": 200,
+      "finalUrl": "https://americanhistory.si.edu/collections/object/nmah_425415",
+      "title": "Cher Ami | National Museum of American History",
+      "visibleTextCharacters": 6506,
+      "result": "reachable"
+    },
+    {
+      "url": "https://avp.org/get-help/",
+      "status": 200,
+      "finalUrl": "https://avp.org/get-help/",
+      "title": "Get Help - NYC Anti-Violence Project",
+      "visibleTextCharacters": 1940,
+      "result": "reachable"
+    },
+    {
+      "url": "https://callen-lorde.org/trans-health/",
+      "status": 200,
+      "finalUrl": "https://callen-lorde.org/trans-health/",
+      "title": "Transgender Health - Callen-Lorde",
+      "visibleTextCharacters": 2039,
+      "result": "reachable"
+    },
+    {
+      "url": "https://eldercare.acl.gov/home",
+      "status": 200,
+      "finalUrl": "https://eldercare.acl.gov/home",
+      "title": "Elder Care | Home",
+      "visibleTextCharacters": 1390,
+      "result": "reachable"
+    },
+    {
+      "url": "https://findahealthcenter.hrsa.gov/",
+      "status": 200,
+      "finalUrl": "https://findahealthcenter.hrsa.gov/",
+      "title": "Find a Health Center",
+      "visibleTextCharacters": 0,
+      "result": "interactive-not-tested"
+    },
+    {
+      "url": "https://findahelpline.com/",
+      "status": 200,
+      "finalUrl": "https://findahelpline.com/",
+      "title": "Suicide Hotlines & Crisis Helplines | Free, 24/7 Chat, Text & Phone",
+      "visibleTextCharacters": 7086,
+      "result": "reachable"
+    },
+    {
+      "url": "https://findtreatment.gov/",
+      "status": 200,
+      "finalUrl": "https://findtreatment.gov/",
+      "title": "FindTreatment.gov",
+      "visibleTextCharacters": 15,
+      "result": "interactive-not-tested"
+    },
+    {
+      "url": "https://gaycenter.org/tgnc/",
+      "status": 200,
+      "finalUrl": "https://gaycenter.org/tgnc/",
+      "title": "TGNC Support - The Center",
+      "visibleTextCharacters": 9552,
+      "result": "reachable"
+    },
+    {
+      "url": "https://headstart.gov/center-locator",
+      "status": 200,
+      "finalUrl": "https://headstart.gov/center-locator",
+      "title": "Head Start Center Locator | HeadStart.gov",
+      "visibleTextCharacters": 1120,
+      "result": "reachable"
+    },
+    {
+      "url": "https://lgbthotline.org/national-hotline/",
+      "status": 200,
+      "finalUrl": "https://lgbthotline.org/national-hotline/",
+      "title": "LGBT National Hotline - LGBT National Help Center",
+      "visibleTextCharacters": 2941,
+      "result": "reachable"
+    },
+    {
+      "url": "https://na.org/",
+      "status": 200,
+      "finalUrl": "https://na.org/",
+      "title": "Narcotics Anonymous",
+      "visibleTextCharacters": 6685,
+      "result": "reachable"
+    },
+    {
+      "url": "https://ovc.ojp.gov/program/stop-elder-fraud/providing-help-restoring-hope",
+      "status": 200,
+      "finalUrl": "https://ovc.ojp.gov/program/stop-elder-fraud/providing-help-restoring-hope",
+      "title": "National Elder Fraud Hotline | Office for Victims of Crime",
+      "visibleTextCharacters": 3759,
+      "result": "reachable"
+    },
+    {
+      "url": "https://portal.311.nyc.gov/",
+      "status": 200,
+      "finalUrl": "https://portal.311.nyc.gov/",
+      "title": "Home \u00a0\u00b7 NYC311",
+      "visibleTextCharacters": 3168,
+      "result": "reachable"
+    },
+    {
+      "url": "https://translifeline.org/hotline/",
+      "status": 200,
+      "finalUrl": "https://translifeline.org/hotline/",
+      "title": "Hotline - Trans Lifeline",
+      "visibleTextCharacters": 10088,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.aa.org/",
+      "status": 200,
+      "finalUrl": "https://www.aa.org/",
+      "title": "Have a problem with alcohol? There is a solution. | Alcoholics Anonymous",
+      "visibleTextCharacters": 3531,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.americanbar.org/groups/legal_services/flh-home/",
+      "status": 200,
+      "finalUrl": "https://www.americanbar.org/groups/legal_services/flh-home/",
+      "title": "FindLegalHelp.org",
+      "visibleTextCharacters": 2491,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.careeronestop.org/",
+      "status": 200,
+      "finalUrl": "https://www.careeronestop.org/",
+      "title": "Careers and Career Information - CareerOneStop",
+      "visibleTextCharacters": 1446,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.careeronestop.org/LocalHelp/AmericanJobCenters/find-american-job-centers.aspx",
+      "status": 200,
+      "finalUrl": "https://www.careeronestop.org/LocalHelp/AmericanJobCenters/find-american-job-centers.aspx",
+      "title": "American Job Center Finder | CareerOneStop",
+      "visibleTextCharacters": 2828,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.careeronestop.org/LocalHelp/UnemploymentBenefits/find-unemployment-benefits.aspx",
+      "status": 200,
+      "finalUrl": "https://www.careeronestop.org/LocalHelp/UnemploymentBenefits/find-unemployment-benefits.aspx",
+      "title": "Unemployment Benefits Finder | CareerOneStop",
+      "visibleTextCharacters": 2136,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.childcareaware.org/families/",
+      "status": 200,
+      "finalUrl": "https://www.childcareaware.org/families/",
+      "title": "Families - Child Care Aware\u00ae of America",
+      "visibleTextCharacters": 3490,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.consumerfinance.gov/complaint/",
+      "status": 200,
+      "finalUrl": "https://www.consumerfinance.gov/complaint/",
+      "title": "Submit a complaint | Consumer Financial Protection Bureau",
+      "visibleTextCharacters": 9854,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.crisistextline.org/",
+      "status": 200,
+      "finalUrl": "https://www.crisistextline.org/",
+      "title": "Crisis Text Line | Text HOME to 741741 Free, 24/7 Mental Health Support",
+      "visibleTextCharacters": 4786,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.divorcecare.org/",
+      "status": 200,
+      "finalUrl": "https://www.divorcecare.org/",
+      "title": "DivorceCare - Divorce Recovery Support Groups - DivorceCare",
+      "visibleTextCharacters": 971,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.divorcecare.org/about",
+      "status": 200,
+      "finalUrl": "https://www.divorcecare.org/about",
+      "title": "What Is DivorceCare? | Christian Divorce Support Groups",
+      "visibleTextCharacters": 5155,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.divorcecare.org/faq",
+      "status": 200,
+      "finalUrl": "https://www.divorcecare.org/faq",
+      "title": "Frequently Asked Questions About DivorceCare",
+      "visibleTextCharacters": 10769,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.feedingamerica.org/find-your-local-foodbank",
+      "status": 200,
+      "finalUrl": "https://www.feedingamerica.org/find-your-local-foodbank",
+      "title": "Find Your Local Food Bank and Holiday Food Boxes | Feeding America",
+      "visibleTextCharacters": 1979,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.fna.usda.gov/snap/recipient/eligibility",
+      "status": 200,
+      "finalUrl": "https://www.fna.usda.gov/snap/recipient/eligibility",
+      "title": "SNAP Eligibility | Food and Nutrition Administration",
+      "visibleTextCharacters": 18830,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.fna.usda.gov/wic",
+      "status": 200,
+      "finalUrl": "https://www.fna.usda.gov/wic",
+      "title": "WIC: USDA's Special Supplemental Nutrition Program for Women, Infants, and Children | Food and Nutrition Administration",
+      "visibleTextCharacters": 7740,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.griefshare.org/",
+      "status": 200,
+      "finalUrl": "https://www.griefshare.org/",
+      "title": "Need Help Dealing with Grief? - GriefShare",
+      "visibleTextCharacters": 5902,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.griefshare.org/faq",
+      "status": 200,
+      "finalUrl": "https://www.griefshare.org/faq",
+      "title": "GriefShare FAQs | Frequently Asked Questions",
+      "visibleTextCharacters": 13606,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.hrsa.gov/get-health-care/affordable/eligibility",
+      "status": 200,
+      "finalUrl": "https://www.hrsa.gov/get-health-care/affordable/eligibility",
+      "title": "Am I Eligible? | HRSA",
+      "visibleTextCharacters": 1869,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.hud.gov/findshelter",
+      "status": 200,
+      "finalUrl": "https://www.hud.gov/findshelter",
+      "title": "Find Shelter | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "visibleTextCharacters": 1424,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.hud.gov/hud-partners/single-family-about-housing-counseling",
+      "status": 200,
+      "finalUrl": "https://www.hud.gov/hud-partners/single-family-about-housing-counseling",
+      "title": "About Housing Counseling | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "visibleTextCharacters": 6777,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.legalservicesnyc.org/resources/lgbtq-rights/",
+      "status": 200,
+      "finalUrl": "https://www.legalservicesnyc.org/resources/lgbtq-rights/",
+      "title": "LGBTQ+ Rights - Legal Services NYC",
+      "visibleTextCharacters": 8267,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.loveisrespect.org/",
+      "status": 200,
+      "finalUrl": "https://www.loveisrespect.org/",
+      "title": "Healthy relationships for young adults | love is respect",
+      "visibleTextCharacters": 1866,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.lsc.gov/about-lsc/what-legal-aid/i-need-legal-help",
+      "status": 200,
+      "finalUrl": "https://www.lsc.gov/about-lsc/what-legal-aid/i-need-legal-help",
+      "title": "I Need Legal Help | LSC - Legal Services Corporation: America's Partner for Equal Justice",
+      "visibleTextCharacters": 1511,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "status": 200,
+      "finalUrl": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "title": "Where Can People Get Help With Medicaid & CHIP? | Medicaid",
+      "visibleTextCharacters": 10551,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.medicare.gov/about-us/contact-medicare",
+      "status": 200,
+      "finalUrl": "https://www.medicare.gov/about-us/contact-medicare",
+      "title": "Contact Medicare | Medicare",
+      "visibleTextCharacters": 779,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.nami.org/nami-helpline/",
+      "status": 200,
+      "finalUrl": "https://www.nami.org/nami-helpline/",
+      "title": "NAMI HelpLine | NAMI",
+      "visibleTextCharacters": 4091,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.nfcc.org/blog/can-i-trust-the-credit-counseling-agencies-2/",
+      "status": 200,
+      "finalUrl": "https://www.nfcc.org/blog/can-i-trust-the-credit-counseling-agencies-2/",
+      "title": "Can I Trust a Credit Counseling Agency? Here's What You Need to Know. - NFCC - National Foundation for Credit Counseling",
+      "visibleTextCharacters": 5536,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.nfcc.org/contact-us/",
+      "status": 200,
+      "finalUrl": "https://www.nfcc.org/contact-us/",
+      "title": "Contact Us - NFCC - National Foundation for Credit Counseling",
+      "visibleTextCharacters": 1439,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.nyc.gov/site/dhs/shelter/shelter.page",
+      "status": 200,
+      "finalUrl": "https://www.nyc.gov/site/dhs/shelter/shelter.page",
+      "title": "Shelter - DHS",
+      "visibleTextCharacters": 1217,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.nyc.gov/site/hra/help/domestic-violence-support.page",
+      "status": 200,
+      "finalUrl": "https://www.nyc.gov/site/hra/help/domestic-violence-support.page",
+      "title": "Domestic and Gender-Based Violence Support - HRA",
+      "visibleTextCharacters": 4669,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.nyc.gov/site/hra/help/food-assistance.page",
+      "status": 200,
+      "finalUrl": "https://www.nyc.gov/site/hra/help/food-assistance.page",
+      "title": "Community Food Connection (CFC) - HRA",
+      "visibleTextCharacters": 2726,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.nyc.gov/site/hra/help/homebase.page",
+      "status": 200,
+      "finalUrl": "https://www.nyc.gov/site/hra/help/homebase.page",
+      "title": "Homebase - HRA",
+      "visibleTextCharacters": 2471,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.redcross.org/get-help.html",
+      "status": 200,
+      "finalUrl": "https://www.redcross.org/get-help.html",
+      "title": "Get Help | Emergency Preparedness | Red Cross",
+      "visibleTextCharacters": 1298,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.rxassist.org/",
+      "status": 200,
+      "finalUrl": "https://www.rxassist.org/",
+      "title": "RxAssist - Patient Assistance Programs",
+      "visibleTextCharacters": 1825,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.safehorizon.org/",
+      "status": 200,
+      "finalUrl": "https://www.safehorizon.org/",
+      "title": "Home | Safe Horizon",
+      "visibleTextCharacters": 1128,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.samhsa.gov/find-help/helplines/national-helpline",
+      "status": 200,
+      "finalUrl": "https://www.samhsa.gov/find-help/helplines/national-helpline",
+      "title": "National Helpline for Mental Health, Drug, Alcohol Issues | SAMHSA",
+      "visibleTextCharacters": 21196,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.ssa.gov/disability",
+      "status": 200,
+      "finalUrl": "https://www.ssa.gov/disability",
+      "title": "Disability | SSA",
+      "visibleTextCharacters": 1833,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.ssa.gov/ssi",
+      "status": 200,
+      "finalUrl": "https://www.ssa.gov/ssi",
+      "title": "Supplemental Security Income (SSI) | SSA",
+      "visibleTextCharacters": 1464,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.thehotline.org/",
+      "status": 200,
+      "finalUrl": "https://www.thehotline.org/",
+      "title": "Domestic Violence Support | National Domestic Violence Hotline",
+      "visibleTextCharacters": 6409,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.thehotline.org/plan-for-safety/",
+      "status": 200,
+      "finalUrl": "https://www.thehotline.org/plan-for-safety/",
+      "title": "Relationship Abuse Safety Planning | National Domestic Violence Hotline",
+      "visibleTextCharacters": 4849,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.thehotline.org/plan-for-safety/internet-safety/",
+      "status": 200,
+      "finalUrl": "https://www.thehotline.org/plan-for-safety/internet-safety/",
+      "title": "Internet Safety for Survivors | The National Domestic Violence Hotline",
+      "visibleTextCharacters": 8338,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.thetrevorproject.org/get-help/",
+      "status": 200,
+      "finalUrl": "https://www.thetrevorproject.org/get-help/",
+      "title": "24/7 Suicide Hotline for LGBTQ Youth - We\u2019re here for you Now",
+      "visibleTextCharacters": 9783,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.usa.gov/disaster-assistance",
+      "status": 200,
+      "finalUrl": "https://www.usa.gov/disaster-assistance",
+      "title": "How to apply for disaster assistance | USAGov",
+      "visibleTextCharacters": 3785,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.va.gov/resources/va-accredited-representative-faqs/",
+      "status": 200,
+      "finalUrl": "https://www.va.gov/resources/va-accredited-representative-faqs/",
+      "title": "VA Accredited Representative FAQs | Veterans Affairs",
+      "visibleTextCharacters": 6028,
+      "result": "reachable"
+    },
+    {
+      "url": "https://www.veteranscrisisline.net/",
+      "status": 200,
+      "finalUrl": "https://www.veteranscrisisline.net/",
+      "title": "Veterans Crisis Line",
+      "visibleTextCharacters": 1672,
+      "result": "reachable"
+    }
+  ]
+}

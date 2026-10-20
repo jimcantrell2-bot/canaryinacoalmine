@@ -1,15 +1,15 @@
 {
-  "reviewedOn": "2026-10-08",
-  "reviewDue": "2026-11-07",
+  "reviewedOn": "2026-10-20",
+  "reviewDue": "2026-11-19",
   "resources": {
     "hotline": {
       "name": "National Domestic Violence Hotline",
       "description": "Support, safety planning and referrals for relationship abuse.",
       "url": "https://www.thehotline.org/",
       "linkLabel": "Talk to an advocate or find support",
-      "detail": "Free support, 24/7. Message and data rates may apply.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "detail": "Free live advocates, 24/7. On the provider’s website, Ruth is an AI chatbot; choose live chat for a person. Message and data rates may apply.",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.thehotline.org/"
       ],
@@ -17,7 +17,8 @@
         "number": "+18007997233",
         "label": "Call 1-800-799-7233"
       },
-      "text": "Text START to 88788"
+      "text": "Text START to 88788",
+      "textNumber": "88788"
     },
     "loveisrespect": {
       "name": "love is respect",
@@ -25,8 +26,8 @@
       "url": "https://www.loveisrespect.org/",
       "linkLabel": "Visit love is respect",
       "detail": "Phone, text and online support.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.loveisrespect.org/",
         "https://www.thehotline.org/"
@@ -42,8 +43,8 @@
       "url": "https://988lifeline.org/",
       "linkLabel": "Visit 988 for chat and support",
       "detail": "Free support, 24/7.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://988lifeline.org/"
       ],
@@ -51,7 +52,8 @@
         "number": "988",
         "label": "Call 988"
       },
-      "text": "Text 988"
+      "text": "Text 988",
+      "textNumber": "988"
     },
     "crisis-text": {
       "name": "Crisis Text Line",
@@ -59,21 +61,22 @@
       "url": "https://www.crisistextline.org/",
       "linkLabel": "About text support",
       "detail": "Free service, 24/7. Message and data rates may apply.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.crisistextline.org/"
       ],
-      "text": "Text HOME to 741741"
+      "text": "Text HOME to 741741",
+      "textNumber": "741741"
     },
     "nami": {
       "name": "NAMI HelpLine",
-      "description": "Mental health information, peer support and referrals. Not a crisis line.",
+      "description": "Mental health information, peer support and help finding resources. Not a crisis line or counseling service.",
       "url": "https://www.nami.org/nami-helpline/",
       "linkLabel": "NAMI HelpLine options",
       "detail": "Monday–Friday, 10am–10pm Eastern, excluding federal holidays.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.nami.org/nami-helpline/"
       ],
@@ -81,7 +84,8 @@
         "number": "+18009506264",
         "label": "Call 1-800-950-6264"
       },
-      "text": "Text NAMI to 62640"
+      "text": "Text NAMI to 62640",
+      "textNumber": "62640"
     },
     "unemployment": {
       "name": "Unemployment benefits",
@@ -89,8 +93,8 @@
       "url": "https://www.careeronestop.org/LocalHelp/UnemploymentBenefits/find-unemployment-benefits.aspx",
       "linkLabel": "Find your state’s unemployment office",
       "detail": "Eligibility and application rules vary by state.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.careeronestop.org/LocalHelp/UnemploymentBenefits/find-unemployment-benefits.aspx"
       ]
@@ -101,8 +105,8 @@
       "url": "https://www.careeronestop.org/LocalHelp/AmericanJobCenters/find-american-job-centers.aspx",
       "linkLabel": "Find a job center",
       "detail": "Ask the center which services it offers before visiting.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.careeronestop.org/LocalHelp/AmericanJobCenters/find-american-job-centers.aspx"
       ]
@@ -113,8 +117,8 @@
       "url": "https://www.careeronestop.org/",
       "linkLabel": "Explore CareerOneStop",
       "detail": "Training programs have their own costs and eligibility.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.careeronestop.org/"
       ]
@@ -125,8 +129,8 @@
       "url": "https://www.nfcc.org/contact-us/",
       "linkLabel": "Connect with a counselor",
       "detail": "Free and low-cost services. Ask about fees before agreeing to a plan.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.nfcc.org/contact-us/",
         "https://www.nfcc.org/blog/can-i-trust-the-credit-counseling-agencies-2/"
@@ -142,8 +146,8 @@
       "url": "https://www.consumerfinance.gov/complaint/",
       "linkLabel": "Start with the complaint guide",
       "detail": "A complaint is not a promise of reimbursement or immediate financial help.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.consumerfinance.gov/complaint/"
       ]
@@ -151,11 +155,11 @@
     "hud": {
       "name": "HUD housing counseling",
       "description": "Find a HUD-participating counselor for housing problems.",
-      "url": "https://www.hud.gov/counseling",
-      "linkLabel": "Find housing counseling",
+      "url": "https://www.hud.gov/hud-partners/single-family-about-housing-counseling",
+      "linkLabel": "Find housing counseling options",
       "detail": "Foreclosure, eviction and homelessness counseling is free. Other counseling may have fees.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.hud.gov/hud-partners/single-family-about-housing-counseling"
       ],
@@ -166,12 +170,12 @@
     },
     "shelter": {
       "name": "HUD Find Shelter",
-      "description": "Look for nearby shelter, housing, food and clothing resources.",
+      "description": "Find nearby shelter, food pantries, health clinics and clothing resources.",
       "url": "https://www.hud.gov/findshelter",
       "linkLabel": "Find nearby resources",
       "detail": "Contact the provider to confirm hours, eligibility and availability.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.hud.gov/findshelter"
       ]
@@ -182,8 +186,8 @@
       "url": "https://www.feedingamerica.org/find-your-local-foodbank",
       "linkLabel": "Find a food bank near you",
       "detail": "Check where food is distributed and the current opening hours before going.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.feedingamerica.org/find-your-local-foodbank"
       ]
@@ -194,8 +198,8 @@
       "url": "https://www.fna.usda.gov/snap/recipient/eligibility",
       "linkLabel": "SNAP eligibility and applications",
       "detail": "Eligibility depends on household circumstances and current program rules.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.fna.usda.gov/snap/recipient/eligibility"
       ]
@@ -206,8 +210,8 @@
       "url": "https://www.fna.usda.gov/wic",
       "linkLabel": "Find WIC in your state",
       "detail": "Your local WIC program determines eligibility.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.fna.usda.gov/wic"
       ]
@@ -218,12 +222,17 @@
       "url": "https://findahealthcenter.hrsa.gov/",
       "linkLabel": "Find a health center",
       "detail": "Sliding-scale fees; care is not necessarily free.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.hrsa.gov/get-health-care/affordable/eligibility",
         "https://findahealthcenter.hrsa.gov/"
-      ]
+      ],
+      "requiresJavaScript": true,
+      "fallback": {
+        "url": "https://www.hrsa.gov/get-health-care/affordable/eligibility",
+        "label": "HRSA’s health-center guidance"
+      }
     },
     "rx": {
       "name": "RxAssist prescription assistance",
@@ -231,8 +240,8 @@
       "url": "https://www.rxassist.org/",
       "linkLabel": "Explore prescription assistance",
       "detail": "Each program sets its own eligibility and assistance rules.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.rxassist.org/"
       ]
@@ -243,8 +252,8 @@
       "url": "https://www.medicare.gov/about-us/contact-medicare",
       "linkLabel": "Contact Medicare",
       "detail": "Insurance costs and coverage vary. This is separate from Medicaid.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.medicare.gov/about-us/contact-medicare"
       ],
@@ -259,8 +268,8 @@
       "url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
       "linkLabel": "Find your state Medicaid agency",
       "detail": "Eligibility and coverage rules vary by state.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
       ]
@@ -271,8 +280,8 @@
       "url": "https://www.samhsa.gov/find-help/helplines/national-helpline",
       "linkLabel": "About the referral service",
       "detail": "Free referral service, 24/7, in English and Spanish. Treatment costs vary.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.samhsa.gov/find-help/helplines/national-helpline"
       ],
@@ -287,12 +296,17 @@
       "url": "https://findtreatment.gov/",
       "linkLabel": "Search treatment providers",
       "detail": "Ask providers about costs, insurance, eligibility and openings.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.samhsa.gov/find-help/helplines/national-helpline",
         "https://findtreatment.gov/"
-      ]
+      ],
+      "requiresJavaScript": true,
+      "fallback": {
+        "url": "https://www.samhsa.gov/find-help/helplines/national-helpline",
+        "label": "SAMHSA’s treatment-referral options"
+      }
     },
     "aa": {
       "name": "Alcoholics Anonymous",
@@ -300,8 +314,8 @@
       "url": "https://www.aa.org/",
       "linkLabel": "Find A.A. near you",
       "detail": "Peer support; not a medical treatment service.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.aa.org/"
       ]
@@ -312,8 +326,8 @@
       "url": "https://na.org/",
       "linkLabel": "Find N.A. near you",
       "detail": "Peer support; not a medical treatment service.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://na.org/"
       ]
@@ -324,8 +338,8 @@
       "url": "https://www.veteranscrisisline.net/",
       "linkLabel": "Veterans crisis chat and support",
       "detail": "Free support, 24/7.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.veteranscrisisline.net/"
       ],
@@ -333,7 +347,8 @@
         "number": "988",
         "label": "Call 988, then press 1"
       },
-      "text": "Text 838255"
+      "text": "Text 838255",
+      "textNumber": "838255"
     },
     "vso": {
       "name": "VA-accredited representatives",
@@ -341,8 +356,8 @@
       "url": "https://www.va.gov/resources/va-accredited-representative-faqs/",
       "linkLabel": "Find accredited claims help",
       "detail": "Accredited VSO claims help is free. Attorneys and claims agents may charge fees.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.va.gov/resources/va-accredited-representative-faqs/"
       ]
@@ -353,8 +368,8 @@
       "url": "https://www.usa.gov/disaster-assistance",
       "linkLabel": "How to apply for disaster assistance",
       "detail": "Help depends on the disaster declaration and your eligibility.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.usa.gov/disaster-assistance"
       ],
@@ -369,8 +384,8 @@
       "url": "https://www.redcross.org/get-help.html",
       "linkLabel": "Get disaster help",
       "detail": "Check current local availability; this is not a shelter reservation.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.redcross.org/get-help.html"
       ]
@@ -381,8 +396,8 @@
       "url": "https://www.lsc.gov/about-lsc/what-legal-aid/i-need-legal-help",
       "linkLabel": "Find legal aid near you",
       "detail": "For people who meet local eligibility requirements. Availability varies.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.lsc.gov/about-lsc/what-legal-aid/i-need-legal-help"
       ]
@@ -393,8 +408,8 @@
       "url": "https://www.americanbar.org/groups/legal_services/flh-home/",
       "linkLabel": "Find legal-help options",
       "detail": "Includes both free legal aid and paid lawyer referrals; ask about fees.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.americanbar.org/groups/legal_services/flh-home/"
       ]
@@ -405,8 +420,8 @@
       "url": "https://eldercare.acl.gov/home",
       "linkLabel": "Find aging and caregiver services",
       "detail": "Ask local providers about service costs and eligibility.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://eldercare.acl.gov/home"
       ],
@@ -421,8 +436,8 @@
       "url": "https://ovc.ojp.gov/program/stop-elder-fraud/providing-help-restoring-hope",
       "linkLabel": "About elder fraud support",
       "detail": "Free help. Monday–Friday, 10am–6pm Eastern.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://ovc.ojp.gov/program/stop-elder-fraud/providing-help-restoring-hope"
       ],
@@ -437,10 +452,11 @@
       "url": "https://www.griefshare.org/",
       "linkLabel": "Find a grief support group",
       "detail": "Group or workbook fees may apply; check with the host.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
-        "https://www.griefshare.org/"
+        "https://www.griefshare.org/",
+        "https://www.griefshare.org/faq"
       ]
     },
     "hope": {
@@ -449,8 +465,8 @@
       "url": "https://allianceofhope.org/",
       "linkLabel": "Explore suicide-loss support",
       "detail": "Check any service’s fees before booking. For immediate crisis support, use 988.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://allianceofhope.org/"
       ]
@@ -461,8 +477,8 @@
       "url": "https://www.childcareaware.org/families/",
       "linkLabel": "Find child care resources",
       "detail": "Child care costs and assistance eligibility vary. This link is for families generally.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.childcareaware.org/families/"
       ]
@@ -473,8 +489,8 @@
       "url": "https://headstart.gov/center-locator",
       "linkLabel": "Find a Head Start program",
       "detail": "Contact the program about eligibility and available places.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://headstart.gov/center-locator"
       ]
@@ -485,8 +501,8 @@
       "url": "https://www.ssa.gov/disability",
       "linkLabel": "Learn about SSDI",
       "detail": "Social Security determines eligibility; this is separate from SSI.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.ssa.gov/disability"
       ]
@@ -497,8 +513,8 @@
       "url": "https://www.ssa.gov/ssi",
       "linkLabel": "Learn about SSI",
       "detail": "Social Security determines eligibility.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.ssa.gov/ssi"
       ]
@@ -509,8 +525,8 @@
       "url": "https://adata.org/",
       "linkLabel": "Get ADA information",
       "detail": "Information and guidance; not a promise of legal representation.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://adata.org/"
       ],
@@ -525,8 +541,8 @@
       "url": "https://www.divorcecare.org/",
       "linkLabel": "Find a DivorceCare group",
       "detail": "Groups commonly charge a fee; check the group listing.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.divorcecare.org/about",
         "https://www.divorcecare.org/faq"
@@ -538,8 +554,8 @@
       "url": "https://211.org/",
       "linkLabel": "Find your local 211",
       "detail": "Texting options differ by location. Ask providers about eligibility and availability.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://211.org/"
       ],
@@ -554,8 +570,8 @@
       "url": "https://www.nyc.gov/site/hra/help/domestic-violence-support.page",
       "linkLabel": "NYC domestic violence support",
       "detail": "NYC hotline available 24/7.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.nyc.gov/site/hra/help/domestic-violence-support.page",
         "https://www.safehorizon.org/"
@@ -571,8 +587,8 @@
       "url": "https://portal.311.nyc.gov/",
       "linkLabel": "Visit NYC 311",
       "detail": "For emergencies, call 911.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://portal.311.nyc.gov/"
       ],
@@ -587,8 +603,8 @@
       "url": "https://access.nyc.gov/",
       "linkLabel": "Find benefits and application steps",
       "detail": "A screening is not an eligibility decision. Official applications may require an account.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://access.nyc.gov/"
       ]
@@ -599,8 +615,8 @@
       "url": "https://www.nyc.gov/site/hra/help/food-assistance.page",
       "linkLabel": "Find food in NYC",
       "detail": "Call 311 for help locating food; confirm opening hours before going.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.nyc.gov/site/hra/help/food-assistance.page"
       ],
@@ -615,8 +631,8 @@
       "url": "https://www.nyc.gov/site/hra/help/homebase.page",
       "linkLabel": "Find your Homebase office",
       "detail": "Call the local office before visiting to arrange an appointment. Eligibility applies.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.nyc.gov/site/hra/help/homebase.page"
       ]
@@ -627,8 +643,8 @@
       "url": "https://www.nyc.gov/site/dhs/shelter/shelter.page",
       "linkLabel": "See NYC shelter options",
       "detail": "Intake routes depend on household type; use the official guidance or call 311.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.nyc.gov/site/dhs/shelter/shelter.page"
       ],
@@ -643,8 +659,8 @@
       "url": "https://translifeline.org/hotline/",
       "linkLabel": "See hotline hours and support options",
       "detail": "Monday–Friday, 1pm–9pm Eastern. Scheduled closures and high call volumes may affect availability.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://translifeline.org/hotline/"
       ],
@@ -659,8 +675,8 @@
       "url": "https://www.thetrevorproject.org/get-help/",
       "linkLabel": "Chat with a counselor or learn what to expect",
       "detail": "Free service, 24/7. Message and data rates may apply.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.thetrevorproject.org/get-help/"
       ],
@@ -668,7 +684,8 @@
         "number": "+18664887386",
         "label": "Call 1-866-488-7386"
       },
-      "text": "Text START to 678678"
+      "text": "Text START to 678678",
+      "textNumber": "678678"
     },
     "lgbt-national": {
       "name": "LGBT National Hotline",
@@ -676,8 +693,8 @@
       "url": "https://lgbthotline.org/national-hotline/",
       "linkLabel": "See peer support and hotline information",
       "detail": "Free service. Monday–Friday, 2pm–11pm; Saturday, noon–5pm Eastern.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://lgbthotline.org/national-hotline/"
       ],
@@ -692,8 +709,8 @@
       "url": "https://gaycenter.org/tgnc/",
       "linkLabel": "Find TGNC programs and referrals",
       "detail": "Check the program’s intake requirements and current schedule.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://gaycenter.org/tgnc/"
       ]
@@ -704,8 +721,8 @@
       "url": "https://avp.org/get-help/",
       "linkLabel": "Find survivor support and legal services",
       "detail": "English/Spanish hotline: Monday–Thursday, 10am–6pm; Friday, 10am–2pm Eastern.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://avp.org/get-help/"
       ],
@@ -720,8 +737,8 @@
       "url": "https://callen-lorde.org/trans-health/",
       "linkLabel": "Explore trans health services",
       "detail": "Ask about new-patient intake, appointment availability, insurance, and costs.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://callen-lorde.org/trans-health/"
       ]
@@ -732,8 +749,8 @@
       "url": "https://www.legalservicesnyc.org/resources/lgbtq-rights/",
       "linkLabel": "Get legal help and find LGBTQ+ rights resources",
       "detail": "Intake: Monday–Friday, 9:30am–4pm Eastern. Help depends on location and capacity.",
-      "reviewedOn": "2026-10-08",
-      "reviewDue": "2026-11-07",
+      "reviewedOn": "2026-10-20",
+      "reviewDue": "2026-11-19",
       "sources": [
         "https://www.legalservicesnyc.org/resources/lgbtq-rights/"
       ],
@@ -924,6 +941,11 @@
     {
       "name": "DisasterAssistance.gov direct link",
       "reason": "Direct fetch was access-blocked; replaced with reviewed USA.gov application guidance, which links to the official application."
+    },
+    {
+      "name": "HUD /counseling landing page",
+      "url": "https://www.hud.gov/counseling",
+      "reason": "October 20, 2026: returned HTTP 200 but exposed only a page shell and agency footer. Replaced with HUD’s substantive About Housing Counseling page; the provider and phone service are retained."
     }
   ],
   "lgbtqResources": {
