@@ -1,58 +1,48 @@
 (function(){
   'use strict';
-  const C=window.Canary, $=id=>document.getElementById(id);
-  const names=['Your work','The people','Your workplace'];
-  const examples=['Writing reports','Handling customer questions','Updating records','Writing or checking code','Planning work','Teaching or advising','Troubleshooting equipment','Hands-on work'];
-  let state=C.empty(), step=0, result=null;
+  const C=window.CanaryAssessment,$=id=>document.getElementById(id);
+  let state=C.empty(),result=null;
   const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  function view(id){['intro','check','result'].forEach(x=>$(x).hidden=x!==id);$('clear-prompt').hidden=true;$('copy-fallback').hidden=true;}
-  function scrollFocus(el){el.focus({preventScroll:true});el.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});}
-  function options(list,name,multi=false){return '<div class="options">'+list.map(([v,l])=>'<label class="option"><input type="'+(multi?'checkbox':'radio')+'" name="'+name+'" value="'+v+'"'+((multi?state[name].includes(v):state[name]===v)?' checked':'')+'><span>'+esc(l)+'</span></label>').join('')+'</div>';}
-  function reason(){return '<fieldset><legend>What reason was given for that staffing change?</legend>'+options(C.REASONS,'reason')+'</fieldset><p class="task-help">Record what you heard. The check won’t assume it proves the cause.</p>';}
-  function render(focus=true){
-    view('check');$('step-count').textContent='Step '+(step+1)+' of 3';$('step-name').textContent=names[step];$('progress').value=step+1;$('progress').setAttribute('aria-valuetext',names[step]+', step '+(step+1)+' of 3');
-    $('step-nav').innerHTML=names.map((n,i)=>'<li'+(i===step?' class="current" aria-current="step"':'')+'><span>'+(i<step?'✓':i+1)+'</span>'+n+'</li>').join('');
-    $('errors').hidden=true;$('next').innerHTML=step===2?'See my next step <span aria-hidden="true">→</span>':'Continue <span aria-hidden="true">→</span>';
-    let html;
-    if(step===0)html='<h2 class="question-title" id="question-title" tabindex="-1">What work do you want to check?</h2><p class="question-intro">Choose a recurring task that takes a meaningful part of your week. You can check another task afterward.</p><label for="task" class="field-label">One task I do often</label><input type="text" id="task" name="task" maxlength="100" value="'+esc(state.task)+'" placeholder="For example, preparing the weekly report" aria-describedby="task-hint" autocomplete="off"><p class="task-help" id="task-hint">Be specific if you can. Leave out names and confidential details.</p><div class="examples" role="group" aria-label="Task examples">'+examples.map(x=>'<button type="button" class="example" data-example="'+esc(x)+'">'+esc(x)+'</button>').join('')+'</div><fieldset><legend>At your workplace, what have you seen AI do with this task?</legend>'+options(C.USE,'use')+'</fieldset><p class="task-help">Include checking and corrections when deciding whether it does “most.”</p>';
-    if(step===1)html='<h2 class="question-title" id="question-title" tabindex="-1">What still needs a person?</h2><p class="question-intro">Select what this task needs today. These are parts of the work to examine, not guarantees about staffing.</p><p class="context-task">Your task: <strong>'+esc(state.task)+'</strong></p><fieldset><legend>Choose all that apply.</legend>'+options(C.NEEDS,'needs',true)+'</fieldset>';
-    if(step===2)html='<h2 class="question-title" id="question-title" tabindex="-1">What has changed at work?</h2><p class="question-intro">Think about staffing for work like yours over the past 12 months. Choose the closest pattern you’ve seen.</p><fieldset><legend>For this kind of work, my employer is…</legend>'+options(C.STAFF,'staff')+'</fieldset><div id="reason-block"'+(!C.needsReason(state.staff)?' hidden':'')+'>'+reason()+'</div>';
-    $('question-body').innerHTML=html;
-    if(focus)scrollFocus($('question-title'));
+  const optionList=(items,selected)=>'<option value="">Choose an answer</option>'+items.map(([v,l])=>'<option value="'+v+'"'+(selected===v?' selected':'')+'>'+esc(l)+'</option>').join('');
+  function choices(items,name,multi=false){return '<div class="single-options">'+items.map(([v,l])=>'<label class="choice"><input type="'+(multi?'checkbox':'radio')+'" name="'+name+'" value="'+v+'"><span>'+esc(l)+'</span></label>').join('')+'</div>';}
+  function focusAt(el){el.focus({preventScroll:true});el.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});}
+  function invalidate(){result=null;$('result').hidden=true;$('result-content').innerHTML='';$('copy-status').textContent='';$('copy-fallback').hidden=true;$('summary-text').value='';$('form-errors').hidden=true;updateProgress();}
+  function distribute(){const n=state.tasks.length;if(n)state.tasks.forEach((t,i)=>t.share=Math.floor(100/n)+(i<100%n?1:0));}
+  function renderTaskDetails(){
+    $('allocation').hidden=!state.tasks.length;
+    $('shares').innerHTML=state.tasks.map(t=>'<div class="share-row"><label for="share-'+t.id+'">'+esc(C.TASKS[t.id].label)+'</label><div class="share-entry"><input id="share-'+t.id+'" type="number" min="1" max="100" step="1" inputmode="numeric" value="'+t.share+'" data-share="'+t.id+'" aria-describedby="allocation-help"><span aria-hidden="true">%</span></div></div>').join('');
+    for(const [container,key,list] of [['routine-rows','routine',C.ROUTINE],['evidence-rows','evidence',C.EVIDENCE]])$(container).innerHTML=state.tasks.length?state.tasks.map(t=>'<div class="task-row"><label for="'+key+'-'+t.id+'">'+esc(C.TASKS[t.id].label)+'</label><select id="'+key+'-'+t.id+'" data-task="'+t.id+'" data-field="'+key+'">'+optionList(list,t[key])+'</select></div>').join(''):'<p class="placeholder-note">Choose your main tasks in question 1 first.</p>';
+    updateTotal();
   }
-  $('start').addEventListener('click',()=>{step=0;render();});
-  $('question-body').addEventListener('input',e=>{if(e.target.name==='task'){state.task=e.target.value;$('task').removeAttribute('aria-invalid');}});
-  $('question-body').addEventListener('change',e=>{
-    const name=e.target.name, value=e.target.value;
-    if(name==='needs'){state.needs=C.toggle(state.needs,value);document.querySelectorAll('input[name="needs"]').forEach(el=>el.checked=state.needs.includes(el.value));}
-    if(['use','reason'].includes(name))state[name]=value;
-    if(name==='staff'){state.staff=value;state.reason='';$('reason-block').innerHTML=reason();$('reason-block').hidden=!C.needsReason(value);}
-    $('errors').hidden=true;
+  function updateTotal(){const total=state.tasks.reduce((n,t)=>n+(Number.isFinite(t.share)?t.share:0),0);$('total').textContent='Total: '+total+'%'+(total===100?'':' — adjust to 100%');$('total').classList.toggle('invalid',total!==100);}
+  function updateProgress(){const missing=new Set(C.validate(state).map(e=>e.question));$('completion').textContent=(9-missing.size)+' of 9 questions complete';}
+  $('tasks').innerHTML=Object.entries(C.TASKS).map(([id,t])=>'<label class="choice"><input type="checkbox" name="task" value="'+id+'"><span>'+esc(t.label)+'</span></label>').join('');
+  for(const key of ['adoption','needs','ownership','errors','plans','staffing','reason'])$(key+'-options').innerHTML=choices(C.CHOICES[key],key,key==='needs');
+  renderTaskDetails();$('form').hidden=false;updateProgress();
+  $('form').addEventListener('change',e=>{
+    const el=e.target,name=el.name;
+    if(name==='task'){
+      if(el.checked&&state.tasks.length===3){el.checked=false;$('task-status').textContent='Choose up to three. Uncheck one before adding another.';return;}
+      if(el.checked)state.tasks.push({id:el.value,share:0,routine:'',evidence:''});else state.tasks=state.tasks.filter(t=>t.id!==el.value);
+      distribute();renderTaskDetails();$('task-status').textContent='Time shares have been split evenly. Adjust them below to match your week.';
+    }else if(el.dataset.task){const task=state.tasks.find(t=>t.id===el.dataset.task);if(task)task[el.dataset.field]=el.value;}
+    else if(name==='needs'){state.needs=C.toggleNeeds(state.needs,el.value);document.querySelectorAll('input[name="needs"]').forEach(input=>input.checked=state.needs.includes(input.value));}
+    else if(Object.hasOwn(C.CHOICES,name)){state[name]=el.value;if(name==='staffing'){state.reason='';document.querySelectorAll('input[name="reason"]').forEach(input=>input.checked=false);$('reason-block').hidden=!C.needsReason(el.value);}}
+    invalidate();
   });
-  $('question-body').addEventListener('click',e=>{const el=e.target.closest('[data-example]');if(el){state.task=el.dataset.example;$('task').value=state.task;$('task').focus();$('task').removeAttribute('aria-invalid');}});
+  $('form').addEventListener('input',e=>{const id=e.target.dataset.share;if(id){state.tasks.find(t=>t.id===id).share=e.target.value===''?NaN:Number(e.target.value);updateTotal();invalidate();}});
+  $('equal-shares').addEventListener('click',()=>{distribute();state.tasks.forEach(t=>$('share-'+t.id).value=t.share);updateTotal();invalidate();});
   $('form').addEventListener('submit',e=>{
-    e.preventDefault();const errors=C.errors(state,step);
-    if(errors.length){$('errors').innerHTML=errors.map(x=>'<p>'+esc(x)+'</p>').join('');$('errors').hidden=false;if(step===0&&C.clean(state.task).length<3){$('task').setAttribute('aria-invalid','true');$('task').focus();}else $('errors').focus();return;}
-    state.task=C.clean(state.task);
-    if(step<2){step++;render();}else showResult();
+    e.preventDefault();const errors=C.validate(state);
+    if(errors.length){$('error-list').innerHTML=errors.map(error=>'<li><a href="#q'+error.question+'">'+esc(error.text)+'</a></li>').join('');$('form-errors').hidden=false;focusAt($('form-errors'));return;}
+    result=C.assess(state);renderResult();focusAt($('result-title'));
   });
-  $('back').addEventListener('click',()=>{if(step===0){view('intro');scrollFocus($('start'));}else{step--;render();}});
-  function showResult(){
-    result=C.analyse(state);if(!result)return;const r=result;
-    view('result');$('copy-status').textContent='';
-    $('result-body').innerHTML='<p class="eyebrow">YOUR NEXT STEP</p><p class="result-task">For: '+esc(r.task)+'</p><h1 id="result-title" tabindex="-1">'+esc(r.focus.title)+'</h1><p class="result-lede">'+esc(r.focus.summary)+'</p><section class="next-step" aria-label="A practical next step"><h2>ONE THING TO DO</h2><p>'+esc(r.focus.action)+'</p><div class="ask"><span>ASK AT WORK</span><blockquote>“'+esc(r.focus.question)+'”</blockquote></div></section><h2 class="evidence-title">What your answers tell us</h2><div class="evidence"><article><h3>AI and this task</h3><p>'+esc(r.ai)+'</p></article><article><h3>Where people matter</h3><ul>'+r.people.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>'+r.humanNotes.map(x=>'<p>'+esc(x)+'</p>').join('')+'<p>These requirements don’t tell us how many people will be employed.</p></article><article><h3>At your workplace</h3><p>'+esc(r.workplace)+'</p></article></div>'+(r.gaps.length?'<section class="gaps"><h3>Still unknown</h3><ul>'+r.gaps.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul></section>':'');
-    scrollFocus($('result-title'));
+  function renderResult(){const r=result;
+    $('form-errors').hidden=true;$('result').hidden=false;
+    $('result-content').innerHTML='<div class="result-label">Will AI take my job?</div><h2 id="result-title" class="result-title" tabindex="-1">'+esc(r.verdict.title)+'</h2><p class="answer">'+esc(r.verdict.answer)+'</p><p class="result-limit">This is a reasoned assessment of the work you described. It cannot predict a particular employer’s decision or give a probability of job loss.</p>'+(r.warnings.length?'<section class="workplace-note warning"><h3>Check these details</h3>'+r.warnings.map(t=>'<p>'+esc(t)+'</p>').join('')+'</section>':'')+'<div class="assessment-axes"><section class="assessment-axis"><h3>Exposure</h3><p>'+esc(r.exposure)+'</p></section><section class="assessment-axis"><h3>Holding</h3><p>'+(state.needs.some(x=>['physical','relationship','judgment'].includes(x))?'Essential human work identified':state.needs.includes('approval')&&state.ownership==='own'?'Your approval is required':state.needs.includes('unknown')?'Human requirements unclear':'Review or approval needs closer examination')+'</p></section></div><section class="result-section"><h3>Why this is your result</h3><ul>'+r.reasons.map(reason=>'<li><strong>'+esc(reason.title)+':</strong> '+esc(reason.text)+'</li>').join('')+'</ul></section><section class="result-section"><h3>Your tasks, separately</h3><p>The percentages describe the time you allocated. They are not risk scores.</p><div class="task-breakdown">'+r.tasks.map(t=>'<article class="task-read"><div class="time">'+t.share+'% of your week</div><h4>'+esc(t.label)+'</h4><p class="task-band">'+esc(t.bandLabel)+'</p><p>'+esc(t.basis)+'</p><p><strong>What AI may do:</strong> '+esc(t.can)+'</p><p><strong>What still needs checking:</strong> '+esc(t.limit)+'</p><p><strong>Your tool experience:</strong> '+esc(C.label(C.EVIDENCE,t.evidence))+'.</p></article>').join('')+'</div></section><section class="result-section"><h3>What holds the human role</h3><ul>'+r.holds.map(t=>'<li>'+esc(t)+'</li>').join('')+'</ul><p style="margin-top:12px">'+esc(r.quality)+'</p></section><section class="workplace-note '+r.workplace.kind+'"><h3>'+esc(r.workplace.title)+'</h3><p>'+esc(r.workplace.text)+'</p></section><section class="next-action"><h3>'+esc(r.action.title)+'</h3><p>'+esc(r.action.text)+'</p><blockquote><strong>Ask:</strong> “'+esc(r.action.question)+'”</blockquote></section>'+(r.gaps.length?'<details class="result-section"><summary>What is still unknown</summary><ul>'+r.gaps.map(t=>'<li>'+esc(t)+'</li>').join('')+'</ul></details>':'')+'<section class="result-section"><h3>What would change this assessment</h3><p>'+esc(r.sensitivity)+'</p></section>';
   }
-  $('edit').addEventListener('click',()=>{step=0;render();});
-  function reset(){state=C.empty();result=null;step=0;$('summary-text').value='';$('copy-status').textContent='';$('result-body').innerHTML='';$('question-body').innerHTML='';view('intro');scrollFocus($('start'));}
-  $('clear').addEventListener('click',()=>{$('clear-prompt').hidden=false;$('confirm-clear').focus();});
-  $('confirm-clear').addEventListener('click',reset);
-  $('cancel-clear').addEventListener('click',()=>{$('clear-prompt').hidden=true;$('clear').focus();});
-  $('another').addEventListener('click',()=>{state=C.empty();result=null;step=0;$('summary-text').value='';$('result-body').innerHTML='';render();});
-  $('copy').addEventListener('click',async()=>{
-    if(!result)return;
-    try{if(!navigator.clipboard?.writeText)throw Error('Unavailable');await navigator.clipboard.writeText(C.summary(result));$('copy-status').textContent='Summary copied.';}
-    catch{$('summary-text').value=C.summary(result);$('copy-fallback').hidden=false;$('summary-text').focus();$('summary-text').select();$('copy-status').textContent='Automatic copying isn’t available. Select and copy the summary below.';}
-  });
-  $('save').addEventListener('click',()=>{if(!result)return;const url=URL.createObjectURL(new Blob([C.summary(result)],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='canary-career-check.txt';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);$('copy-status').textContent='Summary prepared for download.';});
+  $('edit').addEventListener('click',()=>focusAt($('q1')));
+  $('reset').addEventListener('click',()=>{state=C.empty();$('form').reset();$('reason-block').hidden=true;$('task-status').textContent='';renderTaskDetails();invalidate();focusAt($('q1'));});
+  $('copy').addEventListener('click',async()=>{if(!result)return;try{if(!navigator.clipboard?.writeText)throw Error('unavailable');await navigator.clipboard.writeText(C.summary(result));$('copy-status').textContent='Summary copied.';}catch{$('summary-text').value=C.summary(result);$('copy-fallback').hidden=false;$('summary-text').focus();$('summary-text').select();$('copy-status').textContent='Select and copy the summary below.';}});
+  $('save').addEventListener('click',()=>{if(!result)return;const url=URL.createObjectURL(new Blob([C.summary(result)],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='canary-job-assessment.txt';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);$('copy-status').textContent='Summary prepared for download.';});
 })();

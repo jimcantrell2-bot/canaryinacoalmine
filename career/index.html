@@ -1,29 +1,179 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Check | Canary in a Coal Mine</title>
-<meta name="description" content="Look at one recurring task, what AI changes, and what to ask at work next.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will AI Take My Job? | Career Canary</title>
+<meta name="description" content="Assess how AI could affect your main tasks, what still needs a person, and what changes at work mean for your role. Free, no account.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Will AI Take My Job? Career Canary">
+<meta property="og:description" content="Assess how AI could affect your main tasks, what still needs a person, and what changes at work mean for your role. Free, no account.">
+<meta property="og:url" content="https://canaryinacoalmine.ai/career/">
+<meta property="og:image" content="https://canaryinacoalmine.ai/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Will AI Take My Job? Career Canary">
+<meta name="twitter:description" content="Assess how AI could affect your main tasks, what still needs a person, and what changes at work mean for your role. Free, no account.">
+<meta name="twitter:image" content="https://canaryinacoalmine.ai/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #0e0e0c;
+  --off-white: #f5f3ee;
+  --cream: #ede9e0;
+  --amber: #d4850a;
+  --amber-light: #fdf3e0;
+  --muted: #6b6860;
+  --border: rgba(14,14,12,0.1);
+  --blue: #1a4f8a;
+  --blue-light: #e8f0fa;
+  --green: #2d7a3a;
+  --red: #c0392b;
+  --stone: #a89880;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--off-white); color: var(--black); font-family: 'Instrument Sans', sans-serif; line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+
+nav { background: var(--off-white); border-bottom: 1px solid var(--border); padding: 0 28px; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 100; }
+.logo-wrap { display: flex; flex-direction: column; gap: 1px; line-height: 1; align-items: center; }
+.logo-top { font-family: 'DM Serif Display', serif; font-size: 17px; color: var(--black); letter-spacing: -.01em; }
+.logo-sub { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 11px; color: var(--stone); }
+.nav-links { display: flex; align-items: center; gap: 20px; font-size: 13px; color: var(--muted); }
+.nav-links a:hover { color: var(--black); }
+.nav-links a.active { color: var(--amber); font-weight: 500; }
+.nav-links a.blue { color: var(--blue); font-weight: 500; }
+.nav-btn { background: var(--black); color: var(--off-white); padding: 7px 16px; border-radius: 4px; font-size: 13px; font-weight: 500; }
+.nav-btn:hover { background: #2a2a28; color: var(--off-white); }
+.nav-links a.nav-support { color: var(--amber); font-weight: 500; }
+.nav-links a.nav-support:hover { color: #b8730a; }
+
+.page-header { padding: 48px 28px 36px; max-width: 720px; margin: 0 auto; }
+.eyebrow { font-family: 'DM Mono', monospace; font-size: 18px; letter-spacing: .1em; text-transform: uppercase; color: var(--amber); margin-bottom: 12px; font-weight: 500; }
+.page-title { font-family: 'DM Serif Display', serif; font-size: 36px; line-height: 1.15; margin-bottom: 10px; }
+.page-title em { font-style: italic; color: var(--stone); }
+.page-sub { font-size: 15px; color: var(--muted); line-height: 1.6; max-width: 520px; }
+
+.scorer-wrap { max-width: 720px; margin: 0 auto; padding: 0 28px; }
+.q-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 20px 22px; margin-bottom: 12px; }
+.q-num { font-family: 'DM Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 8px; }
+.q-text { font-size: 15px; font-weight: 500; color: var(--black); margin-bottom: 14px; line-height: 1.35; }
+.q-options { display: flex; flex-wrap: wrap; gap: 7px; }
+.q-opt { font-size: 12px; padding: 6px 13px; border: 1px solid var(--border); border-radius: 4px; background: var(--off-white); color: var(--black); cursor: pointer; font-family: 'Instrument Sans', sans-serif; transition: all .12s; }
+.q-opt:hover { border-color: var(--amber); background: var(--amber-light); color: #854f0b; }
+.q-opt.sel { border-color: var(--amber); background: var(--amber-light); color: #854f0b; font-weight: 500; }
+
+.score-btn { display: block; margin: 20px 0 0; background: var(--black); color: var(--off-white); border: none; padding: 13px 32px; border-radius: 4px; font-size: 14px; font-weight: 500; font-family: 'Instrument Sans', sans-serif; cursor: pointer; opacity: .35; transition: opacity .2s; }
+.score-btn.ready { opacity: 1; }
+
+.result-box { display: none; background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 24px; margin-top: 12px; }
+.result-box.show { display: block; }
+.result-score { font-family: 'DM Serif Display', serif; font-size: 48px; color: var(--black); line-height: 1; margin-bottom: 4px; }
+.result-label { font-family: 'DM Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: 16px; }
+.result-bar-wrap { height: 6px; background: var(--cream); border-radius: 3px; overflow: hidden; margin-bottom: 20px; }
+.result-bar { height: 100%; border-radius: 3px; transition: width .6s ease; }
+.result-text { font-size: 14px; color: var(--muted); line-height: 1.6; }
+.result-dims { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 16px; }
+.dim-card { background: var(--off-white); border-radius: 6px; padding: 12px 14px; }
+.dim-label { font-family: 'DM Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 4px; }
+.dim-val { font-size: 20px; font-weight: 500; color: var(--black); }
+
+.section-rule { border: none; border-top: 1px solid var(--border); margin: 40px 28px 0; }
+
+.intel-section { max-width: 720px; margin: 0 auto; padding: 32px 28px 0; }
+.intel-header { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+.intel-header-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--amber); flex-shrink: 0; }
+.intel-header-label { font-family: 'DM Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+.intel-header-date { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--stone); margin-left: auto; }
+.intel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 600px) { .intel-grid { grid-template-columns: 1fr; } }
+
+.icard { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 16px 18px; }
+.icard-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 8px; gap: 8px; }
+.icard-topic { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.pill { font-family: 'DM Mono', monospace; font-size: 9px; padding: 2px 7px; border-radius: 3px; font-weight: 500; white-space: nowrap; flex-shrink: 0; }
+.pill-red { background: #fce8e8; color: #a32d2d; }
+.pill-amber { background: #faeeda; color: #854f0b; }
+.pill-green { background: #eaf3de; color: #3b6d11; }
+.pill-blue { background: #e6f1fb; color: #0c447c; }
+.icard-headline { font-size: 13px; font-weight: 500; color: var(--black); line-height: 1.35; margin-bottom: 6px; }
+.icard-body { font-size: 12px; color: var(--muted); line-height: 1.5; }
+.icard-divider { height: 1px; background: var(--border); margin: 10px 0; }
+.irow { display: flex; align-items: baseline; gap: 5px; font-size: 11.5px; color: var(--muted); margin-top: 5px; line-height: 1.4; }
+.rr { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--red); flex-shrink: 0; }
+.rg { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--green); flex-shrink: 0; }
+.ra { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--amber); flex-shrink: 0; }
+
+.intel-note { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--stone); margin-top: 10px; padding-bottom: 2px; }
+
+.email-section { max-width: 720px; margin: 0 auto; padding: 32px 28px; }
+.email-box { background: var(--cream); border-radius: 8px; padding: 24px 28px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.email-copy h3 { font-family: 'DM Serif Display', serif; font-size: 18px; margin-bottom: 4px; }
+.email-copy p { font-size: 13px; color: var(--muted); }
+.email-form { display: flex; gap: 8px; flex-shrink: 0; }
+.email-input { padding: 9px 14px; border: 1px solid var(--border); border-radius: 4px; font-size: 13px; font-family: 'Instrument Sans', sans-serif; background: #fff; width: 220px; }
+.email-submit { padding: 9px 18px; background: var(--black); color: var(--off-white); border: none; border-radius: 4px; font-size: 13px; font-weight: 500; font-family: 'Instrument Sans', sans-serif; cursor: pointer; white-space: nowrap; }
+
+footer { border-top: 1px solid var(--border); padding: 20px 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+.footer-links { display: flex; gap: 16px; font-size: 12px; color: var(--muted); font-family: 'DM Mono', monospace; }
+.footer-links a { color: var(--muted); }
+.footer-links a:hover { color: var(--black); }
+.footer-note { font-size: 11px; color: var(--stone); font-family: 'DM Mono', monospace; }
+
+
+.q-hint { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--stone); margin-top: 9px; letter-spacing: .03em; }
+.axis-block { margin-bottom: 16px; }
+.axis-head { display: flex; justify-content: space-between; align-items: baseline; font-family: 'DM Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--black); margin-bottom: 6px; }
+.axis-head .axis-num { font-size: 14px; font-weight: 500; }
+.axis-sub { font-size: 11px; color: var(--stone); margin-top: 4px; }
+.result-section { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+.rs-label { font-family: 'DM Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--amber); margin-bottom: 4px; }
+.result-section p { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+.pos-name { font-family: 'DM Serif Display', serif; font-size: 34px; line-height: 1.1; margin-bottom: 8px; }
+
+.title-row { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+.title-row h1 { margin-bottom: 0; }
+
+/* mobile nav */
+.logo-top{white-space:nowrap;display:inline-flex;align-items:center;}
+.nav-links a{white-space:nowrap;}
+@media(max-width:680px){
+  nav{padding:0 14px;}
+  .logo-sub{display:none;}
+  .nav-links{gap:12px;font-size:12px;overflow-x:auto;}
+  .nav-btn{display:none;}
+}
+
+.nav-links{scrollbar-width:none;-ms-overflow-style:none;}
+.nav-links::-webkit-scrollbar{display:none;}
+</style>
+
 <link rel="canonical" href="https://canaryinacoalmine.ai/career/">
-<meta property="og:type" content="website"><meta property="og:title" content="The Check | Canary in a Coal Mine"><meta property="og:description" content="Three steps to look at changes to your work and choose a practical next action."><meta property="og:url" content="https://canaryinacoalmine.ai/career/"><meta property="og:image" content="https://canaryinacoalmine.ai/og-image.png">
-<link rel="icon" type="image/svg+xml" href="/career/canary.svg"><link rel="stylesheet" href="/career/style.css">
-<script src="/career/model.js" defer></script><script src="/career/app.js" defer></script>
+<link rel="stylesheet" href="/career/assessment.css">
+<script src="/career/assessment.js" defer></script><script src="/career/app.js" defer></script>
 </head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-<header class="header wrap"><a href="/" class="brand"><img src="/career/canary.svg" width="50" height="36" alt=""><span>Canary<small>in a coal mine</small></span></a><nav aria-label="Main"><a href="/career/" aria-current="page">The Check</a><a href="/pigeon/">Cher Ami <span aria-hidden="true">↗</span></a></nav></header>
-<main id="main" class="wrap">
-<section id="intro" class="intro view" aria-labelledby="intro-title">
-  <div class="intro-copy"><p class="eyebrow">CAREER CANARY / THE CHECK</p><h1 id="intro-title">What is AI changing<br>in <em>your work?</em></h1><p class="lede">Start with one task you do often. Look at what’s changing, what still needs a person, and what to ask next.</p><button id="start" class="button primary">Start the check <span aria-hidden="true">→</span></button><p class="micro">3 steps · About 2 minutes · Free</p></div>
-  <aside class="yellow-panel" aria-label="What the check covers"><div class="panel-top"><span class="eyebrow">START WITH WHAT YOU SEE</span><img src="/career/canary.svg" width="82" height="58" alt=""></div><ol class="outline"><li><div><h2>Your work</h2><p>A recurring task and how AI is used.</p></div></li><li><div><h2>The people</h2><p>The parts that need human involvement.</p></div></li><li><div><h2>Your workplace</h2><p>Changes in staffing for work like yours.</p></div></li></ol><p class="panel-note">Leave with one practical next step.</p></aside>
-</section>
-<section id="check" class="view check-layout" hidden aria-labelledby="check-title">
-  <aside class="check-side"><p class="eyebrow">CAREER CANARY</p><h1 id="check-title">The Check</h1><p>Use what you’ve seen at work. “I don’t know” is a useful answer.</p><ol id="step-nav" class="step-nav" aria-label="Check steps"></ol><p class="micro">Your answers stay in this page. Reloading clears them.</p></aside>
-  <div class="question-shell"><div class="progress-top"><span id="step-count"></span><span id="step-name"></span></div><progress id="progress" max="3" value="1" aria-label="Current step"></progress><form id="form" novalidate><div id="question-body"></div><div id="errors" class="errors" role="alert" tabindex="-1" hidden></div><div class="form-actions"><button id="back" type="button" class="button secondary">Back</button><button id="next" type="submit" class="button primary">Continue <span aria-hidden="true">→</span></button></div></form><button id="clear" class="text-button">Clear answers</button><div id="clear-prompt" class="clear-prompt" hidden><p>Clear this check and return to the start?</p><button id="confirm-clear" class="button secondary">Clear and start over</button><button id="cancel-clear" class="text-button">Keep my answers</button></div></div>
-</section>
-<section id="result" class="view result" hidden aria-labelledby="result-title"><div id="result-body"></div><div class="result-tools"><button id="copy" class="button primary">Copy my summary</button><button id="save" class="button secondary">Save as text</button><button id="edit" class="text-button">Edit my answers</button><button id="another" class="text-button">Check another task</button></div><p id="copy-status" class="micro" role="status" aria-live="polite"></p><div id="copy-fallback" hidden><label for="summary-text">Copy this summary</label><textarea id="summary-text" rows="12" readonly></textarea></div><p class="result-limit">This is a starting point for a conversation about your work. It uses your observations and doesn’t predict whether you’ll lose your job.</p></section>
-<a href="/pigeon/" class="help-strip"><img src="/career/cher-ami.svg" width="66" height="45" alt=""><div><span class="eyebrow">CHER AMI</span><h2>Need practical help?</h2><p>U.S. and NYC resources for job loss, housing, food, and more.</p></div><span class="help-arrow" aria-hidden="true">→</span></a>
-<details class="about" id="about"><summary>How this check works & your privacy</summary><div class="about-content"><h2>A useful question, based on your answers.</h2><p>The check looks at one task, reported AI use, human involvement, and staffing over the past year. It gives priority to cuts, then unfilled vacancies or mixed staffing changes. Otherwise, it points to missing information, regular AI use, a trial, or future plans—in that order.</p><p>Human requirements add questions about the work people do. They don’t cancel a staffing warning or guarantee job security. An employer’s explanation for a cut is recorded as an explanation, not proof of its cause.</p><p>This is Jim’s practical reflection tool. It doesn’t estimate how much of your job can be automated or cover every task in your role. Its focus is generative AI software; robotics and other automation may affect work differently.</p><p>Background: the <a href="https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure" target="_blank" rel="noopener noreferrer">ILO’s 2025 task exposure research ↗</a> distinguishes potential changes to tasks from employment outcomes. It does not validate this questionnaire.</p><h3>Your answers</h3><p>The check keeps answers in page memory and sends no answers to a server. Reloading or clearing removes them. There are no analytics or signup forms here. Copying or saving creates a summary you control. Hosting and external websites may keep normal access logs. Avoid names or confidential information in the task field.</p><p class="micro">Check rebuilt October 8, 2026</p></div></details>
-<noscript><div class="no-script">The interactive check needs JavaScript. You can still read how it works above and visit <a href="/pigeon/">Cher Ami for practical help</a>.</div></noscript>
-</main><footer class="wrap"><span>Canary in a Coal Mine <span aria-hidden="true">/</span> A project by Jim.</span><a href="https://canaryinacoalmine.ai/support/" target="_blank" rel="noopener noreferrer">Support Canary ↗</a></footer>
-</body></html>
+<body><a class="skip-link" href="#main">Skip to assessment</a><nav>
+  <a href="/" class="logo-wrap">
+    <span class="logo-top"><svg width="22" height="22" viewBox="58 60 175 123" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:3px"><ellipse cx="150" cy="110" rx="45" ry="35" fill="#f5c800" stroke="#c8960a" stroke-width="1.5"/><ellipse cx="158" cy="125" rx="32" ry="20" fill="#f7d940" stroke="none"/><path d="M192 105 Q215 88 225 95 Q210 108 192 112Z" fill="#e8b400" stroke="#c8960a" stroke-width="1"/><path d="M192 110 Q218 100 226 110 Q210 118 192 118Z" fill="#d4a000" stroke="#c8960a" stroke-width="1"/><path d="M192 115 Q215 115 222 126 Q208 126 192 120Z" fill="#c89000" stroke="#c8960a" stroke-width="1"/><ellipse cx="112" cy="95" rx="30" ry="27" fill="#f5c800" stroke="#c8960a" stroke-width="1.5"/><path d="M85 92 L62 88 L64 95 L85 97Z" fill="#e8a020" stroke="#c8760a" stroke-width="1"/><ellipse cx="100" cy="90" rx="6" ry="5.5" fill="#1a1a18"/><line x1="145" y1="143" x2="142" y2="165" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round"/><line x1="142" y1="165" x2="134" y2="174" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="142" y1="165" x2="151" y2="173" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="162" y1="143" x2="160" y2="165" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round"/><line x1="160" y1="165" x2="152" y2="174" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="160" y1="165" x2="168" y2="173" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/></svg>Canary</span>
+    <span class="logo-sub">in a coal mine</span>
+  </a>
+  <div class="nav-links">
+    <a href="/career" class="active">Career</a>
+    <a href="/pigeon" class="blue">Cher Ami</a>
+    <a href="/about">About</a>
+    <a href="/support" class="nav-support">Support Canary</a>
+    <a href="/" class="nav-btn">Home</a>
+  </div>
+</nav><main id="main"><div class="page-header">
+  <div class="eyebrow">Career Canary</div>
+  <div class="title-row"><svg width="83" height="83" viewBox="58 60 175 123" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;margin-top:14px"><ellipse cx="150" cy="110" rx="45" ry="35" fill="#f5c800" stroke="#c8960a" stroke-width="1.5"/><ellipse cx="158" cy="125" rx="32" ry="20" fill="#f7d940" stroke="none"/><path d="M192 105 Q215 88 225 95 Q210 108 192 112Z" fill="#e8b400" stroke="#c8960a" stroke-width="1"/><path d="M192 110 Q218 100 226 110 Q210 118 192 118Z" fill="#d4a000" stroke="#c8960a" stroke-width="1"/><path d="M192 115 Q215 115 222 126 Q208 126 192 120Z" fill="#c89000" stroke="#c8960a" stroke-width="1"/><ellipse cx="112" cy="95" rx="30" ry="27" fill="#f5c800" stroke="#c8960a" stroke-width="1.5"/><path d="M85 92 L62 88 L64 95 L85 97Z" fill="#e8a020" stroke="#c8760a" stroke-width="1"/><line x1="85" y1="94" x2="64" y2="91" stroke="#c8760a" stroke-width="0.8"/><ellipse cx="100" cy="90" rx="6" ry="5.5" fill="#1a1a18"/><ellipse cx="99" cy="89" rx="2" ry="1.5" fill="#3a3a38"/><line x1="145" y1="143" x2="142" y2="165" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round"/><line x1="142" y1="165" x2="134" y2="174" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="142" y1="165" x2="144" y2="175" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="142" y1="165" x2="151" y2="173" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="162" y1="143" x2="160" y2="165" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round"/><line x1="160" y1="165" x2="152" y2="174" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="160" y1="165" x2="162" y2="175" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/><line x1="160" y1="165" x2="168" y2="173" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/></svg><h1 class="page-title">Will AI take<br><em>my job?</em></h1></div>
+  <p class="page-sub">Start with the work you actually do. Compare what AI could handle with what still needs a person, then see what that means for your role.</p><p class="check-meta">Nine questions · About 5 minutes · Free · No account</p>
+</div><div class="scorer-wrap"><p class="check-intro">You’ll get an assessment of your whole work mix, a task-by-task explanation, and a next step. “I don’t know” is a useful answer.</p><form id="form" novalidate hidden><fieldset class="q-card" id="q1" tabindex="-1"><legend><span class="q-num">Question 1 of 9 · Exposure</span>Which kinds of work fill your week?</legend><div class="question-content"><p class="q-hint">Choose up to three that cover your main responsibilities. Split the time roughly across them; it should add up to 100%.</p><div id="tasks" class="task-options"></div><p id="task-status" class="live-status" role="status"></p><div id="allocation" class="allocation" hidden><h3>How much of your week goes to each?</h3><p id="allocation-help">The initial split is even. Adjust it to match your work. These are time estimates, not risk scores.</p><div id="shares"></div><p id="total" class="total" role="status"></p><button id="equal-shares" class="subtle-button" type="button">Split evenly</button></div></div></fieldset><fieldset class="q-card" id="q2" tabindex="-1"><legend><span class="q-num">Question 2 of 9 · Exposure</span>How repeatable is each kind of work?</legend><div class="question-content"><p class="q-hint">Think about the real work, including exceptions. A task with a standard template differs from solving a new problem each time.</p><div id="routine-rows"></div></div></fieldset><fieldset class="q-card" id="q3" tabindex="-1"><legend><span class="q-num">Question 3 of 9 · Exposure</span>What have AI tools actually shown on these tasks?</legend><div class="question-content"><p class="q-hint">Judge the finished result, including corrections. A demonstration or a good first draft is not the same as doing the whole task. For hands-on work, distinguish the physical activity from its paperwork.</p><div id="evidence-rows"></div></div></fieldset><fieldset class="q-card" id="q4" tabindex="-1"><legend><span class="q-num">Question 4 of 9 · Exposure</span>Is your employer using AI for work like yours?</legend><div class="question-content"><p class="q-hint">Your own trials and your employer’s rollout are different observations. Choose what you know about the employer.</p><div id="adoption-options"></div></div></fieldset><fieldset class="q-card" id="q5" tabindex="-1"><legend><span class="q-num">Question 5 of 9 · Holding</span>What does the job still need a person to do?</legend><div class="question-content"><p class="q-hint">Select all that are essential to the role, even if they take only part of your time. These requirements may shape a future job; they do not guarantee the same staffing.</p><div id="needs-options"></div></div></fieldset><fieldset class="q-card" id="q6" tabindex="-1"><legend><span class="q-num">Question 6 of 9 · Holding</span>Who owns the final decision or required approval?</legend><div class="question-content"><p class="q-hint">Distinguish preparing the work from the authority to decide, approve, or accept responsibility for the outcome.</p><div id="ownership-options"></div></div></fieldset><fieldset class="q-card" id="q7" tabindex="-1"><legend><span class="q-num">Question 7 of 9 · Holding</span>What happens when the work is wrong?</legend><div class="question-content"><p class="q-hint">Think about the consequences if a mistake gets past normal checks. Serious consequences create a quality requirement, not an automatic promise of job security.</p><div id="errors-options"></div></div></fieldset><fieldset class="q-card" id="q8" tabindex="-1"><legend><span class="q-num">Question 8 of 9 · Direction</span>What does your employer intend to do with time saved?</legend><div class="question-content"><p class="q-hint">Choose an announced plan rather than guessing. Saving time can mean more output, different work, or fewer people.</p><div id="plans-options"></div></div></fieldset><fieldset class="q-card" id="q9" tabindex="-1"><legend><span class="q-num">Question 9 of 9 · Direction</span>What is happening to staffing for work like yours?</legend><div class="question-content"><p class="q-hint">Think about your workplace over the past 12 months. A staffing change matters, but it is not automatically caused by AI.</p><div id="staffing-options"></div><fieldset id="reason-block" class="reason-block" hidden><legend>What reason was given?</legend><div class="question-content" id="reason-options"></div></fieldset></div></fieldset><div id="form-errors" class="form-errors" tabindex="-1" role="alert" hidden><h2>A few answers are missing or need adjusting.</h2><ul id="error-list"></ul></div><div class="completion"><div class="completion-actions"><button class="score-btn" type="submit">Show my assessment →</button><button id="reset" class="subtle-button" type="button">Clear answers</button></div><p id="completion" role="status"></p></div></form><section id="result" class="result-box" hidden aria-labelledby="result-title"><div id="result-content"></div><div class="result-tools"><button id="edit" class="edit-button" type="button">Edit my answers</button><button id="copy" type="button">Copy summary</button><button id="save" type="button">Save as text</button></div><p id="copy-status" class="copy-status" role="status"></p><div id="copy-fallback" class="copy-fallback" hidden><label for="summary-text">Copy this summary</label><textarea id="summary-text" readonly rows="12"></textarea></div></section><noscript><p>This assessment needs JavaScript to run. You can read the method below and use <a href="/pigeon/">Cher Ami’s practical resources</a>.</p></noscript></div><p class="help-link">Need help now? <a href="/pigeon/">Cher Ami has resources for job loss, housing, food, and more.</a></p><details class="method" id="method"><summary>How the assessment works, its limits, and your privacy</summary><h2>Exposure × Holding, without a false promise.</h2><p><strong>Exposure:</strong> the assessment looks at task categories, your time estimates, repeatability, and what tools have actually shown. Repeatable digital work has higher potential exposure. Substantial checking or a failed trial is treated differently from a tool completing a task. Physical work needs people or specialized equipment; software that writes instructions does not perform it.</p><p><strong>Holding:</strong> physical action, relationships, judgment, approval, and review describe work that may remain. They do not subtract points from exposure or guarantee a job. An approval held by someone else is not counted as your personal protection.</p><p><strong>Direction:</strong> employer adoption, plans for time saved, and staffing are considered separately. The main answer assesses your tasks. A separate workplace warning addresses cuts or announced reductions, including when AI is not the stated cause.</p><p>The time shares describe the week you entered. If tasks classified with higher potential exposure make up at least half of it, the result says a large part of your work is exposed. If physical work makes up more than half, the answer focuses on supporting work and equipment automation. These are editorial decision rules, not calibrated employment forecasts. Small differences near a boundary can change the headline; the individual task analysis remains visible.</p><p>There is no trained AI prediction system or live occupation database behind this page. Task descriptions and decision rules are written for this tool. Your choices drive the assessment; no job title or free text is silently treated as if it had been understood.</p><p>Background: the <a href="https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure" target="_blank" rel="noopener noreferrer">ILO’s May 2025 research on task exposure</a> distinguishes potential changes to tasks from employment outcomes. Its occupational scores are not used here, and it does not validate this questionnaire. The task descriptions are broad starting points; tool performance varies with the task and required standard.</p><p><strong>Privacy:</strong> answers stay in this page’s memory. They are not sent to a server or saved in browser storage. Reloading or clearing removes them. Copying or downloading creates a summary you control. The optional newsletter on other pages is separate. Fonts, hosting, and external links may generate normal web requests.</p><p>Assessment revised October 20, 2026.</p></details></main><footer>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/career">Career</a>
+    <a href="/pigeon">Cher Ami</a><a href="/about">About</a><a href="/support">Support Canary</a>
+  </div>
+  <div class="footer-note">Not advice · Not investment guidance · Just awareness</div>
+</footer></body></html>
